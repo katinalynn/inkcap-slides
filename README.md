@@ -14,7 +14,6 @@ HTML/Reveal.js slide decks for Katina L. Rogers's upcoming talks, styled to matc
 | `inkcap-template-cheatsheet.md` | Editing reference guide | Complete |
 | `COWORK_HANDOFF.md` | Task list and context for continuing work in Cowork | See below |
 
-Image files (mushroom photos) are **not** in this repo — they live in Google Drive and will be added locally at presentation time. See `COWORK_HANDOFF.md` for the Drive folder ID and file list.
 
 ---
 
