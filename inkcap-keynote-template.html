@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkcap Consulting — Keynote Template</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    /* ================================================================
+       INKCAP CONSULTING — BRAND TOKENS
+       Matches inkcapconsulting.com CSS variables exactly
+    ================================================================ */
+    :root {
+      --color-primary:        #006D6F;
+      --color-primary-dark:   #005456;
+      --color-primary-light:  #e6f3f3;
+      --color-text:           #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-bg:             #ffffff;
+      --color-bg-subtle:      #f7f8f9;
+      --color-bg-warm:        #faf9f7;
+      --color-border:         #d4d4d4;
+      --color-border-light:   #e8e8e8;
+      --color-accent-dark:    #051A42;
+      --color-accent-orange:  #e05724;
+      --font-body:    'Libre Franklin', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    }
+
+    /* ================================================================
+       REVEAL.JS BASE OVERRIDES
+    ================================================================ */
+    .reveal-viewport { background: var(--color-bg); }
+
+    .reveal {
+      font-family: var(--font-body);
+      font-size: 28px;
+      color: var(--color-text);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      text-transform: none;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal h1 { font-size: 2.8em; }
+    .reveal h2 { font-size: 2em; }
+    .reveal h3 { font-size: 1.4em; }
+
+    .reveal p {
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.65;
+      margin-bottom: 0.8em;
+    }
+
+    .reveal ul, .reveal ol {
+      font-family: var(--font-body);
+      line-height: 1.7;
+      margin-left: 1.5em;
+    }
+
+    .reveal ul li, .reveal ol li { margin-bottom: 0.4em; }
+    .reveal a { color: var(--color-primary); }
+
+    /* Progress bar */
+    .reveal .progress { background: var(--color-border-light); color: var(--color-primary); height: 3px; }
+
+    /* Controls */
+    .reveal .controls { color: var(--color-primary); }
+
+    /* Slide number */
+    .reveal .slide-number {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      background: transparent;
+      right: 20px;
+      bottom: 18px;
+    }
+
+    /* ================================================================
+       LAYOUT: TITLE (Navy background)
+       Use for: opening slide, title of a new talk
+    ================================================================ */
+    .layout-title { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+
+    .layout-title .slide-inner { padding: 0; display: flex; }
+
+    .layout-title .text-col {
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1.1;
+    }
+
+    .layout-title .img-col {
+      flex: 0.9;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .layout-title .img-col img,
+    .layout-title .img-col .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .layout-title .eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.42em;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 1.4em;
+    }
+
+    .layout-title h1 {
+      color: #f5f3ee;
+      font-size: 2.5em;
+      line-height: 1.1;
+      font-weight: 300;
+      margin-bottom: 0.4em;
+    }
+
+    .layout-title h1 em {
+      color: var(--color-primary);
+      font-style: italic;
+    }
+
+    .layout-title .teal-rule {
+      width: 56px;
+      height: 3px;
+      background: var(--color-primary);
+      margin: 1em 0 1.2em;
+    }
+
+    .layout-title .subtitle {
+      font-family: var(--font-body);
+      font-size: 0.48em;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      max-width: 72%;
+      margin-bottom: 0;
+    }
+
+    .layout-title .presenter {
+      font-family: var(--font-heading);
+      font-size: 0.7em;
+      color: rgba(255, 255, 255, 0.82);
+      margin-top: 2em;
+      padding-top: 1em;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    /* ================================================================
+       LAYOUT: SECTION BREAK (Teal background)
+       Use for: major transitions between parts of the talk
+    ================================================================ */
+    .layout-section { background: var(--color-primary) !important; padding: 0 !important; text-align: left; }
+
+    .layout-section .slide-inner { padding: 64px 80px; }
+
+    .layout-section .section-num {
+      font-family: var(--font-heading);
+      font-size: 0.52em;
+      color: rgba(255, 255, 255, 0.38);
+      letter-spacing: 0.1em;
+      font-weight: 300;
+      margin-bottom: 0.5em;
+      font-style: italic;
+    }
+
+    .layout-section h2 {
+      color: #ffffff;
+      font-size: 2.3em;
+      font-weight: 300;
+      line-height: 1.15;
+    }
+
+    .layout-section h2 em {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .layout-section .section-desc {
+      font-family: var(--font-body);
+      font-size: 0.48em;
+      color: rgba(255, 255, 255, 0.62);
+      margin-top: 1.4em;
+      line-height: 1.7;
+      max-width: 62%;
+    }
+
+    /* ================================================================
+       LAYOUT: DEFAULT (White)
+       Use for: most content slides — argument + evidence
+    ================================================================ */
+    .layout-default { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+
+    .layout-default .slide-inner { padding: 56px 80px; }
+
+    .layout-default h2 {
+      color: var(--color-primary);
+      font-size: 1.85em;
+      border-bottom: 1.5px solid var(--color-primary-light);
+      padding-bottom: 0.3em;
+      margin-bottom: 0.65em;
+    }
+
+    .layout-default h3 {
+      color: var(--color-accent-dark);
+      font-size: 1.25em;
+      font-weight: 500;
+    }
+
+    .layout-default p,
+    .layout-default li {
+      color: var(--color-text);
+      font-size: 0.7em;
+    }
+
+    /* ================================================================
+       LAYOUT: QUOTE (Warm off-white)
+       Use for: pull quotes from research, interviewees, your own work
+    ================================================================ */
+    .layout-quote { background: var(--color-bg-warm) !important; padding: 0 !important; text-align: left; }
+
+    .layout-quote .slide-inner { padding: 64px 96px; }
+
+    .layout-quote .quote-mark {
+      font-family: var(--font-heading);
+      font-size: 4.5em;
+      color: var(--color-primary);
+      line-height: 0.5;
+      margin-bottom: 0.4em;
+      font-weight: 300;
+    }
+
+    .layout-quote blockquote {
+      font-family: var(--font-heading);
+      font-size: 1.32em;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-accent-dark);
+      line-height: 1.55;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .layout-quote .attribution {
+      font-family: var(--font-body);
+      font-size: 0.43em;
+      color: var(--color-text-secondary);
+      margin-top: 1.4em;
+      padding-top: 1em;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .layout-quote .attribution strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    /* ================================================================
+       LAYOUT: TWO COLUMN
+       Use for: comparisons, before/after, problem/solution, text+image
+    ================================================================ */
+    .layout-two-col { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+
+    .layout-two-col .slide-inner { padding: 50px 72px; }
+
+    .layout-two-col h2 {
+      color: var(--color-primary);
+      font-size: 1.65em;
+      margin-bottom: 0.55em;
+    }
+
+    .layout-two-col .col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      margin-top: 0.6em;
+    }
+
+    .layout-two-col .col h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15em;
+      color: var(--color-accent-dark);
+      margin-bottom: 0.4em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .layout-two-col .col p,
+    .layout-two-col .col li {
+      font-size: 0.63em;
+      color: var(--color-text);
+      line-height: 1.72;
+    }
+
+    /* ================================================================
+       LAYOUT: CALLOUT / STAT GRID (Subtle background)
+       Use for: key research findings, program outcomes, data points
+    ================================================================ */
+    .layout-callout { background: var(--color-bg-subtle) !important; padding: 0 !important; text-align: left; }
+
+    .layout-callout .slide-inner { padding: 50px 80px; }
+
+    .layout-callout h2 {
+      color: var(--color-primary);
+      font-size: 1.7em;
+      margin-bottom: 0.8em;
+    }
+
+    .layout-callout .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+    }
+
+    .layout-callout .stat-card {
+      background: var(--color-bg);
+      border: 1.5px solid var(--color-border-light);
+      border-radius: 3px;
+      padding: 28px 22px;
+    }
+
+    .layout-callout .stat-card .num {
+      font-family: var(--font-heading);
+      font-size: 2em;
+      font-weight: 500;
+      color: var(--color-accent-dark);
+      line-height: 1;
+      margin-bottom: 0.25em;
+    }
+
+    .layout-callout .stat-card .num .hi {
+      color: var(--color-accent-orange);
+    }
+
+    .layout-callout .stat-card .label {
+      font-family: var(--font-body);
+      font-size: 0.5em;
+      color: var(--color-text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ================================================================
+       LAYOUT: CLOSING (Navy, centered)
+       Use for: final slide, Q&A prompt, thank you
+    ================================================================ */
+    .layout-closing { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: center; }
+
+    .layout-closing .slide-inner { padding: 64px 80px; }
+
+    .layout-closing h2 {
+      color: #f5f3ee;
+      font-size: 2.1em;
+      font-weight: 300;
+      margin-bottom: 0.3em;
+    }
+
+    .layout-closing .tagline {
+      font-family: var(--font-body);
+      font-size: 0.47em;
+      color: rgba(255, 255, 255, 0.52);
+      margin-bottom: 0;
+    }
+
+    .layout-closing .orange-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--color-accent-orange);
+      margin: 1.8em auto;
+    }
+
+    .layout-closing .contact {
+      font-family: var(--font-body);
+      font-size: 0.46em;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 2.2;
+    }
+
+    .layout-closing .contact a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    /* ================================================================
+       LAYOUT: DEFAULT WITH IMAGE (White, split)
+       Use for: content slides with a full-bleed mushroom photo or
+       illustration on the right — the main layout for image-heavy talks
+    ================================================================ */
+    .layout-default-img { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+
+    .layout-default-img .slide-inner { display: flex; gap: 0; }
+
+    .layout-default-img .content-col {
+      padding: 52px 48px 52px 80px;
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .layout-default-img .img-col {
+      flex: 0.8;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .layout-default-img .img-col img,
+    .layout-default-img .img-col .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .layout-default-img h2 {
+      color: var(--color-primary);
+      font-size: 1.65em;
+      border-bottom: 1.5px solid var(--color-primary-light);
+      padding-bottom: 0.3em;
+      margin-bottom: 0.6em;
+    }
+
+    .layout-default-img h3 { color: var(--color-accent-dark); font-size: 1.2em; }
+
+    .layout-default-img p,
+    .layout-default-img li {
+      font-size: 0.66em;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    /* ================================================================
+       LAYOUT: DISCUSSION (Navy background)
+       Use for: audience reflection prompts, small-group activities
+    ================================================================ */
+    .layout-discussion { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+
+    .layout-discussion .slide-inner {
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .layout-discussion h2 {
+      color: #f5f3ee;
+      font-size: 1.85em;
+      font-weight: 300;
+      margin-bottom: 0.7em;
+    }
+
+    .layout-discussion .prompt {
+      font-family: var(--font-body);
+      font-size: 0.6em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4em;
+      font-style: italic;
+    }
+
+    .layout-discussion ul { list-style: none; margin-left: 0; }
+
+    .layout-discussion ul li {
+      font-family: var(--font-heading);
+      font-size: 1.05em;
+      font-style: italic;
+      color: rgba(255,255,255,0.88);
+      font-weight: 300;
+      padding: 0.55em 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ================================================================
+       UTILITY & SHARED COMPONENTS
+    ================================================================ */
+
+    /* Custom bullet list */
+    ul.custom-bullets {
+      list-style: none !important;
+      margin-left: 0 !important;
+    }
+
+    ul.custom-bullets li {
+      padding-left: 1.3em;
+      position: relative;
+    }
+
+    ul.custom-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.52em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+
+    /* Teal highlight box */
+    .highlight-box {
+      background: var(--color-primary-light);
+      border-left: 4px solid var(--color-primary);
+      padding: 0.65em 1em;
+      margin: 0.9em 0;
+      font-size: 0.63em;
+      border-radius: 0 3px 3px 0;
+      color: var(--color-text);
+    }
+
+    /* Orange highlight box */
+    .orange-box {
+      background: #fdf1ec;
+      border-left: 4px solid var(--color-accent-orange);
+      padding: 0.65em 1em;
+      margin: 0.9em 0;
+      font-size: 0.63em;
+      border-radius: 0 3px 3px 0;
+      color: var(--color-text);
+    }
+
+    /* Footnote / source line */
+    .footnote {
+      font-family: var(--font-body);
+      font-size: 0.38em;
+      color: var(--color-text-secondary);
+      border-top: 1px solid var(--color-border-light);
+      padding-top: 0.7em;
+      margin-top: 1.8em;
+      position: absolute;
+      bottom: 36px;
+      left: 80px;
+      right: 80px;
+    }
+
+    /* Image placeholder (swap with real <img> tags) */
+    .img-placeholder {
+      background: var(--color-primary-light);
+      border: 1.5px dashed var(--color-primary);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.42em;
+      color: var(--color-primary-dark);
+      min-height: 200px;
+    }
+
+    /* Caption */
+    .caption {
+      font-family: var(--font-body);
+      font-size: 0.4em;
+      color: var(--color-text-secondary);
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+
+    /* Fragment fade-in */
+    .reveal .fragment {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- ====================================================================
+       SLIDE 1 · TITLE
+       Customize: eyebrow label, talk title, subtitle, presenter line
+       Layout: Navy background, split text left / image right
+       To use without an image: remove .img-col div and change
+       .slide-inner padding back to 64px 80px
+  ==================================================================== -->
+  <section class="layout-title">
+    <div class="slide-inner">
+      <div class="text-col">
+        <div class="eyebrow">[Event Name] &nbsp;·&nbsp; [City, Date]</div>
+        <h1>
+          Your Talk Title<br>
+          <em>Goes Right Here</em>
+        </h1>
+        <div class="teal-rule"></div>
+        <div class="subtitle">
+          A subtitle or brief framing statement — one or two lines<br>
+          that orient the audience before you begin.
+        </div>
+        <div class="presenter">
+          Katina L. Rogers &nbsp;·&nbsp; Inkcap Consulting
+        </div>
+      </div>
+      <div class="img-col">
+        <div class="img-placeholder">[ Replace with full-bleed image ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 2 · OVERVIEW / AGENDA
+       Customize: items in the list, highlight box framing
+       Layout: White, fragments reveal each item
+  ==================================================================== -->
+  <section class="layout-default">
+    <div class="slide-inner">
+      <h2>Today's Conversation</h2>
+      <ul class="custom-bullets">
+        <li class="fragment">First major theme or arc of the talk</li>
+        <li class="fragment">Second major theme — where the argument turns</li>
+        <li class="fragment">Third major theme — toward a resolution or provocation</li>
+        <li class="fragment">Questions &amp; discussion</li>
+      </ul>
+      <div class="highlight-box fragment">
+        Key framing question or through-line: the one thing you want the audience to hold.
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 3 · SECTION BREAK
+       Customize: Part number, section title, optional framing sentence
+       Layout: Teal background — use between major sections of the talk
+  ==================================================================== -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <div class="section-num">Part One</div>
+      <h2>First Section Title<br><em>Optional Elaboration</em></h2>
+      <div class="section-desc">
+        One or two sentences that frame what this section covers
+        and why it matters — optional, leave blank if you prefer a cleaner break.
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 4 · CONTENT — argument + evidence
+       Customize: heading, opening sentence, bullet points
+       Layout: White, left-aligned, custom bullet points
+       Note: footnote is a flowing element at the bottom of content-col,
+       NOT position:absolute — that pattern breaks with center:true
+  ==================================================================== -->
+  <section class="layout-default">
+    <div class="slide-inner">
+      <h2>Content Slide Heading</h2>
+      <p>
+        Opening sentence that makes a claim — not a topic, an argument.
+        Write it as a complete thought that the bullets will support.
+      </p>
+      <ul class="custom-bullets">
+        <li class="fragment">Key point one — complete sentence, enough to stand on its own</li>
+        <li class="fragment">Key point two — consider what the audience needs to <em>feel</em> here, not just know</li>
+        <li class="fragment">Key point three — what does this mean for practice or for the field?</li>
+      </ul>
+      <div class="footnote">Source: Author, <em>Title</em>, Year — URL or DOI as appropriate</div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 5 · PULL QUOTE
+       Customize: quote text, attribution
+       Layout: Warm off-white, Cormorant Garamond italic — let it breathe
+  ==================================================================== -->
+  <section class="layout-quote">
+    <div class="slide-inner">
+      <div class="quote-mark">"</div>
+      <blockquote>
+        The full text of the quote goes here. Don't cut it short
+        if the full version is more powerful — Cormorant Garamond
+        italic was made to carry this weight.
+      </blockquote>
+      <div class="attribution">
+        <strong>Speaker or Author Name</strong><br>
+        Role, Affiliation or Publication Title · Year
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 6 · TWO COLUMN — comparison or juxtaposition
+       Customize: heading, column headings, list items, synthesis box
+       Layout: White, two equal columns, teal heading
+  ==================================================================== -->
+  <section class="layout-two-col">
+    <div class="slide-inner">
+      <h2>Compare, Contrast, or Complicate</h2>
+      <div class="col-grid">
+        <div class="col">
+          <h3>Column A</h3>
+          <ul class="custom-bullets">
+            <li>First observation for this column</li>
+            <li>Second point with enough elaboration</li>
+            <li>Third point — the crux of this side</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Column B</h3>
+          <ul class="custom-bullets">
+            <li>Corresponding observation for this side</li>
+            <li>Additional nuance, tension, or contrast</li>
+            <li>What makes this side distinct or incomplete</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top: 1.4em;">
+        Synthesis: the insight that bridges or complicates these two positions — where does your argument go from here?
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 7 · STAT / DATA CALLOUT
+       Customize: heading, stat cards (num + label), footnote
+       Layout: Subtle background, three-column stat grid
+  ==================================================================== -->
+  <section class="layout-callout">
+    <div class="slide-inner">
+      <h2>By the Numbers</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="num"><span class="hi">72</span>%</div>
+          <div class="label">Brief descriptor of what this number represents and why it matters to this argument</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">1 in <span class="hi">3</span></div>
+          <div class="label">Brief descriptor — what does this proportion tell us, and who is affected?</div>
+        </div>
+        <div class="stat-card">
+          <div class="num"><span class="hi">$</span>2.4M</div>
+          <div class="label">Brief descriptor — what does this figure represent, and what should follow from it?</div>
+        </div>
+      </div>
+      <div class="footnote">Source: Author, <em>Title of Report or Study</em>, Year — Institution or Publisher · URL</div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 8 · CONTENT WITH ORANGE ACCENT
+       Customize: heading, paragraph, orange box, follow-on paragraph
+       Layout: White — use orange box for urgent or actionable claims
+  ==================================================================== -->
+  <section class="layout-default">
+    <div class="slide-inner">
+      <h2>A Claim That Needs to Land</h2>
+      <p>
+        The main argument for this slide, written as a complete claim.
+        Lead with the conclusion — don't build to it.
+      </p>
+      <div class="orange-box">
+        The sentence or question you most want the audience to remember.
+        The orange pulls the eye without competing with the teal heading hierarchy.
+      </div>
+      <p>
+        Follow-on elaboration, evidence, or implication. Each slide should carry
+        one core idea — resist the urge to add a fourth point.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 9 · SECTION BREAK 2
+       (Duplicate and modify for additional sections as needed)
+  ==================================================================== -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <div class="section-num">Part Two</div>
+      <h2>Second Section Title</h2>
+      <div class="section-desc">
+        Optional framing sentence for this section of the talk.
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 10 · IMAGE + ANALYSIS (two-column variant)
+       Customize: heading, swap img-placeholder for real <img>, caption, bullets
+       Layout: Two columns — image left, analysis right
+  ==================================================================== -->
+  <section class="layout-two-col">
+    <div class="slide-inner">
+      <h2>Image or Figure With Context</h2>
+      <div class="col-grid">
+        <div class="col">
+          <div class="img-placeholder" style="min-height: 300px;">
+            [ Replace with &lt;img&gt; tag ]
+          </div>
+          <div class="caption">Image description or credit — include alt text in the &lt;img&gt; tag</div>
+        </div>
+        <div class="col">
+          <h3>What We're Looking At</h3>
+          <p style="font-size: 0.63em; line-height: 1.7;">
+            Explanatory text that accompanies the image — what does the audience
+            need to understand about what they're seeing?
+          </p>
+          <ul class="custom-bullets" style="font-size: 0.63em;">
+            <li>First observation from the image</li>
+            <li>Second observation — what is surprising or important?</li>
+            <li>What this means for your argument</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 9b · CONTENT WITH IMAGE (split layout)
+       Customize: heading, bullets, image — swap img-placeholder for real img
+       Layout: White, text left column, full-bleed image right column
+       This is the main layout for image-heavy talks (e.g. mushroom photos)
+  ==================================================================== -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Content With Image</h2>
+        <p>Opening sentence — a claim the bullets and image together support.</p>
+        <ul class="custom-bullets">
+          <li>First point — complete sentence</li>
+          <li>Second point</li>
+          <li>Third point</li>
+        </ul>
+        <div class="highlight-box">Key insight or framing statement.</div>
+      </div>
+      <div class="img-col">
+        <div class="img-placeholder">[ Replace with img tag — see Images section of cheatsheet ]</div>
+      </div>
+    </div>
+    <aside class="notes">Speaker notes go here.</aside>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 9c · DISCUSSION / REFLECTION ACTIVITY
+       Customize: heading, prompt text, reflection items
+       Layout: Navy background — use for audience activities and pauses
+  ==================================================================== -->
+  <section class="layout-discussion">
+    <div class="slide-inner">
+      <h2>Take a moment</h2>
+      <div class="prompt">Brief instruction for the audience — what to do and how long they have:</div>
+      <ul>
+        <li>First reflection prompt</li>
+        <li>Second reflection prompt</li>
+        <li>Third reflection prompt — <em>italics work well here</em></li>
+      </ul>
+    </div>
+    <aside class="notes">Give the audience genuine time. Note what you plan to do with their responses — share out, pair discussion, etc.</aside>
+  </section>
+
+  <!-- ====================================================================
+       SLIDE 10 · CLOSING / Q&A / CONTACT
+       Customize: closing title, tagline, contact info
+       Layout: Navy background, centered, orange rule
+  ==================================================================== -->
+  <section class="layout-closing">
+    <div class="slide-inner">
+      <h2>Thank You</h2>
+      <div class="tagline">Creative, sustainable, equitable solutions for higher education.</div>
+      <div class="orange-rule"></div>
+      <div class="contact">
+        Katina L. Rogers<br>
+        <a href="https://inkcapconsulting.com">inkcapconsulting.com</a><br>
+        [email] &nbsp;·&nbsp; [handle or social]
+      </div>
+    </div>
+  </section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    history: true,
+    center: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    hash: true,
+  });
+</script>
+</body>
+</html>
