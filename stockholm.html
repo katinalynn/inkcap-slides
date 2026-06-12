@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unexpected Flourishing — Stockholm University, June 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --color-primary:        #006D6F;
+      --color-primary-dark:   #005456;
+      --color-primary-light:  #e6f3f3;
+      --color-text:           #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-bg:             #ffffff;
+      --color-bg-subtle:      #f7f8f9;
+      --color-bg-warm:        #faf9f7;
+      --color-border:         #d4d4d4;
+      --color-border-light:   #e8e8e8;
+      --color-accent-dark:    #051A42;
+      --color-accent-orange:  #e05724;
+      --font-body:    'Libre Franklin', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    }
+
+    .reveal-viewport { background: var(--color-bg); }
+
+    .reveal {
+      font-family: var(--font-body);
+      font-size: 28px;
+      color: var(--color-text);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      text-transform: none;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal h1 { font-size: 2.8em; }
+    .reveal h2 { font-size: 2em; }
+    .reveal h3 { font-size: 1.4em; }
+    .reveal p { font-family: var(--font-body); font-weight: 400; line-height: 1.65; margin-bottom: 0.8em; }
+    .reveal ul, .reveal ol { font-family: var(--font-body); line-height: 1.7; margin-left: 1.5em; }
+    .reveal ul li, .reveal ol li { margin-bottom: 0.4em; }
+    .reveal a { color: var(--color-primary); }
+
+    .reveal .progress { background: var(--color-border-light); color: var(--color-primary); height: 3px; }
+    .reveal .controls { color: var(--color-primary); }
+    .reveal .slide-number { font-family: var(--font-body); font-size: 12px; color: var(--color-text-secondary); background: transparent; right: 20px; bottom: 18px; }
+
+    /* TITLE */
+    .layout-title { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-title .slide-inner { padding: 0; display: flex; }
+    .layout-title .text-col { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; flex: 1.1; }
+    .layout-title .img-col { flex: 0.9; display: flex; align-items: stretch; }
+    .layout-title .img-col img,
+    .layout-title .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-title .eyebrow { font-family: var(--font-body); font-size: 0.42em; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 1.4em; }
+    .layout-title h1 { color: #f5f3ee; font-size: 2.2em; line-height: 1.1; font-weight: 300; margin-bottom: 0.4em; }
+    .layout-title h1 em { color: var(--color-primary); font-style: italic; }
+    .layout-title .teal-rule { width: 56px; height: 3px; background: var(--color-primary); margin: 1em 0 1.2em; }
+    .layout-title .subtitle { font-family: var(--font-body); font-size: 0.46em; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .layout-title .presenter { font-family: var(--font-heading); font-size: 0.68em; color: rgba(255,255,255,0.82); margin-top: 2em; padding-top: 1em; border-top: 1px solid rgba(255,255,255,0.14); }
+
+    /* DEFAULT WITH IMAGE: text left, image right */
+    .layout-default-img { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default-img .slide-inner { display: flex; gap: 0; }
+    .layout-default-img .content-col { padding: 52px 48px 52px 80px; flex: 1.2; display: flex; flex-direction: column; justify-content: flex-start; }
+    .layout-default-img .img-col { flex: 0.8; display: flex; align-items: stretch; }
+    .layout-default-img .img-col img,
+    .layout-default-img .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-default-img h2 { color: var(--color-primary); font-size: 1.65em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-default-img h3 { color: var(--color-accent-dark); font-size: 1.2em; }
+    .layout-default-img p, .layout-default-img li { font-size: 0.76em; color: var(--color-text); line-height: 1.7; }
+
+    /* SECTION */
+    .layout-section { background: var(--color-primary) !important; padding: 0 !important; text-align: left; }
+    .layout-section .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-section .section-num { font-family: var(--font-heading); font-size: 0.52em; color: rgba(255,255,255,0.38); letter-spacing: 0.1em; font-weight: 300; margin-bottom: 0.5em; font-style: italic; }
+    .layout-section h2 { color: #ffffff; font-size: 2.3em; font-weight: 300; line-height: 1.15; }
+    .layout-section h2 em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .layout-section .section-desc { font-family: var(--font-body); font-size: 0.48em; color: rgba(255,255,255,0.62); margin-top: 1.4em; line-height: 1.7; max-width: 62%; }
+
+    /* DEFAULT */
+    .layout-default { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default .slide-inner { padding: 56px 80px; }
+    .layout-default h2 { color: var(--color-primary); font-size: 1.85em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.65em; }
+    .layout-default h3 { color: var(--color-accent-dark); font-size: 1.25em; font-weight: 500; }
+    .layout-default p, .layout-default li { color: var(--color-text); font-size: 0.7em; }
+
+    /* QUOTE */
+    .layout-quote { background: var(--color-bg-warm) !important; padding: 0 !important; text-align: left; }
+    .layout-quote .slide-inner { padding: 64px 96px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-quote .quote-mark { font-family: var(--font-heading); font-size: 4.5em; color: var(--color-primary); line-height: 0.5; margin-bottom: 0.4em; font-weight: 300; }
+    .layout-quote blockquote { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; color: var(--color-accent-dark); line-height: 1.55; border: none; margin: 0; padding: 0; }
+    .layout-quote .attribution { font-family: var(--font-body); font-size: 0.43em; color: var(--color-text-secondary); margin-top: 1.4em; padding-top: 1em; border-top: 1px solid var(--color-border); }
+    .layout-quote .attribution strong { color: var(--color-text); font-weight: 600; }
+
+    /* TWO COLUMN */
+    .layout-two-col { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-two-col .slide-inner { padding: 50px 72px; }
+    .layout-two-col h2 { color: var(--color-primary); font-size: 1.65em; margin-bottom: 0.55em; }
+    .layout-two-col .col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 0.6em; }
+    .layout-two-col .col h3 { font-family: var(--font-heading); font-size: 1.15em; color: var(--color-accent-dark); margin-bottom: 0.4em; padding-bottom: 0.3em; border-bottom: 1px solid var(--color-border-light); }
+    .layout-two-col .col p, .layout-two-col .col li { font-size: 0.73em; color: var(--color-text); line-height: 1.72; }
+
+    /* CALLOUT */
+    .layout-callout { background: var(--color-bg-subtle) !important; padding: 0 !important; text-align: left; }
+    .layout-callout .slide-inner { padding: 50px 80px; }
+    .layout-callout h2 { color: var(--color-primary); font-size: 1.7em; margin-bottom: 0.8em; }
+    .layout-callout .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .layout-callout .stat-card { background: var(--color-bg); border: 1.5px solid var(--color-border-light); border-radius: 3px; padding: 28px 22px; }
+    .layout-callout .stat-card .num { font-family: var(--font-heading); font-size: 2em; font-weight: 500; color: var(--color-accent-dark); line-height: 1; margin-bottom: 0.25em; }
+    .layout-callout .stat-card .num .hi { color: var(--color-accent-orange); }
+    .layout-callout .stat-card .label { font-family: var(--font-body); font-size: 0.5em; color: var(--color-text-secondary); line-height: 1.55; }
+
+    /* CLOSING */
+    .layout-closing { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: center; }
+    .layout-closing .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .layout-closing h2 { color: #f5f3ee; font-size: 2.1em; font-weight: 300; margin-bottom: 0.3em; }
+    .layout-closing .tagline { font-family: var(--font-body); font-size: 0.47em; color: rgba(255,255,255,0.52); }
+    .layout-closing .orange-rule { width: 48px; height: 3px; background: var(--color-accent-orange); margin: 1.8em auto; }
+    .layout-closing .contact { font-family: var(--font-body); font-size: 0.46em; color: rgba(255,255,255,0.72); line-height: 2.2; }
+    .layout-closing .contact a { color: var(--color-primary); text-decoration: none; }
+    .layout-closing .book-title { font-family: var(--font-heading); font-size: 0.95em; font-style: italic; color: rgba(255,255,255,0.5); margin-top: 0.5em; }
+
+    /* UTILITIES */
+    ul.custom-bullets { list-style: none !important; margin-left: 0 !important; }
+    ul.custom-bullets li { padding-left: 1.3em; position: relative; }
+    ul.custom-bullets li::before { content: ''; position: absolute; left: 0; top: 0.52em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-primary); }
+
+    .highlight-box { background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 0.75em 1em; margin: 0.9em 0; font-size: 0.63em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.9; }
+    .orange-box { background: #fdf1ec; border-left: 4px solid var(--color-accent-orange); padding: 0.75em 1em; margin: 0.9em 0; font-size: 0.63em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.9; }
+
+    .footnote { font-family: var(--font-body); font-size: 0.46em; color: var(--color-text-secondary); border-top: 1px solid var(--color-border-light); padding-top: 0.7em; margin-top: 1.8em; position: absolute; bottom: 36px; left: 80px; right: 80px; }
+
+    .img-placeholder { background: var(--color-primary-light); border: 1.5px dashed var(--color-primary); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 0.42em; color: var(--color-primary-dark); min-height: 200px; }
+
+    .slide-inner { width: 100%; height: var(--slide-height, 720px); box-sizing: border-box; }
+
+    .reveal .fragment { transition: opacity 0.3s ease; }
+
+    /* DISCUSSION */
+    .layout-discussion { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-discussion .slide-inner { padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-discussion h2 { color: #f5f3ee; font-size: 1.85em; font-weight: 300; margin-bottom: 0.7em; }
+    .layout-discussion .prompt { font-family: var(--font-body); font-size: 0.6em; color: rgba(255,255,255,0.55); margin-bottom: 1.4em; font-style: italic; }
+    .layout-discussion ul { list-style: none; margin-left: 0; }
+    .layout-discussion ul li { font-family: var(--font-heading); font-size: 1.05em; font-style: italic; color: rgba(255,255,255,0.88); font-weight: 300; padding: 0.55em 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- ================================================================
+       1 · TITLE
+  ================================================================ -->
+  <section class="layout-title">
+    <div class="slide-inner">
+      <div class="text-col">
+        <div class="eyebrow">Stockholm University &nbsp;·&nbsp; June 17, 2026</div>
+        <h1>
+          Unexpected Flourishing:<br>
+          <em>Growth from Decay in the Mycelial University</em>
+        </h1>
+        <div class="teal-rule"></div>
+        <div class="subtitle">
+          On rotting logs, higher education, and critical hope
+        </div>
+        <div class="presenter">
+          Katina L. Rogers &nbsp;·&nbsp; Inkcap Consulting
+        </div>
+      </div>
+      <div class="img-col">
+        <img src="images/turkey-tail.jpg" alt="Close-up photograph of fan-like turkey tail mushrooms" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================================================================
+       2 · OPENING PROVOCATION
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Why unexpected flourishing?</h2>
+        <p>Thriving doesn't always look the way we expect.</p>
+        <ul class="custom-bullets">
+          <li>Cycles of decay and regeneration</li>
+          <li>Interdependent, multispecies life</li>
+          <li>Mycoremediation</li>
+          <li>Beauty, even in decay</li>
+          <li>For me: <em>critical hope</em></li>
+        </ul>
+      </div>
+      <div class="img-col">
+        <img src="images/rotting-log.jpg" alt="A rotting log with countless species of fungi growing on it" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       3 · THE ROTTING LOG
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>The rotting log</h2>
+        <p>Universities in their current form are the substrate — the fallen log from which something new might grow.</p>
+        <ul class="custom-bullets">
+          <li>Decades of public disinvestment and underfunding</li>
+          <li>Increasing reliance on contingent labor</li>
+          <li>Skyrocketing tuition and student debt</li>
+          <li>Persistence of structural inequities</li>
+        </ul>
+        <div class="orange-box">The decay is real. It may also serve as a condition for new growth.</div>
+      </div>
+      <div class="img-col">
+      <img src="images/splitgills.jpg" alt="Photo of a fallen log with in the snow now growing splitgill mushrooms" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+
+  </section>
+  
+  <!-- ================================================================
+       4 · A MOMENT OF ACUTE PRECARITY
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>A moment of acute precarity</h2>
+        <p>We are facing additional challenges in our current moment:</p>
+        <ul class="custom-bullets">
+          <li>Federal defunding of awarded research grants</li>
+          <li>Direct threats to academic freedom and shared governance</li>
+          <li>Targeting of international students and DEI-focused programs</li>
+          <li>Dismantling of programs and entire institutions</li>
+        </ul>
+        <div class="orange-box">This is not a normal period of institutional stress. We need to think differently.</div>
+      </div>
+      <div class="img-col">
+          <img src="images/honeys.jpg" alt="Photo of an absurd amount of honey mushrooms, totally covering the ground with fruiting bodies and spores" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ================================================================
+       5 · FULL-BLEED PHOTO: WOODLAND RESTORATION
+  ================================================================ -->
+  <section data-background-image="images/woodland-restoration.png" data-background-size="cover" data-background-position="center">
+    <aside class="notes">
+      Woodland restoration — the blasted landscape, and the beginning of something new.
+    </aside>
+  </section>
+
+  
+  <!-- ================================================================
+       6 · BLASTED LANDSCAPES (TSING)
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner">
+      <h2>Blasted landscapes</h2>
+      <p>In <em>The Mushroom at the End of the World,</em> Anna Lowenhaupt Tsing offers an ethnography of the matsutake mushrooms and the blasted landscapes in which they thrive.</p>
+      <ul class="custom-bullets">
+        <li>Cannot be cultivated</li>
+        <li>Complex multispecies dependencies</li>
+        <li>Disturbance is <em>required</em></li>
+      </ul>
+      <div class="orange-box">Where are the pockets of possibility in higher ed? What connections bring an unexpected flush of new growth?</div>
+      <div class="footnote">Anna Lowenhaupt Tsing, <em>The Mushroom at the End of the World: On the Possibility of Life in Capitalist Ruins</em> (Princeton University Press, 2015)</div>
+    </div>
+    <aside class="notes">
+      Tsing follows the lifecycle and economies of the matsutake mushroom. What I take from this is a kind of critical hope. The log has already fallen — but maybe those inherited structures can be digested and neutralized, enabling something new to grow in their midst.
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       7 · MYCORENEWAL
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Toward a mycelial university</h2>
+        <p>
+          What if we envisioned a different way of working?
+        </p>
+        <ul class="custom-bullets">
+          <li><strong>Hyphae:</strong> liminal, small-scale, exploratory, but incredibly strong and resilient</li>
+          <li><strong>Mycorrhizal networks:</strong> unexpected and deeply reciprocal partnerships</li>
+          <li><strong>Fruiting bodies:</strong> ephemeral, surprising</li>
+          <li><strong>Mycoremediation:</strong> digesting toxins, creating conditions for growth</li>
+        </ul>
+      </div>
+      <div class="img-col">
+        <img src="images/mycelium2.png" alt="Microscopic image of intertwining mycelial strands" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="footnote" style="right: 42%;">Microscopic images of mycelium. Cartabia et al., 2021. <a href="https://doi.org/10.3390/jof7121008">https://doi.org/10.3390/jof7121008</a></div>
+    </div>
+    <aside class="notes">
+      The metaphor I explore throughout the book. The inherited structures of the university are the rotting log. The mycelium is the hidden, persistent work of connection and care. Sometimes, when conditions are right, a mushroom emerges — nourishment, beauty, possibility.
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       8 · MOVING TOWARD JOY
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Moving toward joy</h2>
+        <p>Can we imagine a scholarly environment not grounded in competitiveness and scarcity?</p>
+        <ul class="custom-bullets">
+          <li>Sometimes this requires thinking small to identify where we can have an impact</li>
+          <li>Outsized importance of quiet acts of change &amp; resistance</li>
+          <li>Fractal approach (adrienne maree brown)— the patterns toward which we strive are present in the smallest details</li>
+        </ul>
+        <div class="orange-box">My hope is that we can collectively move toward structures that enable joy.</div>
+      </div>
+      <div class="img-col">
+        <img src="images/amanita_muscaria.jpg" alt="Bright orange-red amanita muscaria mushroom with white dots against forest greenery" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+      Through my students, I learned to value things I might otherwise brush off as small — the quiet acts of change and support can have immeasurable impact. These are modest steps toward a framing that emphasizes abundance and thriving.
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       9 · BOOK COVER + TOC
+  ================================================================ -->
+  <section style="padding: 0 !important; background: #000 !important;">
+    <div class="slide-inner" style="display:flex; padding:0; background:#fff; align-items:stretch;">
+      <img src="images/unexpected_flourishing_cover.png" alt="Cover of Unexpected Flourishing by Katina Rogers" style="height:100%; width:auto; display:block; flex-shrink:0;">
+      <div style="flex:1; display:flex; align-items:center; justify-content:center; background:#fff; overflow:hidden;">
+        <img src="images/toc.jpg" alt="Table of contents from Unexpected Flourishing" style="max-width:100%; max-height:100%; object-fit:contain; display:block;">
+      </div>
+    </div>
+    <aside class="notes">
+      The book — cover and table of contents. Introduce the structure briefly if helpful.
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       10 · FLOWERPOT
+  ================================================================ -->
+  <section style="padding: 0 !important; background: #fff !important;">
+    <div class="slide-inner" style="display:flex; align-items:center; justify-content:center; padding:0; background:#fff;">
+      <img src="images/flowerpot.png" alt="Flowerpot" style="max-width:100%; max-height:100%; object-fit:contain; display:block;">
+    </div>
+    <aside class="notes">Flowerpot.</aside>
+  </section>
+
+  <!-- ================================================================
+       11 · FUNGI COLLAGE (FULL-BLEED)
+  ================================================================ -->
+  <section data-background-image="images/fungi-collage.png" data-background-size="cover" data-background-position="center">
+  </section>
+
+  <!-- ================================================================
+       12 · CLOSING
+  ================================================================ -->
+  <section class="layout-closing">
+    <div class="slide-inner">
+      <h2>Thank you</h2>
+      <div class="book-title">Unexpected Flourishing: Growth from Decay in the Mycelial University</div>
+      <div class="orange-rule"></div>
+      <div class="contact">
+        Katina L. Rogers<br>
+        <a href="https://inkcapconsulting.com">inkcapconsulting.com</a><br>
+        katina@katinarogers.com
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       13 · WORKSHOP Q1
+  ================================================================ -->
+  <section style="background: var(--color-accent-dark) !important; padding: 0 !important;">
+    <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; padding: 72px 96px; position:relative; overflow:hidden;">
+      <div style="position:absolute; right:72px; top:50%; transform:translateY(-50%); font-family:var(--font-heading); font-size:18em; font-weight:300; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none; user-select:none;">1</div>
+      <div style="font-family:var(--font-body); font-size:0.38em; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-primary); margin-bottom:0.9em;">Discussion · 1 of 5</div>
+      <div style="width:48px; height:3px; background:var(--color-primary); margin-bottom:1.2em;"></div>
+      <p style="font-family:var(--font-heading); font-size:1.6em; font-style:italic; font-weight:300; color:#f5f3ee; line-height:1.45; margin:0;">I invited you to picture one element of a mycelial university. What came to mind?</p>
+    </div>
+    <aside class="notes">Open it up — go to chat or unmute. This is a generative question, so let people be specific or abstract. Listen for recurring images.</aside>
+  </section>
+
+  <!-- ================================================================
+       14 · WORKSHOP Q2
+  ================================================================ -->
+  <section style="background: var(--color-accent-dark) !important; padding: 0 !important;">
+    <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; padding: 72px 96px; position:relative; overflow:hidden;">
+      <div style="position:absolute; right:72px; top:50%; transform:translateY(-50%); font-family:var(--font-heading); font-size:18em; font-weight:300; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none; user-select:none;">2</div>
+      <div style="font-family:var(--font-body); font-size:0.38em; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-primary); margin-bottom:0.9em;">Discussion · 2 of 5</div>
+      <div style="width:48px; height:3px; background:var(--color-primary); margin-bottom:1.2em;"></div>
+      <p style="font-family:var(--font-heading); font-size:1.6em; font-style:italic; font-weight:300; color:#f5f3ee; line-height:1.45; margin:0;">What are the conditions of rot or ruin in your current context — the substrate you're working within?</p>
+    </div>
+    <aside class="notes">We won't dwell here, but since we're coming from many disciplinary and institutional contexts, it's useful to name where we're starting from. Keep this moving.</aside>
+  </section>
+
+  <!-- ================================================================
+       15 · WORKSHOP Q3
+  ================================================================ -->
+  <section style="background: var(--color-accent-dark) !important; padding: 0 !important;">
+    <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; padding: 72px 96px; position:relative; overflow:hidden;">
+      <div style="position:absolute; right:72px; top:50%; transform:translateY(-50%); font-family:var(--font-heading); font-size:18em; font-weight:300; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none; user-select:none;">3</div>
+      <div style="font-family:var(--font-body); font-size:0.38em; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-primary); margin-bottom:0.9em;">Discussion · 3 of 5</div>
+      <div style="width:48px; height:3px; background:var(--color-primary); margin-bottom:1.2em;"></div>
+      <p style="font-family:var(--font-heading); font-size:1.6em; font-style:italic; font-weight:300; color:#f5f3ee; line-height:1.45; margin:0;">Where do you see pockets of possibility already growing in that substrate — work that's happening even when it's unrecognized or under-resourced?</p>
+    </div>
+    <aside class="notes">This is the generative pivot — from diagnosis to noticing. Encourage people to be specific about programs, relationships, or practices they've actually seen.</aside>
+  </section>
+
+  <!-- ================================================================
+       16 · WORKSHOP Q4
+  ================================================================ -->
+  <section style="background: var(--color-accent-dark) !important; padding: 0 !important;">
+    <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; padding: 72px 96px; position:relative; overflow:hidden;">
+      <div style="position:absolute; right:72px; top:50%; transform:translateY(-50%); font-family:var(--font-heading); font-size:18em; font-weight:300; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none; user-select:none;">4</div>
+      <div style="font-family:var(--font-body); font-size:0.38em; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-primary); margin-bottom:0.9em;">Discussion · 4 of 5</div>
+      <div style="width:48px; height:3px; background:var(--color-primary); margin-bottom:1.2em;"></div>
+      <p style="font-family:var(--font-heading); font-size:1.6em; font-style:italic; font-weight:300; color:#f5f3ee; line-height:1.45; margin:0;">What are the biggest structural obstacles to this kind of work taking root?</p>
+    </div>
+    <aside class="notes">Let people name the real constraints — institutional, cultural, political. Don't rush past this; acknowledging obstacles honestly is part of what makes the hope credible.</aside>
+  </section>
+
+  <!-- ================================================================
+       17 · WORKSHOP Q5
+  ================================================================ -->
+  <section style="background: var(--color-accent-dark) !important; padding: 0 !important;">
+    <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; padding: 72px 96px; position:relative; overflow:hidden;">
+      <div style="position:absolute; right:72px; top:50%; transform:translateY(-50%); font-family:var(--font-heading); font-size:18em; font-weight:300; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none; user-select:none;">5</div>
+      <div style="font-family:var(--font-body); font-size:0.38em; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-primary); margin-bottom:0.9em;">Discussion · 5 of 5</div>
+      <div style="width:48px; height:3px; background:var(--color-primary); margin-bottom:1.2em;"></div>
+      <p style="font-family:var(--font-heading); font-size:1.6em; font-style:italic; font-weight:300; color:#f5f3ee; line-height:1.45; margin:0;">What's one thing you could do — or stop doing — to create better conditions for it?</p>
+    </div>
+    <aside class="notes">Close on something concrete and personal. You might share your own answer first to model the scale — this doesn't have to be a grand gesture.</aside>
+  </section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    history: true,
+    center: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    hash: true,
+  });
+</script>
+</body>
+</html>
