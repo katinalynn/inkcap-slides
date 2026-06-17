@@ -154,6 +154,28 @@
 
     .reveal .fragment { transition: opacity 0.3s ease; }
 
+    /* FULLSCREEN BUTTON */
+    #fs-btn {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      z-index: 9999;
+      background: rgba(0, 109, 111, 0.82);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    #fs-btn:hover { opacity: 1; }
+    #fs-btn svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
     /* DISCUSSION */
     .layout-discussion { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
     .layout-discussion .slide-inner { padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
@@ -545,6 +567,11 @@
 </div><!-- .slides -->
 </div><!-- .reveal -->
 
+<button id="fs-btn" title="Toggle fullscreen">
+  <svg id="fs-icon-enter" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+  <svg id="fs-icon-exit"  viewBox="0 0 24 24" style="display:none"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/></svg>
+</button>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
 <script>
   Reveal.initialize({
@@ -561,6 +588,35 @@
     backgroundTransition: 'fade',
     hash: true,
   });
+</script>
+
+<script>
+  (function () {
+    const btn        = document.getElementById('fs-btn');
+    const iconEnter  = document.getElementById('fs-icon-enter');
+    const iconExit   = document.getElementById('fs-icon-exit');
+
+    function isFullscreen() {
+      return !!(document.fullscreenElement || document.webkitFullscreenElement);
+    }
+
+    function updateIcon() {
+      iconEnter.style.display = isFullscreen() ? 'none'  : '';
+      iconExit.style.display  = isFullscreen() ? ''      : 'none';
+    }
+
+    btn.addEventListener('click', function () {
+      if (!isFullscreen()) {
+        const el = document.documentElement;
+        (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+      } else {
+        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      }
+    });
+
+    document.addEventListener('fullscreenchange',       updateIcon);
+    document.addEventListener('webkitfullscreenchange', updateIcon);
+  })();
 </script>
 </body>
 </html>
