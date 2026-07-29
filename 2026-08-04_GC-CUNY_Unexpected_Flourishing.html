@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unexpected Flourishing — The Graduate Center, CUNY, August 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --color-primary:        #006D6F;
+      --color-primary-dark:   #005456;
+      --color-primary-light:  #e6f3f3;
+      --color-text:           #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-bg:             #ffffff;
+      --color-bg-subtle:      #f7f8f9;
+      --color-bg-warm:        #faf9f7;
+      --color-border:         #d4d4d4;
+      --color-border-light:   #e8e8e8;
+      --color-accent-dark:    #051A42;
+      --color-accent-orange:  #e05724;
+      --font-body:    'Libre Franklin', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    }
+
+    .reveal-viewport { background: var(--color-bg); }
+    .reveal { font-family: var(--font-body); font-size: 28px; color: var(--color-text); }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: var(--font-heading); font-weight: 400; letter-spacing: 0.01em; line-height: 1.15; text-transform: none; margin-bottom: 0.5em; }
+    .reveal h1 { font-size: 2.8em; }
+    .reveal h2 { font-size: 2em; }
+    .reveal h3 { font-size: 1.4em; }
+    .reveal p { font-family: var(--font-body); font-weight: 400; line-height: 1.65; margin-bottom: 0.8em; }
+    .reveal ul, .reveal ol { font-family: var(--font-body); line-height: 1.7; margin-left: 1.5em; }
+    .reveal ul li, .reveal ol li { margin-bottom: 0.4em; }
+    .reveal a { color: var(--color-primary); }
+    .reveal .progress { background: var(--color-border-light); color: var(--color-primary); height: 3px; }
+    .reveal .controls { color: var(--color-primary); }
+    .reveal .slide-number { font-family: var(--font-body); font-size: 12px; color: var(--color-text-secondary); background: transparent; right: 20px; bottom: 18px; }
+
+    .slide-inner { width: 100%; height: var(--slide-height, 720px); box-sizing: border-box; }
+
+    /* TITLE */
+    .layout-title { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-title .slide-inner { padding: 0; display: flex; }
+    .layout-title .text-col { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; flex: 1.1; }
+    .layout-title .img-col { flex: 0.9; display: flex; align-items: stretch; }
+    .layout-title .img-col img, .layout-title .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-title .eyebrow { font-family: var(--font-body); font-size: 0.42em; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 1.4em; }
+    .layout-title h1 { color: #f5f3ee; font-size: 2.4em; line-height: 1.1; font-weight: 300; margin-bottom: 0.4em; }
+    .layout-title h1 em { color: var(--color-primary); font-style: italic; }
+    .layout-title .teal-rule { width: 56px; height: 3px; background: var(--color-primary); margin: 1em 0 1.2em; }
+    .layout-title .subtitle { font-family: var(--font-body); font-size: 0.46em; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .layout-title .presenter { font-family: var(--font-heading); font-size: 0.68em; color: rgba(255,255,255,0.82); margin-top: 2em; padding-top: 1em; border-top: 1px solid rgba(255,255,255,0.14); }
+
+    /* SECTION */
+    .layout-section { background: var(--color-primary) !important; padding: 0 !important; text-align: left; }
+    .layout-section .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-section .section-num { font-family: var(--font-heading); font-size: 0.52em; color: rgba(255,255,255,0.38); letter-spacing: 0.1em; font-weight: 300; margin-bottom: 0.5em; font-style: italic; }
+    .layout-section h2 { color: #ffffff; font-size: 2.3em; font-weight: 300; line-height: 1.15; }
+    .layout-section h2 em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .layout-section .section-desc { font-family: var(--font-body); font-size: 0.48em; color: rgba(255,255,255,0.62); margin-top: 1.4em; line-height: 1.7; max-width: 62%; }
+
+    /* DEFAULT */
+    .layout-default { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default .slide-inner { padding: 52px 80px; }
+    .layout-default h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-default h3 { color: var(--color-accent-dark); font-size: 1.2em; }
+    .layout-default p, .layout-default li { color: var(--color-text); font-size: 0.78em; }
+
+    /* DEFAULT WITH IMAGE */
+    .layout-default-img { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default-img .slide-inner { display: flex; gap: 0; }
+    .layout-default-img .content-col { padding: 52px 48px 52px 80px; flex: 1.2; display: flex; flex-direction: column; justify-content: flex-start; }
+    .layout-default-img .img-col { flex: 0.8; display: flex; align-items: stretch; }
+    .layout-default-img .img-col img, .layout-default-img .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-default-img h2 { color: var(--color-primary); font-size: 1.65em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-default-img p, .layout-default-img li { font-size: 0.76em; color: var(--color-text); line-height: 1.7; }
+
+    /* QUOTE */
+    .layout-quote { background: var(--color-bg-warm) !important; padding: 0 !important; text-align: left; }
+    .layout-quote .slide-inner { padding: 64px 96px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-quote .quote-mark { font-family: var(--font-heading); font-size: 4.5em; color: var(--color-primary); line-height: 0.5; margin-bottom: 0.4em; font-weight: 300; }
+    .layout-quote blockquote { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; color: var(--color-accent-dark); line-height: 1.55; border: none; margin: 0; padding: 0; }
+    .layout-quote .attribution { font-family: var(--font-body); font-size: 0.43em; color: var(--color-text-secondary); margin-top: 1.4em; padding-top: 1em; border-top: 1px solid var(--color-border); }
+    .layout-quote .attribution strong { color: var(--color-text); font-weight: 600; }
+
+    /* TWO COLUMN */
+    .layout-two-col { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-two-col .slide-inner { padding: 50px 72px; }
+    .layout-two-col h2 { color: var(--color-primary); font-size: 1.65em; margin-bottom: 0.55em; }
+    .layout-two-col .col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-top: 0.6em; }
+    .layout-two-col .col h3 { font-family: var(--font-heading); font-size: 1.15em; color: var(--color-accent-dark); margin-bottom: 0.4em; padding-bottom: 0.3em; border-bottom: 1px solid var(--color-border-light); }
+    .layout-two-col .col p, .layout-two-col .col li { font-size: 0.73em; color: var(--color-text); line-height: 1.72; }
+
+    /* CALLOUT */
+    .layout-callout { background: var(--color-bg-subtle) !important; padding: 0 !important; text-align: left; }
+    .layout-callout .slide-inner { padding: 46px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-callout h2 { color: var(--color-primary); font-size: 1.6em; margin-bottom: 0.6em; }
+    .layout-callout .stat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .layout-callout .stat-grid .stat-card:nth-child(1) { grid-column: 1 / 3; }
+    .layout-callout .stat-grid .stat-card:nth-child(2) { grid-column: 3 / 5; }
+    .layout-callout .stat-grid .stat-card:nth-child(3) { grid-column: 5 / 7; }
+    .layout-callout .stat-grid .stat-card:nth-child(4) { grid-column: 2 / 4; }
+    .layout-callout .stat-grid .stat-card:nth-child(5) { grid-column: 4 / 6; }
+    .layout-callout .stat-card { background: var(--color-bg); border-radius: 3px; border-left: 4px solid var(--color-accent-orange); padding: 40px 22px; display: flex; align-items: center; gap: 18px; }
+    .layout-callout .stat-card--teal { grid-column: 1 / 7; border-left-color: var(--color-primary); background: var(--color-primary-light); padding: 12px 22px; margin-top: 28px; }
+    .layout-callout .card-num { font-family: var(--font-heading); font-size: 1.5em; font-weight: 500; color: var(--color-accent-orange); line-height: 1; min-width: 1em; text-align: center; flex-shrink: 0; }
+    .layout-callout .card-text { font-family: var(--font-body); font-size: 0.72em; font-weight: 600; color: var(--color-accent-dark); line-height: 1.4; }
+    .layout-callout .stat-card--teal .card-text { color: var(--color-primary-dark); font-weight: 400; font-style: italic; }
+
+    /* DISCUSSION */
+    .layout-discussion { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-discussion .slide-inner { padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-discussion h2 { color: #f5f3ee; font-size: 1.85em; font-weight: 300; margin-bottom: 0.7em; }
+    .layout-discussion .prompt { font-family: var(--font-body); font-size: 0.6em; color: rgba(255,255,255,0.55); margin-bottom: 1.4em; font-style: italic; }
+    .layout-discussion ul { list-style: none; margin-left: 0; }
+    .layout-discussion ul li { font-family: var(--font-heading); font-size: 1.05em; font-style: italic; color: rgba(255,255,255,0.88); font-weight: 300; padding: 0.55em 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .layout-discussion .slide-inner { position: relative; }
+    .layout-discussion .discussion-content { max-width: 660px; }
+    .layout-discussion .thankyou-wrap { position: absolute; right: 56px; bottom: 50px; display: flex; align-items: center; gap: 20px; }
+    .layout-discussion .side-callout { width: 250px; background: rgba(255,255,255,0.07); border: 2px solid var(--color-primary); border-radius: 6px; padding: 18px 20px; box-sizing: border-box; }
+    .layout-discussion .side-callout h3 { font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 1.3em; color: #f5f3ee; margin-bottom: 0.5em; }
+    .layout-discussion .side-callout p { font-family: var(--font-body); font-size: 0.55em; color: rgba(255,255,255,0.75); line-height: 1.8; margin: 0; }
+    .layout-discussion .side-callout p + p { margin-top: 0.7em; }
+    .layout-discussion .side-callout a { color: var(--color-primary); text-decoration: none; }
+    .layout-discussion .side-callout .brand { color: var(--color-primary); }
+    .layout-discussion .divider-line { width: 2px; height: 137px; background: var(--color-accent-orange); opacity: 0.75; border-radius: 2px; }
+    .layout-discussion .resources-row { display: flex; align-items: center; justify-content: space-between; margin-top: 0.7em; }
+    .layout-discussion .resources-row span { font-family: var(--font-body); font-size: 0.55em; color: rgba(255,255,255,0.75); }
+    .layout-discussion .qr-inline { width: 60px; height: 60px; flex-shrink: 0; display: block; margin-left: 10px; }
+
+    /* CLOSING */
+    .layout-closing { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: center; }
+    .layout-closing .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .layout-closing h2 { color: #f5f3ee; font-size: 2.1em; font-weight: 300; margin-bottom: 0.3em; }
+    .layout-closing .tagline { font-family: var(--font-body); font-size: 0.47em; color: rgba(255,255,255,0.52); }
+    .layout-closing .orange-rule { width: 48px; height: 3px; background: var(--color-accent-orange); margin: 1.8em auto; }
+    .layout-closing .contact { font-family: var(--font-body); font-size: 0.58em; color: rgba(255, 255, 255, 0.72); line-height: 2.2; }
+
+
+    .layout-closing .resources-link {
+      font-family: var(--font-heading);
+      font-size: 1.0em;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.5em;
+      margin-bottom: 0;
+    }
+
+    .layout-closing .resources-link a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    /* TWO PHOTO */
+    .layout-two-photo { background: var(--color-bg) !important; padding: 0 !important; }
+    .layout-two-photo .slide-inner { display: flex; flex-direction: column; }
+    .layout-two-photo .photo-header { padding: 36px 80px 16px; flex-shrink: 0; background: var(--color-bg); }
+    .layout-two-photo .photo-header h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0; }
+    .layout-two-photo .photo-row { display: flex; flex: 1; min-height: 0; gap: 16px; padding: 0 80px 28px; }
+    .layout-two-photo .photo-col { flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px; background: var(--color-bg); }
+    .layout-two-photo .photo-col img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 6px 24px rgba(0,0,0,0.13); }
+
+    /* MY PATH */
+    .layout-mypath { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-mypath .slide-inner { position: relative; overflow: hidden; padding: 44px 0 0; display: flex; flex-direction: column; align-items: center; }
+    .layout-mypath .mypath-title { position: relative; z-index: 2; color: var(--color-primary); font-size: 1.9em; margin-bottom: 0.5em; }
+    .layout-mypath .bubble-layer { position: absolute; inset: 0; z-index: 1; }
+    .layout-mypath .blob { position: absolute; background: var(--color-accent-orange); opacity: 0.18; }
+    .layout-mypath .context-layer { position: absolute; inset: 0; z-index: 3; }
+    .layout-mypath .context-item { position: absolute; font-family: var(--font-heading); font-style: italic; font-weight: 400; color: var(--color-primary); opacity: 0.85; white-space: nowrap; }
+    .layout-mypath .roles-panel { position: relative; z-index: 2; background: rgba(255,255,255,0.94); border: 1px solid var(--color-border-light); border-radius: 6px; padding: 28px 52px; box-shadow: 0 8px 32px rgba(0,0,0,0.08); width: 620px; }
+    .layout-mypath .role-row { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 0.55em 0; border-bottom: 1px solid var(--color-border-light); }
+    .layout-mypath .role-row:last-child { border-bottom: none; }
+    .layout-mypath .role-name { font-family: var(--font-body); font-weight: 600; font-size: 0.72em; color: var(--color-accent-dark); }
+    .layout-mypath .role-date { font-family: var(--font-body); font-size: 0.6em; color: var(--color-text-secondary); flex-shrink: 0; }
+
+    /* DISCERNMENT GALLERY */
+    .layout-discern { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-discern .slide-inner { display: flex; gap: 0; }
+    .layout-discern .content-col { flex: 1; padding: 52px 40px 52px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-discern h2 { color: var(--color-primary); font-size: 1.65em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-discern p, .layout-discern li { font-size: 0.76em; color: var(--color-text); line-height: 1.7; }
+    .layout-discern .discern-list { line-height: 1.32; margin: 0; }
+    .layout-discern .discern-list li { margin-bottom: 0.15em; }
+    .layout-discern .gallery-col { flex: 1.15; padding: 24px 40px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; overflow: hidden; }
+    .layout-discern .gallery-layer { position: relative; width: 620px; height: 460px; }
+    .layout-discern .gallery-item { position: absolute; background: #fff; border-radius: 4px; box-shadow: 0 6px 18px rgba(0,0,0,0.16); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 6px; box-sizing: border-box; }
+    .layout-discern .gallery-item img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+
+    /* WHERE TO BEGIN */
+    .layout-wherebegin { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-wherebegin .slide-inner { padding: 0; display: flex; gap: 0; }
+    .layout-wherebegin .content-col { padding: 52px 48px 52px 80px; flex: 1.2; display: flex; flex-direction: column; justify-content: center; }
+    .layout-wherebegin .img-col { flex: 0.8; display: flex; align-items: stretch; }
+    .layout-wherebegin .img-col img { width: 100%; height: 100%; object-fit: cover; }
+    .layout-wherebegin h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-wherebegin .step-list { display: flex; flex-direction: column; margin-left: 48px; }
+    .layout-wherebegin .step-row { display: flex; align-items: baseline; gap: 28px; padding: 0.5em 0; border-bottom: 1px solid var(--color-border-light); }
+    .layout-wherebegin .step-row:last-child { border-bottom: none; }
+    .layout-wherebegin .step-num { font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 1.1em; color: var(--color-primary); min-width: 0.9em; }
+    .layout-wherebegin .step-text { font-family: var(--font-body); font-size: 0.76em; color: var(--color-text); font-weight: 400; }
+    .layout-wherebegin .step-row--repeat .step-num, .layout-wherebegin .step-row--repeat .step-text { color: var(--color-accent-orange); font-style: italic; }
+
+    /* UTILITIES */
+    ul.custom-bullets { list-style: none !important; margin-left: 0 !important; }
+    ul.custom-bullets li { padding-left: 1.3em; position: relative; }
+    ul.custom-bullets li::before { content: ''; position: absolute; left: 0; top: 0.52em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-primary); }
+    .highlight-box { background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 0.65em 1em; margin: 0.9em 0; font-size: 0.73em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.6; }
+    .orange-box { background: #fdf1ec; border-left: 4px solid var(--color-accent-orange); padding: 0.65em 1em; margin: 0.9em 0; font-size: 0.73em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.6; }
+    .img-placeholder { background: var(--color-primary-light); border: 1.5px dashed var(--color-primary); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 0.38em; color: var(--color-primary-dark); text-align: center; padding: 1em; min-height: 160px; }
+    .reveal .fragment { transition: opacity 0.3s ease; }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- ================================================================
+       1 · INTRO
+  ================================================================ -->
+  <section class="layout-title">
+    <div class="slide-inner">
+      <div class="text-col">
+        <div class="eyebrow">The Graduate Center, CUNY &nbsp;·&nbsp; August 4, 2026 <br/><br/>Summer Institute on Careers Beyond the Academy</div>
+        <h1>Unexpected<br><em>Flourishing</em></h1>
+        <div class="teal-rule"></div>
+        <div class="subtitle">
+          Research and Careers in Uncertain Times
+        </div>
+        <div class="presenter">Katina L. Rogers &nbsp;·&nbsp; Inkcap Consulting</div>
+      </div>
+      <div class="img-col">
+        <img src="images/turkey-tail.jpg" alt="Close up photograph of fan-like turkey tail mushrooms" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       2 · BOOKS
+  ================================================================ -->
+  <section class="layout-two-photo">
+    <div class="slide-inner">
+      <div class="photo-header">
+        <h2>What I'm drawing on</h2>
+      </div>
+      <div class="photo-row">
+        <div class="photo-col">
+          <img src="images/phd_to_work_cover.jpg" alt="The cover of Putting the Humanities PhD to Work by Katina Rogers, published in 2020 by Duke University Press">
+        </div>
+        <div class="photo-col">
+          <img src="images/unexpected_flourishing_cover.png" alt="The cover of Unexpected Flourishing by Katina Rogers, forthcoming from punctum books">
+        </div>
+      </div>
+    </div>
+    <aside class="notes">The talk I'm giving today draws on my forthcoming book, Unexpected Flourishing: Growth from Decay in the Mycelial University. My first book, Putting the Humanities PhD to Work, came out in 2020 from Duke University Press. Both books are grounded in the same core questions about graduate education, career pathways, and structural change.</aside>
+  </section>
+
+<!-- ================================================================
+       3 · MY PATH (personal career pathway)
+  ================================================================ -->
+  <section class="layout-mypath">
+    <div class="slide-inner">
+      <div class="bubble-layer fragment" data-fragment-index="0">
+        <div class="blob" style="left:-40px; top:-30px; width:540px; height:340px; transform:rotate(-8deg); border-radius: 62% 38% 55% 45% / 42% 60% 40% 58%;"></div>
+        <div class="blob" style="left:780px; top:-20px; width:400px; height:280px; transform:rotate(6deg); border-radius: 40% 60% 45% 55% / 60% 35% 65% 40%;"></div>
+        <div class="blob" style="left:-60px; top:220px; width:360px; height:390px; transform:rotate(-5deg); border-radius: 55% 45% 65% 35% / 45% 55% 30% 70%;"></div>
+        <div class="blob" style="left:830px; top:140px; width:420px; height:360px; transform:rotate(7deg); border-radius: 45% 55% 35% 65% / 55% 40% 60% 45%;"></div>
+        <div class="blob" style="left:-20px; top:545px; width:420px; height:300px; transform:rotate(-9deg); border-radius: 65% 35% 55% 45% / 40% 65% 35% 60%;"></div>
+        <div class="blob" style="left:810px; top:440px; width:480px; height:400px; transform:rotate(-6deg); border-radius: 38% 62% 48% 52% / 62% 38% 55% 45%;"></div>
+      </div>
+      <h2 class="mypath-title">My path</h2>
+      <div class="roles-panel">
+        <div class="role-row"><span class="role-name">Teaching, waiting tables, admin work</span><span class="role-date">2004–2009</span></div>
+        <div class="role-row"><span class="role-name">Temp jobs</span><span class="role-date">2009–2010</span></div>
+        <div class="role-row"><span class="role-name">Alfred P. Sloan Foundation</span><span class="role-date">2010–2012</span></div>
+        <div class="role-row"><span class="role-name">UVA Scholars' Lab</span><span class="role-date">2012–2013</span></div>
+        <div class="role-row"><span class="role-name">MLA</span><span class="role-date">2013–2014</span></div>
+        <div class="role-row"><span class="role-name">CUNY</span><span class="role-date">2014–2021</span></div>
+        <div class="role-row"><span class="role-name">Started Inkcap Consulting</span><span class="role-date">2021–</span></div>
+      </div>
+      <div class="context-layer fragment" data-fragment-index="0">
+        <span class="context-item" style="left:60px; top:85px; transform:rotate(-6deg); font-size:1.3em;">Grad school in Colorado</span>
+        <span class="context-item" style="left:850px; top:80px; transform:rotate(6deg); font-size:1.3em;">Parental leave ×2</span>
+        <span class="context-item" style="left:30px; top:380px; transform:rotate(6deg); font-size:1.3em;">Moved to NYC</span>
+        <span class="context-item" style="left:970px; top:320px; transform:rotate(8deg); font-size:1.3em; width:210px; display:inline-block; text-align:center; white-space:normal;">COVID</span>
+        <span class="context-item" style="left:110px; top:600px; transform:rotate(-8deg); font-size:1.3em;">Defended<br/>dissertation</span>
+        <span class="context-item" style="left:980px; top:615px; transform:rotate(9deg); font-size:1.3em;">Burnout</span>
+      </div>
+    </div>
+    <aside class="notes">The roles are the visible line on a CV. The rest of it — grad school in Colorado, the move to NYC, defending the dissertation, parental leave twice, COVID, burnout — is what actually shaped the path, and none of it lines up neatly next to a job title. Click to bring in that context and talk through how it intersected with (and sometimes interrupted) the roles listed here.</aside>
+  </section>
+
+  <!-- ================================================================
+       4 · WHY UNEXPECTED FLOURISHING?
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Why unexpected flourishing?</h2>
+        <p>Thriving doesn't always look the way we expect.</p>
+        <ul class="custom-bullets">
+          <li>Cycles of decay and regeneration</li>
+          <li>Interdependent, multispecies life</li>
+          <li>Mycoremediation</li>
+          <li>Beauty, even in decay</li>
+          <li>For me: <em>critical hope</em></li>
+        </ul>
+      </div>
+      <div class="img-col">
+        <img src="images/rotting-log.jpg" alt="Photo of a rotting log with countless species of fungi growing on it" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       5 · THE ROTTING LOG
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>The rotting log</h2>
+        <p>Universities in their current form are the substrate — the fallen log from which something new might grow.</p>
+        <ul class="custom-bullets">
+          <li>Decades of public disinvestment and underfunding</li>
+          <li>Increasing reliance on contingent labor</li>
+          <li>Skyrocketing tuition and student debt</li>
+          <li>Persistence of structural inequities — sexism, racism, ableism, etc.</li>
+        </ul>
+      </div>
+      <div class="img-col">
+       <img src="images/splitgills.jpg" alt="Photo of a fallen log with in the snow now growing splitgill mushrooms" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">This sounds cynical, but it's not despair — it's a diagnosis. And like a fallen log in the forest, the decay is also a condition for new growth. COVID made it very clear that the solo, prestige-oriented model doesn't work. But there's something I want to name more directly today.</aside>
+  </section>
+
+  <!-- ================================================================
+       6 · TOWARD A MYCELIAL UNIVERSITY
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Toward a mycelial university</h2>
+        <p>What if we envisioned a different way of working?</p>
+        <ul class="custom-bullets">
+          <li><strong>Hyphae:</strong> liminal, small-scale, exploratory, but incredibly strong and resilient</li>
+          <li><strong>Mycorrhizal networks:</strong> unexpected and deeply reciprocal partnerships</li>
+          <li><strong>Fruiting bodies:</strong> ephemeral, surprising</li>
+          <li><strong>Mycoremediation:</strong> digesting toxins, creating conditions for growth</li>
+        </ul>
+        <div class="highlight-box" style="margin-top: 0.2em;">
+  <em>Microscopic images of mycelium. <br />Cartabia et al., 2021. <a href="https://doi.org/10.3390/jof7121008">https://doi.org/10.3390/jof7121008</a></em></div>
+
+      </div>
+      <div class="img-col">
+        <img src="images/mycelium2.png" alt="Microscopic image of intertwining mycelial strands" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+
+    <aside class="notes">Mycelium is the main component of fungi — threads a single cell wide, growing densely in soil or decaying logs, usually unseen but everywhere under our feet. By "mycelial university" I mean one that fosters tiny, interconnected, often hidden areas of growth. One that makes space for liminal work — work that may or may not bear fruit, but that nourishes the ecosystem.</aside>
+  </section>
+
+  <!-- ================================================================
+       7 · WHERE TO BEGIN
+  ================================================================ -->
+  <section class="layout-wherebegin">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Where do I even start?</h2>
+        <div class="orange-box" style="margin-top: 0.2em;"><em>Throughout: Focus on what you can control and celebrate small wins</em></div>
+        <div class="step-list">
+          <div class="step-row"><span class="step-num">1</span><span class="step-text">Assess what's working for you and what's not</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-text">Build relationships and learn the landscape</span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-text">Find resources</span></div>
+          <div class="step-row"><span class="step-num">4</span><span class="step-text">Make a plan</span></div>
+          <div class="step-row"><span class="step-num">5</span><span class="step-text">Put yourself out there!</span></div>
+          <div class="step-row"><span class="step-num">6</span><span class="step-text">Take time to reflect</span></div>
+          <div class="step-row step-row--repeat"><span class="step-num">7</span><span class="step-text">Repeat.</span></div>
+        </div>
+      </div>
+      <div class="img-col">
+        <img src="images/tiny_parasol.jpg" alt="A hand holding an incredibly tiny parasol mushroom, with a cap smaller than a grain of rice" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">This is a cycle, not a checklist — that's why "repeat" gets its own color. Once you've reflected, you're back to reassessing what's working, and the loop starts again.</aside>
+  </section>
+
+  <!-- ================================================================
+       8 · DISCERNMENT AND DISCOVERY
+  ================================================================ -->
+  <section class="layout-discern">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Discernment and discovery</h2>
+        <ul class="custom-bullets discern-list">
+          <li><strong>Finding Your Purpose</strong> — zine/workbook by Hannah Alpert Abrams</li>
+          <li><strong>Imagine PhD</strong> — robust, research-based career exploration tool</li>
+          <li><strong>YearCompass</strong> — guided reflection and goal-setting</li>
+          <li><strong>Targeted job listings and newsletters</strong></li>
+          <li><strong>Institutional resources</strong></li>
+        </ul>
+      </div>
+      <div class="gallery-col">
+        <div class="gallery-layer">
+          <div class="gallery-item" style="left: 20px; top: 15px; width: 150px; height: 204px; transform: rotate(-5deg); z-index: 2;"><img src="images/abrams1.png" alt="Finding Your Purpose zine cover by Hannah Alpert Abrams"></div>
+          <div class="gallery-item" style="left: 195px; top: 35px; width: 148px; height: 188px; transform: rotate(4deg); z-index: 3;"><img src="images/yearcompass.png" alt="YearCompass guided reflection booklet cover"></div>
+          <div class="gallery-item" style="left: 20px; top: 255px; width: 350px; height: 202px; transform: rotate(-2deg); z-index: 1;"><img src="images/imaginephd.png" alt="ImaginePhD career exploration tool screenshot"></div>
+          <div class="gallery-item" style="left: 375px; top: 130px; width: 220px; height: 50px; transform: rotate(4deg); z-index: 4;"><img src="images/missioncritical.png" alt="Mission Critical resource graphic"></div>
+          <div class="gallery-item" style="left: 392px; top: 200px; width: 220px; height: 57px; transform: rotate(-5deg); z-index: 5;"><img src="images/schacht.png" alt="Schacht resource graphic"></div>
+          <div class="gallery-item" style="left: 378px; top: 275px; width: 220px; height: 67px; transform: rotate(3deg); z-index: 6;"><img src="images/wordsofmouth.png" alt="Words of Mouth resource graphic"></div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes">These multiple, creative career pathways sound great, but they can be hard to find. One challenge in higher ed is that the expected pathways are so rigidly defined that it's hard to envision different possibilities, let alone pursue them. In that context, how do you even know what you might want to do? Discernment and discovery can be a really difficult part of the process. But it's so important, because it taps into our deep curiosity — which is often part of what brought us to graduate school in the first place. Your desires matter, and your curiosity matters. All three tools listed here are worth walking through together during discussion time — Finding Your Purpose (Hannah Alpert Abrams, 2022), ImaginePhD (Graduate Career Consortium), and YearCompass — rather than as separate slides.</aside>
+  </section>
+
+      <!-- ================================================================
+       9 · THRIVING
+  ================================================================ -->
+  <section class="layout-discussion">
+    <div class="slide-inner">
+      <div class="discussion-content">
+        <h2>What does thriving look like for <em>you?</em></h2>
+        <div class="prompt">Forget what formal academic success is supposed to look like. Think about:</div>
+        <ul>
+          <li>A book, film, or song you love</li>
+          <li>A person whose work you admire — <em>work defined broadly</em></li>
+          <li>One thing you'd spend more time on if you could</li>
+        </ul>
+      </div>
+      <div class="thankyou-wrap">
+        <div class="divider-line"></div>
+        <div class="side-callout">
+          <h3>Thank you!</h3>
+          <p>Katina L. Rogers<br><em class="brand">Inkcap Consulting</em></p>
+          <div class="resources-row">
+            <span>Resources:</span>
+            <img class="qr-inline" src="images/qr-inkcap-resources.png" alt="QR code for bit.ly/inkcap-resources">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    history: true,
+    center: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    hash: true,
+  });
+</script>
+</body>
+</html>
