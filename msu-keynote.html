@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unexpected Flourishing — Michigan State University, October 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --color-primary:        #006D6F;
+      --color-primary-dark:   #005456;
+      --color-primary-light:  #e6f3f3;
+      --color-text:           #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-bg:             #ffffff;
+      --color-bg-subtle:      #f7f8f9;
+      --color-bg-warm:        #faf9f7;
+      --color-border:         #d4d4d4;
+      --color-border-light:   #e8e8e8;
+      --color-accent-dark:    #051A42;
+      --color-accent-orange:  #e05724;
+      --font-body:    'Libre Franklin', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    }
+
+    .reveal-viewport { background: var(--color-bg); }
+    .reveal { font-family: var(--font-body); font-size: 28px; color: var(--color-text); }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: var(--font-heading); font-weight: 400; letter-spacing: 0.01em; line-height: 1.15; text-transform: none; margin-bottom: 0.5em; }
+    .reveal h1 { font-size: 2.8em; }
+    .reveal h2 { font-size: 2em; }
+    .reveal h3 { font-size: 1.4em; }
+    .reveal p { font-family: var(--font-body); font-weight: 400; line-height: 1.65; margin-bottom: 0.8em; }
+    .reveal ul, .reveal ol { font-family: var(--font-body); line-height: 1.7; margin-left: 1.5em; }
+    .reveal ul li, .reveal ol li { margin-bottom: 0.4em; }
+    .reveal a { color: var(--color-primary); }
+    .reveal .progress { background: var(--color-border-light); color: var(--color-primary); height: 3px; }
+    .reveal .controls { color: var(--color-primary); }
+    .reveal .slide-number { font-family: var(--font-body); font-size: 12px; color: var(--color-text-secondary); background: transparent; right: 20px; bottom: 18px; }
+
+    .slide-inner { width: 100%; height: var(--slide-height, 720px); box-sizing: border-box; }
+
+    /* TITLE */
+    .layout-title { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-title .slide-inner { padding: 0; display: flex; }
+    .layout-title .text-col { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; flex: 1.1; }
+    .layout-title .img-col { flex: 0.9; display: flex; align-items: stretch; }
+    .layout-title .img-col img, .layout-title .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-title .eyebrow { font-family: var(--font-body); font-size: 0.42em; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 1.4em; }
+    .layout-title h1 { color: #f5f3ee; font-size: 2.4em; line-height: 1.1; font-weight: 300; margin-bottom: 0.4em; }
+    .layout-title h1 em { color: var(--color-primary); font-style: italic; }
+    .layout-title .teal-rule { width: 56px; height: 3px; background: var(--color-primary); margin: 1em 0 1.2em; }
+    .layout-title .subtitle { font-family: var(--font-body); font-size: 0.46em; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .layout-title .presenter { font-family: var(--font-heading); font-size: 0.68em; color: rgba(255,255,255,0.82); margin-top: 2em; padding-top: 1em; border-top: 1px solid rgba(255,255,255,0.14); }
+
+    /* SECTION */
+    .layout-section { background: var(--color-primary) !important; padding: 0 !important; text-align: left; }
+    .layout-section .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-section .section-num { font-family: var(--font-heading); font-size: 0.52em; color: rgba(255,255,255,0.38); letter-spacing: 0.1em; font-weight: 300; margin-bottom: 0.5em; font-style: italic; }
+    .layout-section h2 { color: #ffffff; font-size: 2.3em; font-weight: 300; line-height: 1.15; }
+    .layout-section h2 em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .layout-section .section-desc { font-family: var(--font-body); font-size: 0.48em; color: rgba(255,255,255,0.62); margin-top: 1.4em; line-height: 1.7; max-width: 62%; }
+
+    /* DEFAULT */
+    .layout-default { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default .slide-inner { padding: 52px 80px; }
+    .layout-default h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-default h3 { color: var(--color-accent-dark); font-size: 1.2em; }
+    .layout-default p, .layout-default li { color: var(--color-text); font-size: 0.78em; }
+
+    /* DEFAULT WITH IMAGE */
+    .layout-default-img { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default-img .slide-inner { display: flex; gap: 0; }
+    .layout-default-img .content-col { padding: 52px 48px 52px 80px; flex: 1.2; display: flex; flex-direction: column; justify-content: flex-start; }
+    .layout-default-img .img-col { flex: 0.8; display: flex; align-items: stretch; }
+    .layout-default-img .img-col img, .layout-default-img .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-default-img h2 { color: var(--color-primary); font-size: 1.65em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-default-img p, .layout-default-img li { font-size: 0.76em; color: var(--color-text); line-height: 1.7; }
+
+    /* QUOTE */
+    .layout-quote { background: var(--color-bg-warm) !important; padding: 0 !important; text-align: left; }
+    .layout-quote .slide-inner { padding: 64px 96px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-quote .quote-mark { font-family: var(--font-heading); font-size: 4.5em; color: var(--color-primary); line-height: 0.5; margin-bottom: 0.4em; font-weight: 300; }
+    .layout-quote blockquote { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; color: var(--color-accent-dark); line-height: 1.55; border: none; margin: 0; padding: 0; }
+    .layout-quote .attribution { font-family: var(--font-body); font-size: 0.43em; color: var(--color-text-secondary); margin-top: 1.4em; padding-top: 1em; border-top: 1px solid var(--color-border); }
+    .layout-quote .attribution strong { color: var(--color-text); font-weight: 600; }
+
+    /* TWO COLUMN */
+    .layout-two-col { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-two-col .slide-inner { padding: 50px 72px; }
+    .layout-two-col h2 { color: var(--color-primary); font-size: 1.65em; margin-bottom: 0.55em; }
+    .layout-two-col .col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-top: 0.6em; }
+    .layout-two-col .col h3 { font-family: var(--font-heading); font-size: 1.15em; color: var(--color-accent-dark); margin-bottom: 0.4em; padding-bottom: 0.3em; border-bottom: 1px solid var(--color-border-light); }
+    .layout-two-col .col p, .layout-two-col .col li { font-size: 0.73em; color: var(--color-text); line-height: 1.72; }
+
+    /* CALLOUT */
+    .layout-callout { background: var(--color-bg-subtle) !important; padding: 0 !important; text-align: left; }
+    .layout-callout .slide-inner { padding: 46px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-callout h2 { color: var(--color-primary); font-size: 1.6em; margin-bottom: 0.6em; }
+    .layout-callout .stat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .layout-callout .stat-grid .stat-card:nth-child(1) { grid-column: 1 / 3; }
+    .layout-callout .stat-grid .stat-card:nth-child(2) { grid-column: 3 / 5; }
+    .layout-callout .stat-grid .stat-card:nth-child(3) { grid-column: 5 / 7; }
+    .layout-callout .stat-grid .stat-card:nth-child(4) { grid-column: 2 / 4; }
+    .layout-callout .stat-grid .stat-card:nth-child(5) { grid-column: 4 / 6; }
+    .layout-callout .stat-card { background: var(--color-bg); border-radius: 3px; border-left: 4px solid var(--color-accent-orange); padding: 40px 22px; display: flex; align-items: center; gap: 18px; }
+    .layout-callout .stat-card--teal { grid-column: 1 / 7; border-left-color: var(--color-primary); background: var(--color-primary-light); padding: 12px 22px; margin-top: 28px; }
+    .layout-callout .card-num { font-family: var(--font-heading); font-size: 1.5em; font-weight: 500; color: var(--color-accent-orange); line-height: 1; min-width: 1em; text-align: center; flex-shrink: 0; }
+    .layout-callout .card-text { font-family: var(--font-body); font-size: 0.72em; font-weight: 600; color: var(--color-accent-dark); line-height: 1.4; }
+    .layout-callout .stat-card--teal .card-text { color: var(--color-primary-dark); font-weight: 400; font-style: italic; }
+
+    /* DISCUSSION */
+    .layout-discussion { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-discussion .slide-inner { padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-discussion h2 { color: #f5f3ee; font-size: 1.85em; font-weight: 300; margin-bottom: 0.7em; }
+    .layout-discussion .prompt { font-family: var(--font-body); font-size: 0.6em; color: rgba(255,255,255,0.55); margin-bottom: 1.4em; font-style: italic; }
+    .layout-discussion ul { list-style: none; margin-left: 0; }
+    .layout-discussion ul li { font-family: var(--font-heading); font-size: 1.05em; font-style: italic; color: rgba(255,255,255,0.88); font-weight: 300; padding: 0.55em 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    /* CLOSING */
+    .layout-closing { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: center; }
+    .layout-closing .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .layout-closing h2 { color: #f5f3ee; font-size: 2.1em; font-weight: 300; margin-bottom: 0.3em; }
+    .layout-closing .tagline { font-family: var(--font-body); font-size: 0.47em; color: rgba(255,255,255,0.52); }
+    .layout-closing .orange-rule { width: 48px; height: 3px; background: var(--color-accent-orange); margin: 1.8em auto; }
+    .layout-closing .contact { font-family: var(--font-body); font-size: 0.58em; color: rgba(255, 255, 255, 0.72); line-height: 2.2; }
+
+    
+    .layout-closing .resources-link {
+      font-family: var(--font-heading);
+      font-size: 1.0em;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.5em;
+      margin-bottom: 0;
+    }
+
+    .layout-closing .resources-link a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    /* TWO PHOTO */
+    .layout-two-photo { background: var(--color-bg) !important; padding: 0 !important; }
+    .layout-two-photo .slide-inner { display: flex; flex-direction: column; }
+    .layout-two-photo .photo-header { padding: 36px 80px 16px; flex-shrink: 0; background: var(--color-bg); }
+    .layout-two-photo .photo-header h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0; }
+    .layout-two-photo .photo-row { display: flex; flex: 1; min-height: 0; gap: 16px; padding: 0 80px 28px; }
+    .layout-two-photo .photo-col { flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px; background: var(--color-bg); }
+    .layout-two-photo .photo-col img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 6px 24px rgba(0,0,0,0.13); }
+
+    /* UTILITIES */
+    ul.custom-bullets { list-style: none !important; margin-left: 0 !important; }
+    ul.custom-bullets li { padding-left: 1.3em; position: relative; }
+    ul.custom-bullets li::before { content: ''; position: absolute; left: 0; top: 0.52em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-primary); }
+    .highlight-box { background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 0.65em 1em; margin: 0.9em 0; font-size: 0.73em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.6; }
+    .orange-box { background: #fdf1ec; border-left: 4px solid var(--color-accent-orange); padding: 0.65em 1em; margin: 0.9em 0; font-size: 0.73em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.6; }
+    .img-placeholder { background: var(--color-primary-light); border: 1.5px dashed var(--color-primary); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 0.38em; color: var(--color-primary-dark); text-align: center; padding: 1em; min-height: 160px; }
+    .reveal .fragment { transition: opacity 0.3s ease; }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- ================================================================
+       1 · TITLE
+  ================================================================ -->
+  <section class="layout-title">
+    <div class="slide-inner">
+      <div class="text-col">
+        <div class="eyebrow">Keynote &nbsp;·&nbsp; Michigan State University &nbsp;·&nbsp; October 14, 2026</div>
+        <h1>Unexpected<br><em>Flourishing</em></h1>
+        <div class="teal-rule"></div>
+        <div class="subtitle">
+          Research and Careers in Uncertain Times
+        </div>
+        <div class="presenter">Katina L. Rogers &nbsp;·&nbsp; Inkcap Consulting</div>
+      </div>
+      <div class="img-col">
+        <img src="images/turkey-tail.jpg" alt="Close up photograph of fan-like turkey tail mushrooms" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+      <aside class="notes">
+<ul><li><p>Greetings and gratitude (Kathleen Fitzpatrick and Scott Schopieray)</p></li><li><p>What to expect:</p><ul><li><p>My vision for graduate education and how we can get there</p></li><li><p>Resources that you can carry with you beyond today’s discussion</p></li><li><p>Reflection and Q&amp;A</p></li></ul></li><li><p>My focal point is on career pathways and public scholarship, and for me this is deeply connected with graduate education reform at a structural level.</p></li></ul>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       2 · FOUNDATIONS
+  ================================================================ -->
+  <section class="layout-two-photo">
+    <div class="slide-inner">
+      <div class="photo-header">
+        <h2>What I'm drawing on</h2>
+      </div>
+      <div class="photo-row">
+        <div class="photo-col">
+          <img src="images/phd_to_work_cover.jpg" alt="The cover of Putting the Humanities PhD to Work by Katina Rogers, published in 2020 by Duke University Press">
+        </div>
+        <div class="photo-col">
+          <img src="images/unexpected_flourishing_cover.png" alt="The cover of Unexpected Flourishing by Katina Rogers, forthcoming from punctum books">
+        </div>
+      </div>
+    </div>
+    <aside class="notes">
+<p>The talk I'm giving today draws on both my first book, <em>Putting the Humanities PhD to Work</em>, and my forthcoming book, titled <em>Unexpected Flourishing: Growth from Decay in the Mycelial University</em>. It's a book about the current state of higher education and even though decay is right there in the title, it takes a stance not of despair, but of <strong>critical hope</strong>. That is the same stance I want to bring today.</p>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       3 · THE CENTRAL METAPHOR
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Why unexpected flourishing?</h2>
+        <p>Thriving doesn't always look the way we expect.</p>
+        <ul class="custom-bullets">
+          <li>Cycles of decay and regeneration</li>
+          <li>Interdependent, multispecies life</li>
+          <li>Mycoremediation</li>
+          <li>Beauty, even in decay</li>
+          <li>For me: <em>critical hope</em></li>
+        </ul>
+      </div>
+      <div class="img-col">
+        <img src="images/rotting-log.jpg" alt="Photo of a rotting log with countless species of fungi growing on it" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+      <aside class="notes">
+<p>I'll also be talking about mushrooms! This is where the idea of unexpected flourishing comes in. Because thriving doesn't always look the way we expect it to look.</p><p>Let’s start with a photo. (Most of the photos you'll see today are photos I've taken in the woods, mostly in and around New York. I would also add that I am NOT a mycologist, so… apologies for any glaring scientific errors.)</p><p>One way to see this picture is as a rotting log. Another is to see it as a thriving ecosystem. And it gives a glimpse of what fascinates and inspires me about mushrooms.</p><ul><li><p>Fungi have a critical role in the ecosystem, consuming dead matter and returning nutrients to the soil</p></li><li><p>Some channel nutrients between plant species through what's called the mycorrhizal network. Mycorrhizal connections remind me that interdependence is a beautiful and fragile thing, something we can't control, and more than the sum of its parts.</p></li><li><p>There's growing research around mycoremediation, which is the process by which mushrooms digest and neutralize soil toxins, renewing fertile ground.</p></li><li><p>I also just love the beauty of these mushrooms, and I love how easy it is to overlook them. They have a quiet beauty—intricate colors and patterns and textures, but if you want to see them you have to walk slowly, look closely, stoop down, pick up fallen branches. This posture of attention is central to what I'm arguing today.</p></li></ul>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       4 · THE ROTTING LOG
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>The rotting log</h2>
+        <p>Universities in their current form are the substrate — the fallen log from which something new might grow.</p>
+        <ul class="custom-bullets">
+          <li>Decades of public disinvestment and underfunding</li>
+          <li>Increasing reliance on contingent labor</li>
+          <li>Skyrocketing tuition and student debt</li>
+          <li>Persistence of structural inequities — sexism, racism, ableism, etc.</li>
+        </ul>
+        <div class="orange-box">The decay is real. It may also serve as a condition for new growth.</div>
+      </div>
+      <div class="img-col">
+       <img src="images/splitgills.jpg" alt="Photo of a fallen log with in the snow now growing splitgill mushrooms" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+<p>In the metaphor I'll explore today, universities in their current form are the rotting log that provides a substrate for new growth. This sounds cynical, but I say this as someone who is deeply invested in higher education, especially public higher ed—I have a PhD from a public university, worked at CUNY for the better part of a decade, and now work with universities across the country to help them develop more sustainable, equitable programs.</p><p>Many of the most precious mushrooms cannot be cultivated; their partnerships with other species are too deep and specific. Some grow specifically in what anthropologist Anna Lowenhaupt Tsing calls "blasted landscapes," areas of deforestation and disruption. In these cases, sometimes the best we can do is not plant a seed that we know will grow, but rather look for or create the conditions where the things we seek are most likely to thrive. And this is what I'm interested in thinking through for universities: finding the ways to identify and create conditions for flourishing, even where it seems unlikely.</p><p>The decay is, honestly, quite real. Decades of disinvestment have left universities deeply underfunded. Higher education erodes its own foundations through an increasing reliance on contingent faculty, whose inadequate working conditions become student learning conditions. Meanwhile, tuition and costs of living are skyrocketing, leaving many students deep in debt. And on top of all of this, the structural inequities that have always existed in the academy continue unabated.</p>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       5 · THE CURRENT POLITICAL MOMENT
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>A moment of acute precarity</h2>
+        <p>We are facing additional challenges in our current moment:</p>
+        <ul class="custom-bullets">
+          <li>Federal defunding of awarded research grants</li>
+          <li>Direct threats to academic freedom and shared governance</li>
+          <li>Targeting of international students and DEI-focused programs</li>
+          <li>Dismantling of programs and entire institutions</li>
+        </ul>
+        <div class="orange-box">This is not a normal period of institutional stress. <br />
+        We need to think differently.</div>
+      </div>
+      <div class="img-col">
+          <img src="images/honeys.jpg" alt="Photo of an absurd amount of honey mushrooms, totally covering the ground with fruiting bodies and spores" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+<p>To make things worse, the situation is further exacerbated by our current political climate, which has led to the defunding of federal grants, threats to academic freedom, the targeting of international students and diversity programs, and more.</p><p>Our standard institutional structures and modes of operating will not suffice. I want to name this directly. Many folks are navigating real fear — about funding, programs, visa status, and the viability of their research. These are really important issues, and I don't want to paper over them with optimism. But I do want to offer a framework for thinking about what's possible, even now.</p><p>(This is a photo of honey mushrooms, by the way, which are edible, but here they’re totally out of control.)</p>
+    </aside>
+  </section>
+
+
+  <!-- ================================================================
+       6 · TOWARD A MYCELIAL UNIVERSITY
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Toward a mycelial university</h2>
+        <p>What if we envisioned a different way of working?</p>
+        <ul class="custom-bullets">
+          <li><strong>Hyphae:</strong> liminal, small-scale, exploratory, but incredibly strong and resilient</li>
+          <li><strong>Mycorrhizal networks:</strong> unexpected and deeply reciprocal partnerships</li>
+          <li><strong>Fruiting bodies:</strong> ephemeral, surprising</li>
+          <li><strong>Mycoremediation:</strong> digesting toxins, creating conditions for growth</li>
+        </ul>
+        <div class="highlight-box"; align=right>
+  <em>Microscopic images of mycelium. <br />Cartabia et al., 2021. <a href="https://doi.org/10.3390/jof7121008">https://doi.org/10.3390/jof7121008</a></em></div>
+         
+      </div>
+      <div class="img-col">
+        <img src="images/mycelium2.png" alt="Microscopic image of intertwining mycelial strands" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+   
+    <aside class="notes">
+<p>What I propose in light of this is to let the hierarchical, prestige-oriented universities go ahead and decompose in favor of what I'm calling a <em>mycelial university.</em> While we might usually think of fungi in terms of the mushrooms we see above ground, the main biomass of the organism is actually underground, in the form of mycelium. Mycelium is made of delicate root-like threads, called hyphae, that twine through every inch of soil under our feet, digesting waste and forming interspecies nutrient channels. It's a vast interconnected network that is delicate and easily overlooked. But it's also strong enough to be used as a building material.</p><p>By mycelial university, I mean one that fosters tiny, hidden areas of growth, like the hyphae that are just one cell wide, growing belowground as they seek resources. In a university, this means making space for liminal work, small-scale work, work that may or may not bear fruit. It also means fostering mycorrhizal connections—enabling unexpected partnerships both within the university and beyond it, deeply reciprocal knowledge exchanges across communities. It means finding strength even in precarity, through mutual support and resource sharing.</p><p>To get there, universities need to change their value structures. Rather than aiming for the greatest prestige—through grants, publications, faculty awards, and selectivity—what might happen if universities valued—and incentivized—access, collaboration, indeterminacy, collective thriving? What might this mean for connections beyond the university, for public partnerships, for advocacy?</p><p>Connecting this to career pathways, a mycelial university would celebrate the creative, unexpected places where people apply their knowledge and training. More than that, it would make new pathways possible by fostering connections across people, disciplinary fields, and organizations.</p>
+    </aside>
+  </section>
+
+
+  <!-- ================================================================
+       7 · SECTION BREAK: DOCTORAL FUTURES
+  ================================================================ -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Doctoral<br><em>Futures</em></h2>
+      <div class="section-desc">An ACLS initiative rethinking humanities doctoral education — listening sessions and landscape research with current students, faculty, administrators, and recent PhDs.</div>
+    </div>
+    <aside class="notes">
+<p>Over the past year, I've been working with the American Council of Learned Societies (or ACLS) on an initiative called Doctoral Futures, with the goal of documenting promising practices and leveraging scholarly societies to push for wide-scale institutional change across the country. As part of this work, I’ve done landscape research and have conducted twenty listening sessions with almost 100 current students, faculty, administrators, and recent PhDs.</p>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       8 · DOCTORAL FUTURES: KEY FINDINGS
+  ================================================================ -->
+  <section class="layout-callout">
+    <div class="slide-inner">
+      <h2>What the research tells us</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="card-num">1</span>
+          <span class="card-text">Advisor quality is decisive.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">2</span>
+          <span class="card-text">Funding is systematically inadequate.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">3</span>
+          <span class="card-text">Peer communities are lifelines.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">4</span>
+          <span class="card-text">Early career guidance matters.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">5</span>
+          <span class="card-text">Curricular clarity supports success.</span>
+        </div>
+        <div class="stat-card stat-card--teal">
+          <span class="card-text">ACLS Doctoral Futures Initiative, 2025–26</span>
+        </div>
+      </div>
+    </div>
+      <aside class="notes">
+<p>Through this work, a few things have emerged as key elements for student success:</p><ol type="1"><li><p><strong>Advisor quality</strong>. A supportive advisor is perhaps the most crucial element in student progress and well-being. However, advising practices vary significantly and are not often institutionally rewarded, leaving students in a precarious position without clear guidelines to navigate challenges. This is something I’ll be talking about in depth in the faculty workshop tomorrow.</p></li><li><p><strong>Material support</strong>. Adequate funding is essential to student progress, but the typical stipend falls short of a living wage. Students face food insecurity and impossible trade-offs. If you can't pay rent, care for your kid, or go to the doctor, there's no way you can do your best intellectual work.</p></li><li><p><strong>Non-competitive peer networks.</strong> Informal peer networks provide crucial support, especially when formal structures fail. Grad students regularly turn to their peers to understand the hidden curriculum, to form writing groups, and so much more. In many institutions right now, program size reductions are making this increasingly difficult.</p></li><li><p><strong>Career guidance.</strong> While grad career advising has improved in many institutions, for many students the discussion starts too late, toward the end of their studies. It should be integrated into the entire curriculum—not just a standalone career center, but in discussions within the department—from the very beginning of a student's program. Even before someone applies, they should have a sense of where alumni tend to be employed and what their own career prospects might be.</p></li><li><p><strong>Curricular clarity supports success.</strong> Students—and really, faculty—should know why each step of their program matters. What is the goal of the exam? What constitutes a successful dissertation? Alongside this clarity, flexibility can provide essential breathing room—either for non-traditional research approaches, or for the unexpected curveballs that are a part of life. Clear guidelines plus space for creative work and timing adjustments leads to stronger progress and more meaningful research.</p></li></ol><p>These are not impossible changes! While some of these interventions—like funding—require significant resources, not all of them do. Some of the changes could be made right now with sufficient collective will.</p>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       9 · DOCTORAL FUTURES: WHAT WE HEARD ABOUT CAREERS
+  ================================================================ -->
+  <section class="layout-two-col">
+    <div class="slide-inner">
+      <h2>What we heard about careers</h2>
+      <div class="col-grid">
+        <div class="col">
+          <h3>Students and Recent PhDs</h3>
+          <ul class="custom-bullets">
+            <li>Not sure what jobs exist beyond the tenure track</li>
+            <li>Deep expertise but limited hands-on experience</li>
+            <li>Career conversations arrive "two years too late"</li>
+            <li>Exploration sometimes feels stigmatized</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Faculty and Administrators</h3>
+          <ul class="custom-bullets">
+            <li>A desire to support students wherever they go</li>
+            <li>Not sure how to advise for unfamiliar pathways</li>
+            <li>Difficulty braiding scholarship with skills training</li>
+            <li>Backdrop of structural precarity and overwork</li>
+          </ul>
+        </div>
+      </div>
+      <div class="orange-box">Career change is multi-year identity work, not a single decision point.</div>
+    </div>
+    <aside class="notes">
+<ul><li><p>What we heard from students and what we heard from faculty are perspectives that mirror each other.</p></li><li><p>Students described an uncomfortable silence when they raised non-academic careers. One student said career preparation only came up in their sixth year — "maybe two years too late." Recent PhDs identified a gap between their deep expertise, but limited professional experience employers in other sectors look for.</p></li><li><p>Faculty, for their part, <em>want</em> to support students in a wider range of pathways, but feel a great deal of uncertainty when called upon to advise for careers they've never held. Most recognize that the advice they received no longer applies. They sometimes have a hard time braiding scholarly work with more applied approaches that help students build skills and relationships. Moreover, the backdrop of institutional precarity and ongoing labor casualization means faculty are trying to do this while overworked and anxious about the future.</p></li><li><p>One of the most striking themes was that career transition is identity work that takes years — one recent graduate said it took three years to separate who they are from what they do. A single workshop or panel can't carry that, so sustained engagement is key.</p></li></ul>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       10 · DOCTORAL FUTURES: WHAT WORKS
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>What works</h2>
+        <p>Effective programs share a few elements.</p>
+        <ul class="custom-bullets">
+          <li><strong>Cohorts</strong> that build peer community</li>
+          <li><strong>Mentors</strong> (plural) with varied perspectives</li>
+          <li><strong>Structured experience</strong> that bridges the gap</li>
+          <li><strong>Networks</strong> that last beyond the program</li>
+          <li><strong>Skills translation:</strong> learning to name and own your strengths</li>
+        </ul>
+        <div class="orange-box">How does this become the norm, not the exception?</div>
+      </div>
+      <div class="img-col">
+        <img src="images/silverleaf.png" alt="Bright purple fungi, deep green moss, and pale green lichen against decaying tree bark" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+<p>Students and recent PhDs who have been part of programs like the Mellon Mays Fellowship or the ACLS Leading Edge Fellowship described their experiences as transformative. There are a handful of elements they have in common: a cohort, multiple mentors with different perspectives, professional experience, and a network that continues afterward. Institutional programs that work tend to share those features, plus help with translating skills. But many strong initiatives come to an end when grant funding runs out, or when a key leader moves on. That's the structural question: how does this work become a core institutional commitment rather than an exception? That's part of what the ACLS Doctoral Futures program is working toward now.</p>
+    </aside>
+  </section>
+
+  
+  <!-- ================================================================
+       11 · MY ANCHOR POINTS
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>My anchor points</h2>
+        <p>Moving from individual action to structural change.</p>
+        <ul class="custom-bullets">
+          <li>Talking about career diversity is <em>not enough</em> </li>
+          <li>Structures reveal and reinforce values</li>
+          <li>Public engagement is good for students, the academy, and society</li>
+          <li><em>Joy and sustainability are possible</em></li>
+        </ul>
+        <div class="orange-box">This is an equity question. <br />Who decides what is considered valuable? Whose voices are heard?</div>
+      </div>
+      <div class="img-col">
+        <img src="images/splitgills2.jpg" alt="Two splitgill mushrooms on a twig that look almost like quilted textile art" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+<p>I finished my own PhD sixteen years ago, in 2010. One thing that has remained consistent across all my work in that time is the desire to move from the question of individual actions to structural change.</p><p>There are several key anchor points that I return to again and again; these were central to my first book, <em>Putting the Humanities PhD to Work,</em> and remain important today:</p><ol type="1"><li><p><strong>Talking about career diversity is not enough.</strong> I see too many universities tack this on on top of structures that do not support or enable the kind of curiosity and exploration that is essential to opening up new avenues of possibility.</p></li><li><p><strong>Structures reveal and reinforce values.</strong> A university might say they support access and equity, but if their structures are all grounded in prestige, their stated values will not carry much weight. Real values are often most apparent through institutional budgets.</p></li><li><p><strong>Public engagement supports students, the academy, AND society.</strong> Not all scholarship needs to be grounded in community engagement, but when it is, it's crucial to celebrate not only the knowledge but also the relationships as part of the scholarly achievement. We NEED this work in order to continue strengthening public advocacy for higher education, and to infuse fresh thinking and creative approaches to research.</p></li><li><p><strong>We can and should strive toward the possibility of joy and sustainability</strong> -- with the caveat that I don’t think you can talk about joy without acknowledging the systems of power that are currently in place, and working to bring about greater justice and equity in those systems.</p></li></ol><p>It's important to me to connect these threads because too often I hear institutions talk about career preparation or public engagement in a way that is disconnected from the scholarly heart of graduate education, as well as from structural matters within the university; it's added as an afterthought or a corrective. Students rightfully feel betrayed by that; it feels hollow.</p><p>I also believe that equity is at the heart of all of these issues. When we talk about scholarly impact, public engagement, and career pathways, whether we acknowledge it or not we are also talking about the matter of who decides what is considered valuable, whose voices are heard.</p><p>This is an issue not only connected to career pathways, but to the health of the academy itself. It is a question of how to fight for equity and fair labor practices and <em>thriving</em> in the academy <em>while also</em> supporting the application of scholarly engagement beyond the academy — they are not mutually exclusive.</p>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       12 · WHO DEFINES SUCCESS?
+  ================================================================ -->
+  <section class="layout-two-col">
+    <div class="slide-inner">
+      <h2>Redefining success</h2>
+      <div class="col-grid">
+        <div class="col">
+          <h3>Prestige-based model</h3>
+          <ul class="custom-bullets">
+            <li>Replication</li>
+            <li>Research primacy</li>
+            <li>Hidden curriculum</li>
+            <li>Structural inequity</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Purpose-based model</h3>
+          <ul class="custom-bullets">
+            <li>Mentorship accountability</li>
+            <li>Holistic admissions</li>
+            <li>Public & collaborative work</li>
+            <li>Wellbeing & care</li>
+          </ul>
+        </div>
+      </div>
+      <div class="orange-box">Cultural change cannot happen without structural change.</div>
+    </div>
+    <aside class="notes">
+<p>So who defines success in the academy, and in what ways? We know academia isn't a particularly high-paying industry; instead, the primary currency tends to be oriented around prestige.</p><p>Academic success tends to be conservative in its nature — it rewards things that replicate what’s come before. We see this in admissions, in mentorship discussions, in dissertation standards and tenure criteria—all up and down the chain. Research takes precedence over teaching and mentorship, implicitly devaluing the relational parts of the scholarly journey. A lack of explicit guidelines means that the people who come in knowing more about the system than others have an easier time navigating the system. And students and faculty from historically marginalized groups frequently face an inhospitable environment that can lead to burnout and attrition.</p><p>I believe there are ways to foster greater equity and more creative scholarship just by breaking down some of these tacit expectations. Offer evidence-based training for mentorship and advising, and hold advisors accountable. Rather than leaving students to guess what makes a high-quality dissertation, spell it out. Document the purpose of each step in the doctoral education process.</p><p>In addition to structural clarity, what if we thought much more broadly about why scholarly work matters, and to whom, and then recruited and structured our programs according to that broader vision? Then, the curriculum might open up further, creating an organic emphasis on creativity, public engagement, and collaborative work done in relationship with others. We might even imagine a world in which wellbeing, care, and pleasure are understood as an intrinsic part of scholarly success.</p><p>Moreover, deep research is about advancing new knowledge, which is very different than replication. From my own disciplinary background in the humanities, I think a lot about why my field matters. It’s not about a performance of expertise. It matters because it's how we collectively find meaning and understanding in our lives. It's how we approach complicated, nuanced questions about the world we live in. It's how we express ourselves, how we connect with others, how we celebrate, and how we thrive.</p>
+    </aside>
+  </section>
+  
+ <!-- ================================================================
+       13 · SECTION BREAK: NAVIGATING WHERE WE ARE
+  ================================================================ -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Navigating<br><em>Where We Are</em></h2>
+      <div class="section-desc">Some of this is harm reduction. The system is broken. Grad students have an important voice in reform — but you're also in a precarious position. It's important to be a bit selfish.</div>
+    </div>
+    <aside class="notes">
+<p>Thinking about this all at once can feel overwhelming, so for the next few minutes I want to pull back from the broad vision and speak directly to grad students. You need tools to navigate where you are right now, not just a vision for where we hope to get. And the system is broken — so some of this is a matter of harm reduction. You have an important voice in the broader question of reform — but you're also in a precarious position. It's important to be a bit selfish to make sure you can achieve your own goals.</p>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       14 · CELEBRATING SMALLNESS
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Celebrating smallness</h2>
+        <p>Rather than becoming frozen by the scale of change needed, zoom in to the countless small interactions where you <em>can</em> have an impact.</p>
+        <ul class="custom-bullets">
+          <li>Quiet acts can have immeasurable impact</li>
+          <li>Relationships and daily acts matter ("little intimacies," Emily Yoon Perez)
+          <li>Fractal thinking (adrienne maree brown) — What we practice at small scale, we build at large scale</li>
+        </ul>
+      </div>
+      <div class="img-col">
+        <img src="images/tiny_parasol.jpg" alt="A hand holding an incredibly tiny parasol mushroom, with a cap smaller than a grain of rice" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+<p>To think along these lines, I sometimes need to zoom WAY in and think small. Yes, we need broad-scale change. But rather than become frozen by how daunting that seems, sometimes it's worth zooming in to think about the countless small interactions where we CAN have an impact. Through my students, I have learned to value things I might otherwise brush off as small — because quiet acts of change, resistance, and support can have immeasurable impact. Our relationships and daily actions—what Emily Yoon Perez calls “little intimacies”—matter. adrienne maree brown describes this in <em>Emergent Strategy</em> as working in a fractal way: the patterns we're working toward at the broad scale should also be present in the smallest ones.</p>
+    </aside>
+  </section>
+
+ 
+  <!-- ================================================================
+       15 · THRIVING
+  ================================================================ -->
+  <section class="layout-discussion">
+    <div class="slide-inner">
+      <h2>What does thriving look like for you?</h2>
+      <div class="prompt">Forget what formal academic success is supposed to look like. Take one minute to jot down:</div>
+      <ul>
+        <li>A book, film, or song you love</li>
+        <li>A person whose work you admire — <em>work defined broadly</em></li>
+        <li>One thing you'd spend more time on if you could</li>
+      </ul>
+    </div>
+    <aside class="notes">
+<p>It can be hard to think expansively when we're under pressure and deep in our task list. So I want to use this space that we have today to break through that a bit. Forget for a moment what academic success is <em>supposed</em> to look like. Take one minute to think about or jot down three things:</p><ul><li><p>A book, film, or song that you love</p></li><li><p>A person whose work you admire (with work defined broadly)</p></li><li><p>One thing you'd spend more time on if you could</p></li></ul><p>[one minute timer]</p><p>How did that exercise feel for you? What patterns do you see? Are these things you have given yourself space to think about recently, or did it feel hard to allow yourself to go there? Which question was hardest, and why do you think that was? Do your responses align with what you see in your graduate work, or are they very distant?</p><p>I ask these questions because the way you respond gives a glimpse of what thriving looks like for you — and taking that seriously is part of how we shift collectively from survival mode toward the possibility of flourishing. How can you bring more of the essence of these things—what sparks your interest, the way you want to work, the things that light you up—into your studies?</p>
+    </aside>
+  </section>
+
+
+
+  <!-- ================================================================
+       16 · MOVING TOWARD JOY
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Moving toward joy</h2>
+        <p>We get there by committing to action.</p>
+        <div class="highlight-box"><strong>Students:</strong> What is one thing you can do right now to support your goals?</div>
+        <div class="highlight-box"><strong>Faculty and staff:</strong> What can you do to hold space for mycelial work, and to build structures that support it?</div>
+      </div>
+      <div class="img-col">
+        <img src="images/amanita_muscaria.jpg" alt="A photo of amanita muscaria, a bright orange-red mushroom with white dots, against a backdrop of small forest greenery" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+<p>Taking cues from the abundance mindset of Black and Indigenous feminisms and feminisms of color — can we imagine a scholarly environment that is not grounded in competitiveness and scarcity, but is instead grounded in abundance and collective thriving?</p><p>Once again, I think the key to this is starting small. My final question to students is this: what is one thing you can do <em>right now</em> to support your career goals, or to move closer to integrity with your core values? This is not something to put off to a hypothetical less-stressful future. How can you find spaces for nourishment and support even within a context that often feels antithetical to replenishment?</p><p>Faculty and administrators, how can you use your role to make space for your students to do that kind of reflective work? How can you build structures that make space for curiosity, mutual support, and exploration, even within the rigors of doctoral work?</p><p>I have seen so many people step in to support one another when leadership and social structures fell short — what might it look like to design a system with those values at the core? This work requires understanding systems of power — knowing when to work within and against them. We can start today, by working in a way that embodies the values we hope to build into the academy, and by celebrating all the places where we already see those values in action.</p>
+    </aside>
+  </section>
+
+  <!-- ================================================================
+       17 · CLOSING
+  ================================================================ -->
+  <section class="layout-closing">
+<div class="slide-inner">
+      <h2>Thank you</h2>
+      <div class="tagline">Creative, sustainable, equitable solutions for higher education.</div>
+      <div class="orange-rule"></div>
+      <div class="resources-link">Resources gathered at <a href="https://bit.ly/inkcap-resources">bit.ly/inkcap-resources</a></div><br />
+      <div class="contact">
+        Katina L. Rogers<br>
+        <a href="https://inkcapconsulting.com">inkcapconsulting.com</a><br>
+        katina@inkcapconsulting.com
+      </div>
+    </div>
+
+      <aside class="notes">
+<p>Thank you again for giving me the chance to talk with you today, and for generously sharing your time and attention. I’d love to open it up to questions and discussion.</p>
+    </aside>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    history: true,
+    center: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    hash: true,
+  });
+</script>
+<!-- ================================================================
+     LIVE CAPTIONS (backup) — press C to toggle on/off.
+     Uses Chrome's built-in speech recognition (Chrome only; needs
+     internet and microphone permission). Not shown unless turned on.
+================================================================ -->
+<style>
+  #live-captions { position: fixed; left: 50%; bottom: 3.5vh; transform: translateX(-50%); width: min(88vw, 1400px); z-index: 1000; background: rgba(5, 26, 66, 0.88); border-top: 3px solid #006D6F; border-radius: 6px; padding: 0.55em 1em; box-sizing: border-box; font-family: 'Libre Franklin', system-ui, sans-serif; font-size: clamp(18px, 2.3vw, 36px); line-height: 1.35; color: #ffffff; text-align: left; display: none; max-height: 3.6em; overflow: hidden; }
+  #live-captions.on { display: block; }
+  #live-captions .interim { color: rgba(255,255,255,0.65); }
+  #live-captions .status { color: #5fbfc1; font-style: italic; }
+</style>
+<div id="live-captions" aria-live="polite"></div>
+<script>
+(function () {
+  var box = document.getElementById('live-captions');
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var rec = null, on = false, finalText = '';
+  var MAX_CHARS = 160;  // roughly two lines of recent speech
+
+  function esc(t) { return t.replace(/[&<>]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
+  function show(finalPart, interimPart) {
+    var f = finalPart.length > MAX_CHARS ? '…' + finalPart.slice(-MAX_CHARS) : finalPart;
+    box.innerHTML = esc(f) + (interimPart ? ' <span class="interim">' + esc(interimPart) + '</span>' : '');
+  }
+  function status(msg) { box.innerHTML = '<span class="status">' + esc(msg) + '</span>'; }
+
+  function start() {
+    if (!SR) { box.classList.add('on'); status('Live captions need Google Chrome.'); setTimeout(function(){ if (!on) box.classList.remove('on'); }, 4000); return; }
+    on = true; finalText = '';
+    box.classList.add('on'); status('Captions on — listening…');
+    rec = new SR();
+    rec.lang = 'en-US'; rec.continuous = true; rec.interimResults = true;
+    rec.onresult = function (e) {
+      var interim = '';
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        var t = e.results[i][0].transcript;
+        if (e.results[i].isFinal) { finalText = (finalText + ' ' + t).replace(/\s+/g, ' ').trim(); }
+        else { interim += t; }
+      }
+      if (finalText.length > MAX_CHARS * 3) finalText = finalText.slice(-MAX_CHARS * 2);
+      show(finalText, interim);
+    };
+    rec.onerror = function (e) {
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { on = false; status('Microphone access was blocked. Allow the microphone for this page and press C again.'); }
+      else if (e.error === 'network') { status('Captions need an internet connection — retrying…'); }
+    };
+    rec.onend = function () { if (on) { try { rec.start(); } catch (err) {} } };  // restart after pauses
+    try { rec.start(); } catch (err) {}
+  }
+  function stop() {
+    on = false;
+    if (rec) { try { rec.stop(); } catch (err) {} rec = null; }
+    box.classList.remove('on'); box.innerHTML = '';
+  }
+  function toggle() { on ? stop() : start(); }
+
+  if (window.Reveal && Reveal.addKeyBinding) {
+    Reveal.addKeyBinding({ keyCode: 67, key: 'C', description: 'Toggle live captions' }, toggle);
+  } else {
+    document.addEventListener('keydown', function (e) { if ((e.key === 'c' || e.key === 'C') && !e.metaKey && !e.ctrlKey) toggle(); });
+  }
+})();
+</script>
+</body>
+</html>
