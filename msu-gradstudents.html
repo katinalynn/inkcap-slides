@@ -213,6 +213,19 @@
     .orange-box { background: #fdf1ec; border-left: 4px solid var(--color-accent-orange); padding: 0.65em 1em; margin: 0.9em 0; font-size: 0.73em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.6; }
     .img-placeholder { background: var(--color-primary-light); border: 1.5px dashed var(--color-primary); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 0.38em; color: var(--color-primary-dark); text-align: center; padding: 1em; min-height: 160px; }
     .reveal .fragment { transition: opacity 0.3s ease; }
+
+    /* ================================================================
+       READABILITY OVERRIDES (Oct 15): no teal text on navy; larger small text
+       (decorative teal — bullets, rules, bars — is unchanged)
+    ================================================================ */
+    .layout-title .eyebrow { color: #ffffff; font-size: 0.56em; }
+    .layout-title h1 em { color: #ffffff; }
+    .layout-title .subtitle { font-size: 0.64em; color: rgba(255,255,255,0.88); }
+    .layout-title .presenter { font-size: 0.8em; color: rgba(255,255,255,0.92); }
+    .layout-section .section-desc { font-size: 0.7em; color: rgba(255,255,255,0.92); max-width: 78%; }
+    .layout-intros .intro-hi { color: #ffffff; }
+    .layout-closing .tagline { font-size: 0.66em; color: rgba(255,255,255,0.88); }
+    .layout-closing a, .layout-closing .contact a, .layout-closing .resources-link a, .layout-discussion a { color: #ffffff; }
   </style>
 </head>
 
@@ -645,7 +658,7 @@
   #live-captions { position: fixed; left: 50%; bottom: 3.5vh; transform: translateX(-50%); width: min(88vw, 1400px); z-index: 1000; background: rgba(5, 26, 66, 0.88); border-top: 3px solid #006D6F; border-radius: 6px; padding: 0.55em 1em; box-sizing: border-box; font-family: 'Libre Franklin', system-ui, sans-serif; font-size: clamp(18px, 2.3vw, 36px); line-height: 1.35; color: #ffffff; text-align: left; display: none; max-height: 3.6em; overflow: hidden; }
   #live-captions.on { display: block; }
   #live-captions .interim { color: rgba(255,255,255,0.65); }
-  #live-captions .status { color: #5fbfc1; font-style: italic; }
+  #live-captions .status { color: #ffffff; font-style: italic; }
 </style>
 <div id="live-captions" aria-live="polite"></div>
 <script>
