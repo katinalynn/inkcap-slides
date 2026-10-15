@@ -445,6 +445,28 @@
     .reveal a.df-btn:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
 
 
+
+    /* Reflection-tool slides copied from the student deck: match its text sizes */
+    .lineage-panel li, .exercise-panel li { font-size: 0.78em; }
+    .lineage-panel h3, .exercise-panel h3 { font-weight: 400; }
+    ul.custom-bullets ol li { padding-left: 0.2em; }
+    ul.custom-bullets ol li::before { display: none; }
+    /* WHO'S IN THE ROOM (intro variant of discussion) */
+    .layout-intros h2 { margin-bottom: 0.6em; }
+    .layout-intros .intro-rule { width: 56px; height: 3px; background: var(--color-accent-orange); margin: 0 0 1.1em; }
+    .layout-intros .intro-prompt { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; line-height: 1.4; color: #ffffff; border-left: 4px solid var(--color-primary); padding-left: 0.8em; max-width: 88%; }
+    .layout-intros .intro-hi { color: #5fbfc1; }
+    .layout-intros .intro-lead { font-family: var(--font-body); font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: #ffffff; margin: 3.4em 0 0.9em; font-weight: 500; }
+    .layout-discussion.layout-intros ul.intro-list li { border-bottom: none; padding: 0.1em 0 0.1em 1.2em; margin-bottom: 0.15em; position: relative; font-style: normal; font-size: 1.0em; }
+    .layout-intros ul.intro-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); }
+
+    /* SECTION BREAK (teal) */
+    .layout-section { background: var(--color-primary) !important; padding: 0 !important; text-align: left; }
+    .layout-section .slide-inner { padding: 64px 80px; height: var(--slide-height, 720px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; }
+    .layout-section h2 { color: #ffffff; font-size: 2.3em; font-weight: 300; line-height: 1.15; }
+    .layout-section h2 em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .layout-section .section-desc { font-family: var(--font-body); font-size: 0.48em; color: rgba(255,255,255,0.62); margin-top: 1.4em; line-height: 1.7; max-width: 62%; }
+
     /* ================================================================
        READABILITY OVERRIDES (Oct 15): no teal text on navy; larger small text
        (decorative teal — bullets, rules, bars — is unchanged)
@@ -457,6 +479,13 @@
     .layout-intros .intro-hi { color: #ffffff; }
     .layout-closing .tagline { font-size: 0.66em; color: rgba(255,255,255,0.88); }
     .layout-closing a, .layout-closing .contact a, .layout-closing .resources-link a, .layout-discussion a { color: #ffffff; }
+
+    /* Review pass (Oct 15): body text matches student deck; consistent title sizes; larger contact text */
+    .layout-default p, .layout-default li { font-size: 0.78em; }
+    .layout-default-img p, .layout-default-img li { font-size: 0.76em; }
+    .layout-default-img h2 { font-size: 1.85em; }
+    .layout-discussion.layout-intros ul.intro-list li { margin-bottom: 0.35em; }
+    .layout-closing .contact { font-size: 0.66em; color: rgba(255,255,255,0.85); }
   </style>
 </head>
 
@@ -468,7 +497,7 @@
   <section class="layout-title">
     <div class="slide-inner">
       <div class="text-col">
-        <div class="eyebrow">Faculty Workshop &nbsp;·&nbsp; Michigan State University &nbsp;·&nbsp; October 15, 2026</div>
+        <div class="eyebrow">Faculty Workshop &nbsp;·&nbsp; MSU &nbsp;·&nbsp; October 15, 2026</div>
         <h1>
           Putting the mycelial university<br>
           <em>into practice</em>
@@ -481,13 +510,25 @@
           Katina L. Rogers &nbsp;·&nbsp; Inkcap Consulting
         </div>
       </div>
+      <div class="img-col">
+        <img src="images/turkey-tail.jpg" alt="Close up photograph of fan-like turkey tail mushrooms">
+      </div>
     </div>
     <aside class="notes">Welcome and frame the session. Yesterday's keynote laid out the big picture — today let's get into the practical questions faculty actually face. This is a conversation, not a lecture.</aside>
   </section>
 
   <!-- SLIDE 2 -->
-  <section class="layout-default">
+  <section class="layout-section">
     <div class="slide-inner">
+      <h2>Individual<br><em>actions</em></h2>
+      <div class="section-desc">Advising, mentorship, and pedagogy</div>
+    </div>
+    <aside class="notes">Section break.</aside>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; justify-content: center;">
       <h2>Three questions I hear most from faculty</h2>
       <p>These are the questions that have come up repeatedly as I've worked with faculty across institutions:</p>
       <ul class="custom-bullets">
@@ -500,19 +541,19 @@
     <aside class="notes">Reveal each question one click at a time. Pause after each one — invite a nod, a reaction. These are meant to feel like recognition. End with the highlight box to signal this is a back-and-forth, not a presentation.</aside>
   </section>
 
-  <!-- SLIDE 3 -->
+  <!-- SLIDE 4 -->
   <section class="layout-default-img">
     <div class="slide-inner">
-      <div class="content-col" style="flex: 0.6;">
+      <div class="content-col" style="flex: 0.9;">
         <h2>Advising students into the unknown</h2>
-        <p>You don't need to have walked the path to help someone find their way. Effective advising starts with three things:</p>
+        <p>You don't need to have walked the path to help someone find their way. Effective career support starts with three things:</p>
         <ul class="custom-bullets">
-          <li>Curiosity</li>
-          <li>Connection</li>
-          <li>Guidance</li>
+          <li><strong>Curiosity</strong> — about students' goals and values</li>
+          <li><strong>Connection</strong> — build trust before having hard conversations</li>
+          <li><strong>Guidance</strong> — pointing students to resources or other voices</li>
         </ul>
       </div>
-      <div class="img-col" style="flex: 1.4; position: relative; background: var(--color-bg-subtle);">
+      <div class="img-col" style="flex: 1.1; position: relative; background: var(--color-bg-subtle);">
         <!-- Collage: two overlapping screenshots with white frames + borders -->
         <img src="images/msu/msu_career_services.png" alt="MSU career services resources for graduate students" style="position:absolute; left:5%; top:9%; width:62%; box-sizing:border-box; height:auto; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.18); transform:rotate(-2deg); z-index:1;">
         <img src="images/msu/msu_career_services2.png" alt="Additional MSU career services resources for graduate students" style="position:absolute; left:33%; top:45%; width:62%; box-sizing:border-box; height:auto; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.22); transform:rotate(2deg); z-index:2;">
@@ -521,20 +562,86 @@
     <aside class="notes">Spend a few minutes here before opening to discussion. The mentor mapping point is worth dwelling on — it's a concrete tool faculty can use in advising conversations. Consider pausing to ask: "What does your own mentor map look like? Who's in the room for your students?"</aside>
   </section>
 
-  <!-- SLIDE 4 -->
+  <!-- SLIDE 5 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <h2 style="flex-shrink: 0; margin-bottom: 0.45em;">Tools you can use</h2>
+      <div style="flex: 1; min-height: 0; max-height: 400px; margin-bottom: 0.75em; display: flex; justify-content: center;">
+        <img src="images/imaginephd.png" alt="ImaginePhD career exploration tool screenshot" style="max-width: 100%; max-height: 100%; object-fit: contain; object-position: top;">
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        Imagine PhD, Graduate Career Consortium, 2026 — <a href="https://imaginephd.com">imaginephd.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>Imagine PhD [describe]</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="images/yearcompass.png" alt="YearCompass guided reflection booklet screenshot" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="exercise-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">Calendar review exercise</h3>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Look at your calendar for the past year</li>
+            <li>Identify significant events — social, professional, scholarly, personal, etc.</li>
+            <li>What gave you energy?</li>
+            <li>What left you drained?</li>
+            <li>What patterns do you notice in different parts of your life?</li>
+        
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        YearCompass — <a href="https://yearcompass.com">yearcompass.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>YearCompass guide [describe]</p><p>But the important thing I want to emphasize is the undercurrent of this: that your desires matter, and your curiosity matters.</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="images/abrams1.png" alt="Finding Your Purpose zine by Hannah Alpert Abrams" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="lineage-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">What's your lineage?</h3>
+          <blockquote style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 0.86em; line-height: 1.45; color: var(--color-accent-dark); border-left: 4px solid var(--color-primary); margin: 0 0 0.9em; padding: 0 0 0 0.8em; width: auto; box-shadow: none; text-align: left;">“Are there people who you have encountered on your professional journey who made you think: I want to be like you? This may include someone like your dissertation advisor or a scholar you frequently cite. But it may also include people whose disciplines, professions, and lives look nothing like your own. It is likely to include people you love.” —Hannah Alpert-Abrams</blockquote>
+          <div style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 1.2em; color: var(--color-primary); line-height: 1.15; margin: 0.2em 0 0.25em;">Reflect</div>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Identify key themes or values that shape your work</li>
+            <li>Reflect on who you associate with those themes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        Hannah Alpert Abrams, <em>Finding Your Purpose</em>, 2022 — <a href="https://halperta.com">halperta.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>Finding Your Purpose zine/workbook by Hannah Alpert Abrams [describe]</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 8 -->
   <section class="layout-default-img">
     <div class="slide-inner">
-      <div class="content-col">
+      <div class="content-col" style="flex: 1.3; padding-top: 40px; padding-bottom: 36px;">
         <h2>Supporting students in challenging circumstances</h2>
         <p>International students, students with precarious status, and others navigating structural barriers need the same core things — with extra attentiveness.</p>
         <ul class="custom-bullets">
           <li>Ask what's most top of mind; don't assume you know what they're facing</li>
-          <li>Know where to find institutional resources before a crisis makes them urgent</li>
+          <li>Know where to find resources before a crisis makes them urgent</li>
           <li>Connect with local organizers who understand the specific terrain</li>
         </ul>
-        <div class="highlight-box">Your role isn't to solve every problem — it's to make sure students don't have to face them entirely alone.</div>
+        <div class="highlight-box">Your role isn't to solve every problem.</div>
       </div>
-      <div class="img-col" style="display: flex; flex-direction: column;">
+      <div class="img-col" style="flex: 0.7; display: flex; flex-direction: column;">
         <img src="images/msu/msu_lama.png" alt="MSU LAMA" style="flex: 1; width:100%; object-fit:contain; background:#fff;">
         <img src="images/msu/msu_intl_students.png" alt="MSU Office for International Students and Scholars" style="flex: 1; width:100%; object-fit:contain; background:#fff;">
         <img src="images/msu/msu_voces.jpg" alt="MSU VOCES" style="flex: 1; width:100%; object-fit:contain; background:#fff;">
@@ -543,36 +650,52 @@
     <aside class="notes">This section may bring up anxiety in the room — that's appropriate. Acknowledge it. The point isn't to have all the answers, but to have done enough advance work to be a reliable resource. Ask: "Do you know what resources your institution has? Has that changed recently?"</aside>
   </section>
 
-  <!-- SLIDE 5 -->
-  <section class="layout-two-col">
+  <!-- SLIDE 9 -->
+  <section class="layout-default-img">
     <div class="slide-inner">
-      <h2>Rigor and openness are not opposites</h2>
-      <div class="col-grid">
-        <div class="col">
-          <h3>The false opposition</h3>
-          <ul class="custom-bullets">
-            <li>Difficulty is not the same as quality</li>
-            <li>Gatekeeping rarely develops scholars — it mostly filters them</li>
-            <li>Narrowing too soon is a risk, not a virtue</li>
-          </ul>
-        </div>
-        <div class="col">
-          <h3>Practical strategies</h3>
-          <ul class="custom-bullets">
-            <li>Start with clarity: what are the requirements, and <em>why</em>?</li>
-            <li>Build lower-stakes moments for exploration into coursework</li>
-            <li>Draw on existing pedagogical resources — you don't have to invent this</li>
-          </ul>
-        </div>
+      <div class="content-col">
+        <h2>Rigor and openness are not opposites</h2>
+        <ul class="custom-bullets">
+          <li>Difficulty is not the same as quality</li>
+          <li>Start with clarity: what are the requirements, and <em>why</em>?</li>
+          <li>Build lower-stakes moments for exploration into coursework</li>
+          <li>Draw on existing pedagogical resources — you don't have to invent this</li>
+        </ul>
+        <div class="highlight-box" style="margin-top: 1.2em;">Some of the most creative work is also the most rigorous. The goal is to cultivate both.</div>
       </div>
-      <div class="highlight-box" style="margin-top: 1.4em;">Some of the most creative work is also the most rigorous. The goal is to cultivate both.</div>
+      <div class="img-col">
+        <img src="images/ghost-pipes.jpg" alt="White ghost pipe plants growing in leaf litter" style="width:100%; height:100%; object-fit:cover;">
+      </div>
     </div>
     <aside class="notes">This often generates the most animated discussion. The false opposition framing may push back on assumptions some faculty hold strongly — approach with curiosity, not confrontation. Ask: "Where do you feel tension between rigor and openness in your own teaching or mentorship?"</aside>
   </section>
 
-  <!-- SLIDE 6 -->
-  <section class="layout-default">
+  <!-- SLIDE 10 -->
+  <section class="layout-discussion layout-intros">
     <div class="slide-inner">
+      <h2>Discussion</h2>
+      <ul class="intro-list">
+        <li>What is one teaching or advising practice that you feel you do well?</li>
+        <li class="fragment">Where do you feel least equipped to support students right now?</li>
+        <li class="fragment">What are the things that excite you most in graduate student work?</li>
+        <li class="fragment">What is one practice you could adopt or strengthen to support career reflection?</li>
+      </ul>
+    </div>
+    <aside class="notes">Give the room genuine time here — don't rush to debrief. If energy is high in small groups, let it run a bit long. When you pull back together, ask one person from each table to share a thread rather than a summary. The goal is to surface questions, not close them down.</aside>
+  </section>
+
+  <!-- SLIDE 11 -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Moving toward<br><em>structural change</em></h2>
+      <div class="section-desc">Using findings from ACLS Doctoral Futures to support next steps</div>
+    </div>
+    <aside class="notes">Section break.</aside>
+  </section>
+
+  <!-- SLIDE 12 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; justify-content: center;">
       <h2>Overall recommendations</h2>
       <p>A few places to start, at the program level and in individual advising:</p>
       <ul class="custom-bullets">
@@ -585,7 +708,7 @@
     <aside class="notes">Pull the threads together. A program review doesn't have to be a formal external process — it can start with a department looking honestly at what its requirements, milestones, and incentives signal to students. Self-reflection works best as a regular habit rather than a single exit exercise: noticing what energizes and what drains, which problems students are drawn to, which collaborations bring out their best thinking. And thinking expansively as well as deeply means making room for curiosity beyond the dissertation topic, which is where many unexpected pathways begin.</aside>
   </section>
 
-  <!-- SLIDE 7 -->
+  <!-- SLIDE 13 -->
   <section class="layout-default">
     <div class="slide-inner" style="display: flex; flex-direction: column; padding: 40px 72px 44px; box-sizing: border-box;">
       <h2 style="flex-shrink: 0;">ACLS Doctoral Futures</h2>
@@ -595,6 +718,7 @@
       <div class="df-buttons">
         <a class="df-btn" href="https://docs.google.com/document/d/1ccI7AgOiWQbjTJHA_uj45ucaMvNvrtIjOO84N56C2YY/edit?tab=t.0" target="_blank" rel="noopener">Recommendations ↗</a>
         <a class="df-btn" href="https://works.hcommons.org/collections/doctoral-futures/" target="_blank" rel="noopener">Resources ↗</a>
+        <a class="df-btn" href="https://docs.google.com/document/d/1CYTHcMV81mM-nZJjEny6LEz-XQ8OI3bqw9qq-eMN5rI/edit?tab=t.0" target="_blank" rel="noopener">Actions ↗</a>
       </div>
       <div style="flex-shrink: 0; text-align: center; margin-top: 0.9em; font-family: var(--font-body); font-size: 0.6em;">
         <a href="https://www.acls.org/doctoral-futures/" target="_blank">acls.org/doctoral-futures</a>
@@ -603,9 +727,23 @@
     <aside class="notes">The Doctoral Futures initiative is working to turn what we've heard in listening sessions into concrete recommendations and models for programs. More information is at acls.org/doctoral-futures.</aside>
   </section>
 
-  <!-- SLIDE 8 -->
-  <section class="layout-default">
+  <!-- SLIDE 14 -->
+  <section class="layout-discussion layout-intros">
     <div class="slide-inner">
+      <h2>What can you do?</h2>
+      <div class="intro-prompt" style="margin-bottom: 0.45em;">Building on all this, consider:</div>
+      <ul class="intro-list" style="margin-top: 0;">
+        <li>What is one short-term action you can take?</li>
+        <li>What is one longer-term change you would like to build towards?</li>
+        <li>What obstacles do you anticipate?</li>
+      </ul>
+    </div>
+    <aside class="notes">Reflection activity.</aside>
+  </section>
+
+  <!-- SLIDE 15 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; justify-content: center;">
       <h2>Your own wellbeing matters, too</h2>
       <p>Faculty face real structural pressures — precarity, overwork, competing demands on time and energy.</p>
       <ul class="custom-bullets">
@@ -613,25 +751,12 @@
         <li>Sustainable practices in your own work make genuine mentorship possible</li>
         <li>Setting limits models something essential for students who struggle to do the same</li>
       </ul>
-      <div class="orange-box">The way you navigate these challenges teaches students at least as much as your curriculum does.</div>
+      <div class="highlight-box">The way you navigate these challenges teaches students at least as much as your curriculum does.</div>
     </div>
     <aside class="notes">This slide often lands quietly. Give it space. Faculty are not used to being asked how they're doing. You can ask directly: "What does sustainability look like in your own work right now? What would you want to model for your students — and what's getting in the way?"</aside>
   </section>
 
-  <!-- SLIDE 9 -->
-  <section class="layout-discussion">
-    <div class="slide-inner">
-      <h2>Discussion</h2>
-      <ul>
-        <li>When has a student surprised you with where they wanted to go? How did you respond?</li>
-        <li>Where do you feel least equipped in advising right now — and what would actually help?</li>
-        <li>What are you already doing well that you could do more <em>intentionally</em>?</li>
-      </ul>
-    </div>
-    <aside class="notes">Give the room genuine time here — don't rush to debrief. If energy is high in small groups, let it run a bit long. When you pull back together, ask one person from each table to share a thread rather than a summary. The goal is to surface questions, not close them down.</aside>
-  </section>
-
-  <!-- SLIDE 10 -->
+  <!-- SLIDE 16 -->
   <section class="layout-closing">
     <div class="slide-inner">
       <h2>Thank you</h2>

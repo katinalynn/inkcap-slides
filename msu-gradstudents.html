@@ -194,7 +194,7 @@
     .layout-intros .intro-hi { color: #5fbfc1; }
     .layout-intros .intro-lead { font-family: var(--font-body); font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: #ffffff; margin: 3.4em 0 0.9em; font-weight: 500; }
     .layout-discussion.layout-intros ul.intro-list li { border-bottom: none; padding: 0.1em 0 0.1em 1.2em; margin-bottom: 0.15em; position: relative; font-style: normal; font-size: 1.0em; }
-    .layout-intros ul.intro-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #5fbfc1; }
+    .layout-intros ul.intro-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); }
 
     /* Numbered sub-items inside teal-dot lists: no extra dot */
     ul.custom-bullets ol li { padding-left: 0.2em; }
@@ -503,8 +503,8 @@
   <section class="layout-discussion layout-intros">
     <div class="slide-inner">
       <h2>Taking stock</h2>
-      <div class="intro-prompt" style="margin-bottom: 1.1em;">Take a few minutes to reflect and write:</div>
-      <ul class="intro-list">
+      <div class="intro-prompt" style="margin-bottom: 0.45em;">Take a few minutes to reflect and write:</div>
+      <ul class="intro-list" style="margin-top: 0;">
         <li>What gives you energy in your work right now? What drains it?</li>
         <li>What would you like more of in the year ahead — in work, and beyond it?</li>
         <li>One small step you could take this month</li>
