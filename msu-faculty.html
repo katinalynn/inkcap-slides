@@ -439,6 +439,11 @@
     .reveal .fragment {
       transition: opacity 0.3s ease;
     }
+    /* LINK BUTTONS (Doctoral Futures slide) */
+    .df-buttons { flex-shrink: 0; display: flex; justify-content: center; gap: 28px; margin-top: 1.1em; }
+    .reveal a.df-btn { font-family: var(--font-body); font-size: 0.8em; font-weight: 500; padding: 0.55em 1.5em; border-radius: 5px; background: var(--color-primary); color: #fff; border: 2px solid var(--color-primary); text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .reveal a.df-btn:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
+
   </style>
 </head>
 
@@ -571,10 +576,14 @@
   <section class="layout-default">
     <div class="slide-inner" style="display: flex; flex-direction: column; padding: 40px 72px 44px; box-sizing: border-box;">
       <h2 style="flex-shrink: 0;">ACLS Doctoral Futures</h2>
-      <div style="flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center;">
+      <div style="flex: 1; min-height: 0; max-height: 330px; margin-top: 0.4em; display: flex; align-items: center; justify-content: center;">
         <img src="images/doctoral-futures.png" alt="ACLS Doctoral Futures initiative" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 6px 24px rgba(0,0,0,0.13);">
       </div>
-      <div style="flex-shrink: 0; text-align: center; margin-top: 0.7em; font-family: var(--font-body); font-size: 0.8em;">
+      <div class="df-buttons">
+        <a class="df-btn" href="https://docs.google.com/document/d/1ccI7AgOiWQbjTJHA_uj45ucaMvNvrtIjOO84N56C2YY/edit?tab=t.0" target="_blank" rel="noopener">Recommendations ↗</a>
+        <a class="df-btn" href="https://works.hcommons.org/collections/doctoral-futures/" target="_blank" rel="noopener">Resources ↗</a>
+      </div>
+      <div style="flex-shrink: 0; text-align: center; margin-top: 0.9em; font-family: var(--font-body); font-size: 0.6em;">
         <a href="https://www.acls.org/doctoral-futures/" target="_blank">acls.org/doctoral-futures</a>
       </div>
     </div>

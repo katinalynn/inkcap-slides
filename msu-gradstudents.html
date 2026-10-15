@@ -192,9 +192,18 @@
     .layout-intros .intro-rule { width: 56px; height: 3px; background: var(--color-accent-orange); margin: 0 0 1.1em; }
     .layout-intros .intro-prompt { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; line-height: 1.4; color: #ffffff; border-left: 4px solid var(--color-primary); padding-left: 0.8em; max-width: 88%; }
     .layout-intros .intro-hi { color: #5fbfc1; }
-    .layout-intros .intro-lead { font-family: var(--font-body); font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-orange); margin: 1.6em 0 0.6em; font-weight: 500; }
+    .layout-intros .intro-lead { font-family: var(--font-body); font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: #ffffff; margin: 3.4em 0 0.9em; font-weight: 500; }
     .layout-discussion.layout-intros ul.intro-list li { border-bottom: none; padding: 0.1em 0 0.1em 1.2em; margin-bottom: 0.15em; position: relative; font-style: normal; font-size: 1.0em; }
     .layout-intros ul.intro-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #5fbfc1; }
+
+    /* Numbered sub-items inside teal-dot lists: no extra dot */
+    ul.custom-bullets ol li { padding-left: 0.2em; }
+    ul.custom-bullets ol li::before { display: none; }
+
+    /* LINK BUTTONS (Doctoral Futures slide) */
+    .df-buttons { flex-shrink: 0; display: flex; justify-content: center; gap: 28px; margin-top: 1.1em; }
+    .reveal a.df-btn { font-family: var(--font-body); font-size: 0.8em; font-weight: 500; padding: 0.55em 1.5em; border-radius: 5px; background: var(--color-primary); color: #fff; border: 2px solid var(--color-primary); text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .reveal a.df-btn:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
 
     /* UTILITIES */
     ul.custom-bullets { list-style: none !important; margin-left: 0 !important; }
@@ -244,7 +253,7 @@
     <p>Reflective practices to <em>build a foundation</em> for your career journey:</p>
               <ul class="expect-list">
            <li class="expect-yes">A focus on reflection and discernment</li> 
-           <li class="expect-yes">Lenses that may change how you think about your work</li>                   
+           <li class="expect-yes">Tools to help you advocate for change & support</li>                   
           </ul>
             <p>It won't address the things specific to your own pathway:</p>
 <ul class="expect-list">
@@ -263,11 +272,11 @@
 
   <!-- SLIDE 3 -->
   <!-- ================================================================
-       3 · WHO'S IN THE ROOM?
+       3 · INTROS
   ================================================================ -->
   <section class="layout-discussion layout-intros">
     <div class="slide-inner">
-      <h2>Who's in the room?</h2>
+      <h2>Intros</h2>
       <div class="intro-prompt">Building on the prompt from yesterday: think of <span class="intro-hi">one thing</span> you'd spend more time on if you could.</div>
       <div class="intro-lead">Then introduce yourself with:</div>
       <ul class="intro-list">
@@ -317,7 +326,19 @@
 
   <!-- SLIDE 5 -->
   <!-- ================================================================
-       5 · WHERE DO I EVEN START?
+       5 · SECTION: FINDING YOUR WAY
+  ================================================================ -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Finding<br><em>your way</em></h2>
+      <div class="section-desc">A practical framework for reflection and discernment.</div>
+    </div>
+    <aside class="notes">Transition from introductions and my own story into practical tools for finding your way.</aside>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <!-- ================================================================
+       6 · WHERE DO I EVEN START?
   ================================================================ -->
   <section class="layout-wherebegin">
     <div class="slide-inner">
@@ -341,9 +362,9 @@
     <aside class="notes">This is a cycle, not a checklist — that's why "repeat" gets its own color. Once you've reflected, you're back to reassessing what's working, and the loop starts again.</aside>
   </section>
 
-  <!-- SLIDE 6 -->
+  <!-- SLIDE 7 -->
   <!-- ================================================================
-       6 · DISCERNMENT AND DISCOVERY
+       7 · DISCERNMENT AND DISCOVERY
   ================================================================ -->
   <section class="layout-default-img">
     <div class="slide-inner">
@@ -351,10 +372,10 @@
         <h2>Discernment and discovery</h2>
         <div style="display: flex; align-items: flex-start; gap: 1.4em;">
           <ul class="custom-bullets" style="flex: 1; margin: 0;">
-            <li><strong>Finding Your Purpose</strong> — zine/workbook by Hannah Alpert Abrams</li>
+            <li><strong>Institutional resources</strong> — via the Grad School & the Career Services Network</li>
             <li><strong>Imagine PhD</strong> — robust, research-based career exploration tool</li>
             <li><strong>YearCompass</strong> — guided reflection and goal-setting</li>
-            <li><strong>Institutional resources</strong></li>
+            <li><strong>Finding Your Purpose</strong> — zine/workbook by Hannah Alpert Abrams</li>
           </ul>
           <div style="flex-shrink: 0; text-align: center; border: 2px solid var(--color-primary); border-radius: 4px; padding: 0.5em;">
             <img src="images/qr-inkcap-resources.png" alt="QR code for bit.ly/inkcap-resources" style="width: 120px; height: 120px; display: block; margin: 0 auto;">
@@ -372,28 +393,25 @@
     </aside>
   </section>
 
-  <!-- SLIDE 7 -->
-  <!-- ================================================================
-       7 · FINDING YOUR PURPOSE (Abrams)
-  ================================================================ -->
-  <section class="layout-default">
-    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
-      <div style="flex: 1; display: flex; gap: 1.2em; min-height: 0; margin-bottom: 0.75em; align-items: flex-start;">
-        <img src="images/abrams1.png" alt="Finding Your Purpose zine by Hannah Alpert Abrams" style="flex: 1.6; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
-        <img src="images/abrams2.png" alt="Finding Your Purpose interior spread" style="flex: 1.2; min-width: 0; max-height: 100%; object-fit: contain; object-position: center; align-self: center;">
-      </div>
-      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
-        Hannah Alpert Abrams, <em>Finding Your Purpose</em>, 2022 — <a href="https://halperta.com">halperta.com</a>
-      </div>
-    </div>
-    <aside class="notes">
-<p>Finding Your Purpose zine/workbook by Hannah Alpert Abrams [describe]</p>
-    </aside>
-  </section>
-
   <!-- SLIDE 8 -->
   <!-- ================================================================
-       8 · IMAGINE PHD
+       8 · INSTITUTIONAL RESOURCES
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 44px 80px 36px; box-sizing: border-box;">
+      <h2 style="flex-shrink: 0; margin-bottom: 0.4em;">Institutional resources</h2>
+      <div style="flex: 1; min-height: 0; position: relative; background: var(--color-bg-subtle); border-radius: 4px;">
+        <!-- Collage: two overlapping screenshots with white frames + borders (same as faculty deck) -->
+        <img src="images/msu/msu_career_services.png" alt="MSU career services resources for graduate students" style="position:absolute; left:6%; top:6%; width:48%; height:auto; box-sizing:border-box; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.18); transform:rotate(-2deg); z-index:1;">
+        <img src="images/msu/msu_career_services2.png" alt="Additional MSU career services resources for graduate students" style="position:absolute; left:45%; top:27%; width:48%; height:auto; box-sizing:border-box; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.22); transform:rotate(2deg); z-index:2;">
+      </div>
+    </div>
+    <aside class="notes">MSU Graduate School career development resources.</aside>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <!-- ================================================================
+       9 · IMAGINE PHD
   ================================================================ -->
   <section class="layout-default">
     <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
@@ -409,14 +427,25 @@
     </aside>
   </section>
 
-  <!-- SLIDE 9 -->
+  <!-- SLIDE 10 -->
   <!-- ================================================================
-       9 · YEARCOMPASS
+       10 · YEARCOMPASS
   ================================================================ -->
   <section class="layout-default">
     <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
-      <div style="flex: 1; min-height: 0; margin-bottom: 0.75em;">
-        <img src="images/yearcompass.png" alt="YearCompass guided reflection booklet screenshot" style="width: 100%; height: 100%; object-fit: contain; object-position: top;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="images/yearcompass.png" alt="YearCompass guided reflection booklet screenshot" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="exercise-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">Calendar review exercise</h3>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Look at your calendar for the past year</li>
+            <li>Identify significant events — social, professional, scholarly, personal, etc.</li>
+            <li>What gave you energy?</li>
+            <li>What left you drained?</li>
+            <li>What patterns do you notice in different parts of your life?</li>
+        
+          </ul>
+        </div>
       </div>
       <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
         YearCompass — <a href="https://yearcompass.com">yearcompass.com</a>
@@ -427,38 +456,42 @@
     </aside>
   </section>
 
-  <!-- SLIDE 10 -->
+  <!-- SLIDE 11 -->
   <!-- ================================================================
-       10 · PRINCIPLES FOR THE PATH
+       11 · FINDING YOUR PURPOSE (Abrams)
   ================================================================ -->
   <section class="layout-default">
-    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 44px 80px 0; box-sizing: border-box;">
-      <h2 style="margin-bottom: 0.3em;">Principles for the path</h2>
-      <ul class="custom-bullets" style="margin-bottom: 0.8em; line-height: 1.3;">
-        <li>Know what you need.</li>
-        <li>Guard your time.</li>
-        <li>Seek resources before you need them.</li>
-        <li>Name and <em>own</em> your skills.</li>
-        <li>Find your people.</li>
-      </ul>
-      <div style="flex: 1; min-height: 0; overflow: hidden;">
-        <img src="images/sequence.jpg" alt="A row of false turkeytail mushrooms, looking almost like steps along a path" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="images/abrams1.png" alt="Finding Your Purpose zine by Hannah Alpert Abrams" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="lineage-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">What's your lineage?</h3>
+          <blockquote style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 0.86em; line-height: 1.45; color: var(--color-accent-dark); border-left: 4px solid var(--color-primary); margin: 0 0 0.9em; padding: 0 0 0 0.8em; width: auto; box-shadow: none; text-align: left;">“Are there people who you have encountered on your professional journey who made you think: I want to be like you? This may include someone like your dissertation advisor or a scholar you frequently cite. But it may also include people whose disciplines, professions, and lives look nothing like your own. It is likely to include people you love.” —Hannah Alpert-Abrams</blockquote>
+          <div style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 1.2em; color: var(--color-primary); line-height: 1.15; margin: 0.2em 0 0.25em;">Reflect</div>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Identify key themes or values that shape your work</li>
+            <li>Reflect on who you associate with those themes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        Hannah Alpert Abrams, <em>Finding Your Purpose</em>, 2022 — <a href="https://halperta.com">halperta.com</a>
       </div>
     </div>
     <aside class="notes">
-<p>I want to share a few guiding principles to keep in mind as you move through your path:</p><ul><li><p>First, be mindful of what you need and of what brings you joy. Return to that earlier question of what thriving looks like. Don't lose sight of it, even when the system discourages you from asking.</p></li><li><p>Guard your time. You don't have to say yes to everything. Sometimes it's worth taking on new projects; sometimes it's not.</p></li><li><p>Seek out and use resources well before you need them. Lots of people have been working on these questions and there are many tools to support you, if you are open to them.</p></li><li><p>Name and really OWN your skills. In grad school, it can sometimes be hard to see what makes you special, because everyone around you is operating at such a high level as well. But the skills you gain here are incredibly useful. Teaching, writing, research design, community engagement — practice articulating these in multiple registers.</p></li><li><p>Finally, and maybe most important: Find your people. Connect with peers -- Create a writing group, connect with people outside the university, figure out who you can lean on. Identify mentors -- Who among the faculty will have your back when you need it? Maybe your advisor, maybe someone else. Always be building relationships—not only because networking is important professionally, but because these are the relationships that sustain us.</p></li></ul>
+<p>Finding Your Purpose zine/workbook by Hannah Alpert Abrams [describe]</p>
     </aside>
   </section>
 
-  <!-- SLIDE 11 -->
+  <!-- SLIDE 12 -->
   <!-- ================================================================
-       11 · REFLECTION
+       12 · REFLECTION
   ================================================================ -->
-  <section class="layout-discussion">
+  <section class="layout-discussion layout-intros">
     <div class="slide-inner">
       <h2>Taking stock</h2>
-      <div class="prompt">Take five minutes to write. Start where step one begins: what's working for you, and what's not?</div>
-      <ul>
+      <div class="intro-prompt" style="margin-bottom: 1.1em;">Take a few minutes to reflect and write:</div>
+      <ul class="intro-list">
         <li>What gives you energy in your work right now? What drains it?</li>
         <li>What would you like more of in the year ahead — in work, and beyond it?</li>
         <li>One small step you could take this month</li>
@@ -467,9 +500,80 @@
     <aside class="notes">Give a full five minutes of quiet writing time. Responses are for them — no one has to share. This loops back to the first step in "Where do I even start?": assessing what's working and what's not. Encourage them to keep the last answer small and concrete.</aside>
   </section>
 
-  <!-- SLIDE 12 -->
+  <!-- SLIDE 13 -->
   <!-- ================================================================
-       12 · DISCUSSION
+       13 · SECTION: ADVOCATING FOR YOURSELF AND OTHERS
+  ================================================================ -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Advocating for<br><em>yourself and others</em></h2>
+      <div class="section-desc">Tools and resources to help understand and shape the system.</div>
+    </div>
+    <aside class="notes">Transition from individual reflection to advocating for yourself and for change in your program and field.</aside>
+  </section>
+
+  <!-- SLIDE 14 -->
+  <!-- ================================================================
+       14 · WHAT THE RESEARCH TELLS US
+  ================================================================ -->
+  <section class="layout-callout">
+    <div class="slide-inner">
+      <h2>What the research tells us</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="card-num">1</span>
+          <span class="card-text">Advisor quality is decisive.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">2</span>
+          <span class="card-text">Funding is systematically inadequate.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">3</span>
+          <span class="card-text">Peer communities are lifelines.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">4</span>
+          <span class="card-text">Early career guidance matters.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">5</span>
+          <span class="card-text">Curricular clarity supports success.</span>
+        </div>
+        <div class="stat-card stat-card--teal">
+          <span class="card-text">ACLS Doctoral Futures Initiative, 2025–26</span>
+        </div>
+      </div>
+    </div>
+      <aside class="notes">
+<p>Through this work, a few things have emerged as key elements for student success:</p><ol type="1"><li><p><strong>Advisor quality</strong>. A supportive advisor is perhaps the most crucial element in student progress and well-being. However, advising practices vary significantly and are not often institutionally rewarded, leaving students in a precarious position without clear guidelines to navigate challenges. This is something I’ll be talking about in depth in the faculty workshop tomorrow.</p></li><li><p><strong>Material support</strong>. Adequate funding is essential to student progress, but the typical stipend falls short of a living wage. Students face food insecurity and impossible trade-offs. If you can't pay rent, care for your kid, or go to the doctor, there's no way you can do your best intellectual work.</p></li><li><p><strong>Non-competitive peer networks.</strong> Informal peer networks provide crucial support, especially when formal structures fail. Grad students regularly turn to their peers to understand the hidden curriculum, to form writing groups, and so much more. In many institutions right now, program size reductions are making this increasingly difficult.</p></li><li><p><strong>Career guidance.</strong> While grad career advising has improved in many institutions, for many students the discussion starts too late, toward the end of their studies. It should be integrated into the entire curriculum—not just a standalone career center, but in discussions within the department—from the very beginning of a student's program. Even before someone applies, they should have a sense of where alumni tend to be employed and what their own career prospects might be.</p></li><li><p><strong>Curricular clarity supports success.</strong> Students—and really, faculty—should know why each step of their program matters. What is the goal of the exam? What constitutes a successful dissertation? Alongside this clarity, flexibility can provide essential breathing room—either for non-traditional research approaches, or for the unexpected curveballs that are a part of life. Clear guidelines plus space for creative work and timing adjustments leads to stronger progress and more meaningful research.</p></li></ol><p>These are not impossible changes! While some of these interventions—like funding—require significant resources, not all of them do. Some of the changes could be made right now with sufficient collective will.</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 15 -->
+  <!-- ================================================================
+       15 · ACLS DOCTORAL FUTURES
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 40px 72px 44px; box-sizing: border-box;">
+      <h2 style="flex-shrink: 0;">ACLS Doctoral Futures</h2>
+      <div style="flex: 1; min-height: 0; max-height: 330px; margin-top: 0.4em; display: flex; align-items: center; justify-content: center;">
+        <img src="images/doctoral-futures.png" alt="ACLS Doctoral Futures initiative" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 6px 24px rgba(0,0,0,0.13);">
+      </div>
+      <div class="df-buttons">
+        <a class="df-btn" href="https://docs.google.com/document/d/1ccI7AgOiWQbjTJHA_uj45ucaMvNvrtIjOO84N56C2YY/edit?tab=t.0" target="_blank" rel="noopener">Recommendations ↗</a>
+        <a class="df-btn" href="https://works.hcommons.org/collections/doctoral-futures/" target="_blank" rel="noopener">Resources ↗</a>
+      </div>
+      <div style="flex-shrink: 0; text-align: center; margin-top: 0.9em; font-family: var(--font-body); font-size: 0.6em;">
+        <a href="https://www.acls.org/doctoral-futures/" target="_blank">acls.org/doctoral-futures</a>
+      </div>
+    </div>
+    <aside class="notes">The Doctoral Futures initiative is working to turn what we've heard in listening sessions into concrete recommendations and models for programs. More information is at acls.org/doctoral-futures.</aside>
+  </section>
+
+  <!-- SLIDE 16 -->
+  <!-- ================================================================
+       16 · DISCUSSION
   ================================================================ -->
   <section class="layout-default-img">
     <div class="slide-inner">
@@ -490,9 +594,9 @@
     <aside class="notes">Open discussion. Depending on the size of the group, start with pairs or small groups for a few minutes, then come back together. The third question connects to the peer programming the fellows will be developing this year.</aside>
   </section>
 
-  <!-- SLIDE 13 -->
+  <!-- SLIDE 17 -->
   <!-- ================================================================
-       13 · CLOSING
+       17 · CLOSING
   ================================================================ -->
   <section class="layout-closing">
 <div class="slide-inner">
