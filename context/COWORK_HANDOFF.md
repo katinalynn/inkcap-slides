@@ -22,6 +22,10 @@ HTML/Reveal.js slide decks for Katina's talks, all sharing brand CSS matched to 
 | `alabama-workshop.html` | Faculty workshop, University of Alabama | May 2026 | 8 |
 | `inkcap-keynote-template.html` | Blank master template | — | 13 |
 
+### File naming and publishing
+
+Decks use short, lowercase, hyphenated filenames with no dates: `[venue].html` or `[venue]-[format].html` (e.g., `cuny.html`, `msu-keynote.html`, `alabama-workshop.html`). The repo is published with GitHub Pages, so each filename becomes a public URL, e.g. `https://katinalynn.github.io/inkcap-slides/msu-keynote.html`. Keep names short and easy to say aloud. If a venue repeats, add the year (`msu-2027.html`). Renaming or moving a deck changes its URL, so links and QR codes that point to the old URL will stop working.
+
 Other files: `faculty-workshop-script.docx` (workshop script), `flourishing-deck-session-handoff.md` (notes from the CUNY deck session), `context/inkcap-template-cheatsheet.md` (editing guide).
 
 ---
