@@ -258,7 +258,7 @@ Custom teal circular dot: 5px, color `#06606d`, positioned 0.52em from top, text
 | Discussion | Navy `#051A42` | `#f5f3ee` | Italic Cormorant, 88% white | Audience engagement |
 | Closing | Navy `#051A42` | `#f5f3ee` | 52% white | Q&A and contact |
 
-**Canvas:** 1280 × 720px (16:9). **Transition:** fade, slow. **Full implementation:** `/mnt/skills/user/inkcap-slides/`.
+**Canvas:** 1280 × 720px (16:9). **Transition:** fade, slow. **Full implementation:** the `inkcap-slides` skill, and `inkcap-keynote-template.html` in the talks folder.
 
 ---
 

@@ -1,20 +1,28 @@
 # Inkcap Slides — Cowork Handoff Document
 
-**Last updated:** May 7, 2026  
-**Purpose:** Everything Cowork needs to continue work on Katina's slide decks.
+**Last updated:** October 16, 2026  
+**Purpose:** Everything Claude needs to continue work on Katina's slide decks.
+
+**Location:** `~/Desktop/talks` on Katina's laptop (moved out of the old `~/Desktop/cowork/talks` folder in October 2026). It is a git repo backed up to GitHub at `katinalynn/inkcap-slides`. Do not move it into a Google Drive sync folder, since Drive sync can corrupt git repos. For Claude to work on these files directly, Katina connects this folder to the session.
 
 ---
 
 ## Project at a glance
 
-Three HTML/Reveal.js slide decks for upcoming talks, all sharing brand CSS matched exactly to inkcapconsulting.com. Two decks are in active development; one is a reusable template.
+HTML/Reveal.js slide decks for Katina's talks, all sharing brand CSS matched to inkcapconsulting.com. Decks sit in the root of the folder; shared images are in `images/` (with per-venue subfolders such as `images/msu/` and `images/alabama/`); reference docs are in `context/`.
 
-| File | Event | Date | Slides | Status |
-|---|---|---|---|---|
-| `2026-05-15_Alabama_Unexpected_Flourishing.html` | Keynote, Univ. of Alabama | May 15, 2026 | 14 | In progress — content edits ongoing on slides 9+ |
-| `2026-06-15_Stockholm_Unexpected_Flourishing.html` | Book talk, Stockholm Univ. | June 15, 2026 | 14 | In progress — content edits ongoing on slides 9+ |
-| `inkcap-keynote-template.html` | Master template | — | 13 | Complete |
-| `inkcap-template-cheatsheet.md` | Editing guide | — | — | Complete |
+| File | Event | Date | Slides |
+|---|---|---|---|
+| `msu-keynote.html` | Keynote, Michigan State University | Oct 2026 | 17 |
+| `msu-faculty.html` | Faculty workshop, Michigan State University | Oct 2026 | 17 |
+| `msu-gradstudents.html` | Graduate student workshop, Michigan State University | Oct 2026 | 17 |
+| `cuny.html` | Talk, The Graduate Center, CUNY | Aug 4, 2026 | 9 |
+| `stockholm.html` | Book talk, Stockholm University | June 2026 | 20 |
+| `alabama.html` | Keynote, University of Alabama | May 2026 | 19 |
+| `alabama-workshop.html` | Faculty workshop, University of Alabama | May 2026 | 8 |
+| `inkcap-keynote-template.html` | Blank master template | — | 13 |
+
+Other files: `faculty-workshop-script.docx` (workshop script), `flourishing-deck-session-handoff.md` (notes from the CUNY deck session), `context/inkcap-template-cheatsheet.md` (editing guide).
 
 ---
 
@@ -30,9 +38,10 @@ Three HTML/Reveal.js slide decks for upcoming talks, all sharing brand CSS match
 - Do NOT add `style="position: relative;"` to any `<section>` tag — this breaks layout with `center: true`
 
 ### Images
-- Image files are NOT in the repo (gitignored)
-- Images are local files placed in the same folder as the HTML at presentation time
-- To add an image: replace `<div class="img-placeholder">...</div>` with `<img src="filename.jpg" alt="description" style="width:100%; height:100%; object-fit:cover;">`
+- Image files live in the `images/` folder next to the decks and ARE tracked in git
+- Decks reference them with relative paths (`images/filename.jpg`, `images/msu/filename.png`), so the HTML files and `images/` must always stay together
+- To add an image: save it to `images/` (or a venue subfolder), then replace `<div class="img-placeholder">...</div>` with `<img src="images/filename.jpg" alt="description" style="width:100%; height:100%; object-fit:cover;">`
+- Quick check that nothing is broken: every `images/...` path in each deck should resolve to a file
 - Most content slides use `layout-default-img` (split layout) — images go in the `.img-col` div
 
 ### Speaker notes
@@ -70,8 +79,8 @@ Named files available:
 - ⚠️ `IMG_9695.heic` and `IMG_8707.heic` — will NOT display in browsers; convert to JPG first
 
 **Workflow for adding images:**
-1. Download photos from Drive to the same local folder as the HTML files
-2. Replace `<div class="img-placeholder">[ ... ]</div>` with `<img src="filename.jpg" alt="..." style="width:100%; height:100%; object-fit:cover;">`
+1. Download photos from Drive into `images/` in the talks folder
+2. Replace `<div class="img-placeholder">[ ... ]</div>` with `<img src="images/filename.jpg" alt="..." style="width:100%; height:100%; object-fit:cover;">`
 
 ---
 
@@ -93,7 +102,11 @@ Named files available:
 
 ---
 
-## Pending tasks — Alabama keynote
+## Archived task lists (May 2026)
+
+These lists were written before the Alabama and Stockholm talks, which have since taken place. They're kept for reference only and are not current to-dos.
+
+### Pending tasks — Alabama keynote
 
 **Slides 1–8: do not modify.** Katina has edited these directly and they are locked.
 
@@ -106,7 +119,7 @@ Named files available:
 - [ ] Add references slide or fold refs into closing notes
 - [ ] Consider offline-ready version (bundle fonts + Reveal.js inline) — deferred
 
-## Pending tasks — Stockholm book talk
+### Pending tasks — Stockholm book talk
 
 **Slides 1–8: do not modify.** Katina has edited these directly and they are locked.
 
@@ -115,7 +128,7 @@ Named files available:
 - [ ] Slide 6 ("Blasted Landscapes") has a known layout issue: `style="position: relative;"` on the section + `position: absolute` footnote. Fix: move footnote inside `.slide-inner` as flowing element and remove the inline style from the section tag
 - [ ] Consider offline-ready version — deferred
 
-## Pending tasks — both decks
+### Pending tasks — both decks
 
 - [ ] PDF export versions for portability backup
 - [ ] Decide on self-contained offline version
@@ -124,10 +137,10 @@ Named files available:
 
 ## How Katina works on these files
 
-1. Downloads the HTML file from Claude's output or from the repo
-2. Opens in VS Code to edit text, reorder slides, swap images
-3. Saves and refreshes in Chrome to preview
-4. Uploads the updated file back to Claude (or Cowork) when requesting further edits
+1. Works on the files in place in `~/Desktop/talks`, editing in VS Code
+2. Saves and refreshes in Chrome to preview
+3. When asking Claude for edits, connects the talks folder to the session so Claude edits the same files (no download/upload round trip)
+4. Commits and pushes to GitHub after a round of changes
 
 **Key constraint:** Always ask Katina which slides are locked before editing. She edits slides 1–8 herself and does not want those reverted. State clearly which slides you will touch.
 

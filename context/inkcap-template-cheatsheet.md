@@ -189,16 +189,16 @@ Replace the `img-placeholder` div inside the `.img-col` with a real image tag:
 <div class="img-placeholder">[ Replace with img tag ]</div>
 
 <!-- Add this: -->
-<img src="your-image-filename.jpg" alt="Describe the image here" style="width:100%; height:100%; object-fit:cover;">
+<img src="images/your-image-filename.jpg" alt="Describe the image here" style="width:100%; height:100%; object-fit:cover;">
 ```
 
-The `object-fit: cover` makes the image fill the column at any aspect ratio. Put your image file in the same folder as the HTML file and use just the filename (not a full path).
+The `object-fit: cover` makes the image fill the column at any aspect ratio. Put your image file in the `images/` folder next to the HTML files and reference it as `images/filename` (a relative path, never a full path from your computer).
 
 ### In a regular layout (layout-default, layout-two-col)
 
 For a standalone image within slide content:
 ```html
-<img src="your-image-filename.jpg" alt="Describe the image here" style="width: 100%; border-radius: 3px;">
+<img src="images/your-image-filename.jpg" alt="Describe the image here" style="width: 100%; border-radius: 3px;">
 ```
 
 ---
@@ -230,14 +230,14 @@ Reveal.js supports speaker notes — they appear in presenter view but not on th
 
 **Presenter view** (notes + timer): Requires a local server — opening directly from your desktop won't work. In Terminal:
 ```bash
-cd ~/path/to/your/slides/folder
+cd ~/Desktop/talks
 python3 -m http.server 8000
 ```
 Then open `http://localhost:8000/your-filename.html` in Chrome and press `S`. A second window with notes and a timer will open. Press `Ctrl+C` in Terminal to stop the server when done.
 
 **PDF export:** Add `?print-pdf` to the URL while running via local server (e.g. `http://localhost:8000/filename.html?print-pdf`), then File → Print → Save as PDF with margins set to None and background graphics on.
 
-**Venue computers:** Bring the HTML file plus any image files on a USB drive. Fonts (Google Fonts) and Reveal.js require an internet connection — if presenting offline, ask for help bundling these inline.
+**Venue computers:** Bring the HTML file plus the `images/` folder (keep the same folder structure) on a USB drive. Fonts (Google Fonts) and Reveal.js require an internet connection — if presenting offline, ask for help bundling these inline.
 
 ---
 
@@ -255,8 +255,8 @@ Then open `http://localhost:8000/your-filename.html` in Chrome and press `S`. A 
 
 To continue working on these slides in a new chat, share the following at the start:
 
-1. **Link to the handoff document** in Google Drive (Research > Talks etc > 2026 > "Inkcap Slides — Handoff Document") — Claude can read it directly from Drive. It contains all project context, source document IDs, image file names, and pending work.
-2. **Upload the current HTML file(s)** you want to work on — Claude cannot access your local files directly.
+1. **Connect the `~/Desktop/talks` folder** to the session. Claude can then read and edit the decks in place, and should read `context/COWORK_HANDOFF.md` and `context/SLIDE_PATTERNS.md` first.
+2. If the folder can't be connected, **upload the HTML file(s)** you want to work on instead. The older Google Drive handoff document (Research > Talks etc > 2026 > "Inkcap Slides — Handoff Document") still holds early project history and source document IDs.
 3. **State clearly** which slides you want changed and which to preserve (e.g. "do not change slides 1–8").
 
 When asking Claude to edit a slide, pasting the exact text you want is more reliable than describing it. If the content comes from another document, share the Google Drive link or paste the text directly.
@@ -269,7 +269,7 @@ When asking Claude to edit a slide, pasting the exact text you want is more reli
 - Fix CSS or layout issues
 - Draft new slide content from source documents
 
-**What Claude cannot do:** open the file in a browser to see how it renders, or directly edit files on your local machine. Always download the output file and check it in your browser before your next session.
+**What to check yourself:** Claude can't always see how a deck renders in a real browser. After a round of edits, open the deck in Chrome, click through the changed slides, then commit and push.
 
 ---
 

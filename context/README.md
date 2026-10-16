@@ -4,16 +4,24 @@ HTML/Reveal.js slide decks for Katina L. Rogers's upcoming talks, styled to matc
 
 ---
 
+**Location:** `~/Desktop/talks` (git repo, backed up to GitHub at `katinalynn/inkcap-slides`). Keep it out of Google Drive sync folders.
+
 ## Files in this folder
 
 **Slide decks** (root of Talks/)
 
-| File | Purpose | Status |
-|---|---|---|
-| `alabama.html` | Keynote, University of Alabama, May 2026 | Complete |
-| `stockholm.html` | Book talk, Stockholm University, June 2026 | Active |
-| `alabama-workshop.html` | Workshop version, University of Alabama | Complete |
-| `inkcap-keynote-template.html` | Blank master template for future decks | Complete |
+| File | Event | Date | Slides |
+|---|---|---|---|
+| `msu-keynote.html` | Keynote, Michigan State University | Oct 2026 | 17 |
+| `msu-faculty.html` | Faculty workshop, Michigan State University | Oct 2026 | 17 |
+| `msu-gradstudents.html` | Graduate student workshop, Michigan State University | Oct 2026 | 17 |
+| `cuny.html` | Talk, The Graduate Center, CUNY | Aug 4, 2026 | 9 |
+| `stockholm.html` | Book talk, Stockholm University | June 2026 | 20 |
+| `alabama.html` | Keynote, University of Alabama | May 2026 | 19 |
+| `alabama-workshop.html` | Faculty workshop, University of Alabama | May 2026 | 8 |
+| `inkcap-keynote-template.html` | Blank master template | — | 13 |
+
+Images are in `images/` (with venue subfolders). Decks use relative `images/...` paths, so keep the HTML files and `images/` together.
 
 **context & reference** (this context/ subfolder)
 
@@ -35,7 +43,7 @@ For editing: open in VS Code, save, refresh browser. See `inkcap-template-cheats
 
 For speaker notes (presenter view): requires a local server.
 ```bash
-cd path/to/this/repo
+cd ~/Desktop/talks
 python3 -m http.server 8000
 # then open http://localhost:8000/filename.html and press S
 ```
