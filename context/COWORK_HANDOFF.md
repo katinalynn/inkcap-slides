@@ -9,24 +9,30 @@
 
 ## Project at a glance
 
-HTML/Reveal.js slide decks for Katina's talks, all sharing brand CSS matched to inkcapconsulting.com. Decks sit in the root of the folder; shared images are in `images/` (with per-venue subfolders such as `images/msu/` and `images/alabama/`); reference docs are in `context/`.
+HTML/Reveal.js slide decks for Katina's talks, all sharing brand CSS matched to inkcapconsulting.com. Current decks sit in the root of the folder; past talks are in `archive/`; shared images are in `images/` (with per-venue subfolders such as `images/msu/` and `images/alabama/`); reference docs are in `context/`.
 
 | File | Event | Date | Slides |
 |---|---|---|---|
 | `msu-keynote.html` | Keynote, Michigan State University | Oct 2026 | 17 |
 | `msu-faculty.html` | Faculty workshop, Michigan State University | Oct 2026 | 17 |
 | `msu-gradstudents.html` | Graduate student workshop, Michigan State University | Oct 2026 | 17 |
-| `cuny.html` | Talk, The Graduate Center, CUNY | Aug 4, 2026 | 9 |
-| `stockholm.html` | Book talk, Stockholm University | June 2026 | 20 |
-| `alabama.html` | Keynote, University of Alabama | May 2026 | 19 |
-| `alabama-workshop.html` | Faculty workshop, University of Alabama | May 2026 | 8 |
+| `archive/cuny.html` | Talk, The Graduate Center, CUNY | Aug 4, 2026 | 9 |
+| `archive/stockholm.html` | Book talk, Stockholm University | June 2026 | 20 |
+| `archive/alabama.html` | Keynote, University of Alabama | May 2026 | 19 |
+| `archive/alabama-workshop.html` | Faculty workshop, University of Alabama | May 2026 | 8 |
 | `inkcap-keynote-template.html` | Blank master template | — | 13 |
 
 ### File naming and publishing
 
 Decks use short, lowercase, hyphenated filenames with no dates: `[venue].html` or `[venue]-[format].html` (e.g., `cuny.html`, `msu-keynote.html`, `alabama-workshop.html`). The repo is published with GitHub Pages, so each filename becomes a public URL, e.g. `https://katinalynn.github.io/inkcap-slides/msu-keynote.html`. Keep names short and easy to say aloud. If a venue repeats, add the year (`msu-2027.html`). Renaming or moving a deck changes its URL, so links and QR codes that point to the old URL will stop working.
 
-Other files: `faculty-workshop-script.docx` (workshop script), `flourishing-deck-session-handoff.md` (notes from the CUNY deck session), `context/inkcap-template-cheatsheet.md` (editing guide).
+### Archiving past talks
+
+After a talk is given, its deck moves into `archive/` (URL becomes `https://katinalynn.github.io/inkcap-slides/archive/[filename]`). When moving a deck there, change every `images/` path in it to `../images/`, then check that each path resolves. When reusing an archived deck for a new talk, change them back to `images/` in the new copy, which goes in the root. Images themselves always stay in the shared `images/` folder.
+
+Archived decks also get a small redirect file at their old address in the root (same filename), so links already shared with hosts still work. The redirect keeps any slide number in the link (e.g. `alabama.html#/5`). Don't delete these, and don't reuse those filenames for new decks.
+
+Other files: `faculty-workshop-script.docx` (workshop script), `archive/flourishing-deck-session-handoff.md` (notes from the CUNY deck session), `context/inkcap-template-cheatsheet.md` (editing guide).
 
 ---
 

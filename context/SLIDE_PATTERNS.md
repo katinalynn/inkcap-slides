@@ -94,7 +94,7 @@ Use `.slide-inner` as the flex container (it has the explicit 720px height Revea
 
 ## Stockholm deck state (June 2026)
 
-`stockholm.html` — 13 slides:
+`archive/stockholm.html` — 13 slides:
 
 | # | Title | Layout |
 |---|-------|--------|
@@ -112,4 +112,4 @@ Use `.slide-inner` as the flex container (it has the explicit 720px height Revea
 | 12 | Toward abundance | layout-default-img |
 | 13 | Closing | layout-closing |
 
-Images live in `images/` folder alongside `stockholm.html`.
+Images live in the shared `images/` folder; since Stockholm is archived, its deck references them as `../images/`.

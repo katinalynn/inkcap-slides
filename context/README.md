@@ -15,13 +15,13 @@ HTML/Reveal.js slide decks for Katina L. Rogers's upcoming talks, styled to matc
 | `msu-keynote.html` | Keynote, Michigan State University | Oct 2026 | 17 |
 | `msu-faculty.html` | Faculty workshop, Michigan State University | Oct 2026 | 17 |
 | `msu-gradstudents.html` | Graduate student workshop, Michigan State University | Oct 2026 | 17 |
-| `cuny.html` | Talk, The Graduate Center, CUNY | Aug 4, 2026 | 9 |
-| `stockholm.html` | Book talk, Stockholm University | June 2026 | 20 |
-| `alabama.html` | Keynote, University of Alabama | May 2026 | 19 |
-| `alabama-workshop.html` | Faculty workshop, University of Alabama | May 2026 | 8 |
+| `archive/cuny.html` | Talk, The Graduate Center, CUNY | Aug 4, 2026 | 9 |
+| `archive/stockholm.html` | Book talk, Stockholm University | June 2026 | 20 |
+| `archive/alabama.html` | Keynote, University of Alabama | May 2026 | 19 |
+| `archive/alabama-workshop.html` | Faculty workshop, University of Alabama | May 2026 | 8 |
 | `inkcap-keynote-template.html` | Blank master template | — | 13 |
 
-Images are in `images/` (with venue subfolders). Decks use relative `images/...` paths, so keep the HTML files and `images/` together.
+Images are in `images/` (with venue subfolders). Current decks use relative `images/...` paths, so keep the HTML files and `images/` together. Past talks are in `archive/` and use `../images/...` instead.
 
 **context & reference** (this context/ subfolder)
 

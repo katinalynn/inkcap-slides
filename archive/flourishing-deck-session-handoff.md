@@ -1,8 +1,8 @@
 # Session handoff — Unexpected Flourishing (GC CUNY, Aug 4 2026)
 
 ## File
-`~/Desktop/talks/cuny.html` (originally saved as `2026-08-04_GC-CUNY_Unexpected_Flourishing.html` in the old cowork folder; renamed and moved)
-Single-file Reveal.js deck (v5.1.0 via cdnjs), 1280x720 slides, images in adjacent `images/` folder. Adapted from `alabama.html` in the same folder.
+`~/Desktop/talks/archive/cuny.html` (originally saved as `2026-08-04_GC-CUNY_Unexpected_Flourishing.html` in the old cowork folder; renamed and moved)
+Single-file Reveal.js deck (v5.1.0 via cdnjs), 1280x720 slides, images in the shared `images/` folder (referenced as `../images/` since the deck was archived). Adapted from `alabama.html` in the same folder.
 
 ## Current slide order (9 slides)
 1. Intro (layout-title)
