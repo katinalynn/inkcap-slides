@@ -150,3 +150,16 @@ Use `.slide-inner` as the flex container (it has the explicit 720px height Revea
 | 13 | Closing | layout-closing |
 
 Images live in the shared `images/` folder; since Stockholm is archived, its deck references them as `../images/`.
+
+---
+
+## Austin-era patterns (Nov 2026; carried into `syracuse.html`)
+
+When combining older decks with `ut-austin.html`, Austin's CSS is the baseline. Changes from the MSU decks:
+
+- **`layout-findings`**: a numbered list with a full-height logo panel whose gradient matches `doctoral-futures.png`. Use it for "What the research tells us" instead of the `layout-callout` stat cards. The Doctoral Futures intro goes in that slide's notes, with no section-break slide before it.
+- **`layout-feature-img`**: a heading, one large image, an optional `.feature-quote` card laid over the image, and a `.source-note`. Used for the fractal/"Start small" slide (nautilus shell, adrienne maree brown quote), which replaces "Celebrating smallness."
+- **Image credits** go in `.source-note`, never a `.highlight-box`. The MSU mycelium slide had `<div class="highlight-box"; align=right>`, which is invalid markup.
+- **Live-caption status text** is `#ffffff`, not `#5fbfc1` (no teal text on navy).
+- **Optional slides**: to keep a slide in the file but skip it when presenting, add `data-visibility="hidden"` to its `<section>`. Reveal removes it at load, and the slide count adjusts.
+- Don't reuse a photo within one deck. `amanita_muscaria.jpg` appears on "Some of this is not that hard," so "Moving toward joy" uses `amanita_line.jpeg`.
