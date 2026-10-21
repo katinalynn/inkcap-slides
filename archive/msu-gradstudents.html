@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unexpected Flourishing — Graduate Student Workshop, Michigan State University, October 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --color-primary:        #006D6F;
+      --color-primary-dark:   #005456;
+      --color-primary-light:  #e6f3f3;
+      --color-text:           #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-bg:             #ffffff;
+      --color-bg-subtle:      #f7f8f9;
+      --color-bg-warm:        #faf9f7;
+      --color-border:         #d4d4d4;
+      --color-border-light:   #e8e8e8;
+      --color-accent-dark:    #051A42;
+      --color-accent-orange:  #e05724;
+      --font-body:    'Libre Franklin', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    }
+
+    .reveal-viewport { background: var(--color-bg); }
+    .reveal { font-family: var(--font-body); font-size: 28px; color: var(--color-text); }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: var(--font-heading); font-weight: 400; letter-spacing: 0.01em; line-height: 1.15; text-transform: none; margin-bottom: 0.5em; }
+    .reveal h1 { font-size: 2.8em; }
+    .reveal h2 { font-size: 2em; }
+    .reveal h3 { font-size: 1.4em; }
+    .reveal p { font-family: var(--font-body); font-weight: 400; line-height: 1.65; margin-bottom: 0.8em; }
+    .reveal ul, .reveal ol { font-family: var(--font-body); line-height: 1.7; margin-left: 1.5em; }
+    .reveal ul li, .reveal ol li { margin-bottom: 0.4em; }
+    .reveal a { color: var(--color-primary); }
+    .reveal .progress { background: var(--color-border-light); color: var(--color-primary); height: 3px; }
+    .reveal .controls { color: var(--color-primary); }
+    .reveal .slide-number { font-family: var(--font-body); font-size: 12px; color: var(--color-text-secondary); background: transparent; right: 20px; bottom: 18px; }
+
+    .slide-inner { width: 100%; height: var(--slide-height, 720px); box-sizing: border-box; }
+
+    /* TITLE */
+    .layout-title { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-title .slide-inner { padding: 0; display: flex; }
+    .layout-title .text-col { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; flex: 1.1; }
+    .layout-title .img-col { flex: 0.9; display: flex; align-items: stretch; }
+    .layout-title .img-col img, .layout-title .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-title .eyebrow { font-family: var(--font-body); font-size: 0.42em; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 1.4em; }
+    .layout-title h1 { color: #f5f3ee; font-size: 2.4em; line-height: 1.1; font-weight: 300; margin-bottom: 0.4em; }
+    .layout-title h1 em { color: var(--color-primary); font-style: italic; }
+    .layout-title .teal-rule { width: 56px; height: 3px; background: var(--color-primary); margin: 1em 0 1.2em; }
+    .layout-title .subtitle { font-family: var(--font-body); font-size: 0.46em; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .layout-title .presenter { font-family: var(--font-heading); font-size: 0.68em; color: rgba(255,255,255,0.82); margin-top: 2em; padding-top: 1em; border-top: 1px solid rgba(255,255,255,0.14); }
+
+    /* SECTION */
+    .layout-section { background: var(--color-primary) !important; padding: 0 !important; text-align: left; }
+    .layout-section .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-section .section-num { font-family: var(--font-heading); font-size: 0.52em; color: rgba(255,255,255,0.38); letter-spacing: 0.1em; font-weight: 300; margin-bottom: 0.5em; font-style: italic; }
+    .layout-section h2 { color: #ffffff; font-size: 2.3em; font-weight: 300; line-height: 1.15; }
+    .layout-section h2 em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .layout-section .section-desc { font-family: var(--font-body); font-size: 0.48em; color: rgba(255,255,255,0.62); margin-top: 1.4em; line-height: 1.7; max-width: 62%; }
+
+    /* DEFAULT */
+    .layout-default { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default .slide-inner { padding: 52px 80px; }
+    .layout-default h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-default h3 { color: var(--color-accent-dark); font-size: 1.2em; }
+    .layout-default p, .layout-default li { color: var(--color-text); font-size: 0.78em; }
+
+    /* DEFAULT WITH IMAGE */
+    .layout-default-img { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default-img .slide-inner { display: flex; gap: 0; }
+    .layout-default-img .content-col { padding: 52px 48px 52px 80px; flex: 1.2; display: flex; flex-direction: column; justify-content: flex-start; }
+    .layout-default-img .img-col { flex: 0.8; display: flex; align-items: stretch; }
+    .layout-default-img .img-col img, .layout-default-img .img-col .img-placeholder { width: 100%; height: 100%; object-fit: cover; }
+    .layout-default-img h2 { color: var(--color-primary); font-size: 1.65em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-default-img p, .layout-default-img li { font-size: 0.76em; color: var(--color-text); line-height: 1.7; }
+
+    /* QUOTE */
+    .layout-quote { background: var(--color-bg-warm) !important; padding: 0 !important; text-align: left; }
+    .layout-quote .slide-inner { padding: 64px 96px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-quote .quote-mark { font-family: var(--font-heading); font-size: 4.5em; color: var(--color-primary); line-height: 0.5; margin-bottom: 0.4em; font-weight: 300; }
+    .layout-quote blockquote { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; color: var(--color-accent-dark); line-height: 1.55; border: none; margin: 0; padding: 0; }
+    .layout-quote .attribution { font-family: var(--font-body); font-size: 0.43em; color: var(--color-text-secondary); margin-top: 1.4em; padding-top: 1em; border-top: 1px solid var(--color-border); }
+    .layout-quote .attribution strong { color: var(--color-text); font-weight: 600; }
+
+    /* TWO COLUMN */
+    .layout-two-col { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-two-col .slide-inner { padding: 50px 72px; }
+    .layout-two-col h2 { color: var(--color-primary); font-size: 1.65em; margin-bottom: 0.55em; }
+    .layout-two-col .col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-top: 0.6em; }
+    .layout-two-col .col h3 { font-family: var(--font-heading); font-size: 1.15em; color: var(--color-accent-dark); margin-bottom: 0.4em; padding-bottom: 0.3em; border-bottom: 1px solid var(--color-border-light); }
+    .layout-two-col .col p, .layout-two-col .col li { font-size: 0.73em; color: var(--color-text); line-height: 1.72; }
+
+    /* CALLOUT */
+    .layout-callout { background: var(--color-bg-subtle) !important; padding: 0 !important; text-align: left; }
+    .layout-callout .slide-inner { padding: 46px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-callout h2 { color: var(--color-primary); font-size: 1.6em; margin-bottom: 0.6em; }
+    .layout-callout .stat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .layout-callout .stat-grid .stat-card:nth-child(1) { grid-column: 1 / 3; }
+    .layout-callout .stat-grid .stat-card:nth-child(2) { grid-column: 3 / 5; }
+    .layout-callout .stat-grid .stat-card:nth-child(3) { grid-column: 5 / 7; }
+    .layout-callout .stat-grid .stat-card:nth-child(4) { grid-column: 2 / 4; }
+    .layout-callout .stat-grid .stat-card:nth-child(5) { grid-column: 4 / 6; }
+    .layout-callout .stat-card { background: var(--color-bg); border-radius: 3px; border-left: 4px solid var(--color-accent-orange); padding: 40px 22px; display: flex; align-items: center; gap: 18px; }
+    .layout-callout .stat-card--teal { grid-column: 1 / 7; border-left-color: var(--color-primary); background: var(--color-primary-light); padding: 12px 22px; margin-top: 28px; }
+    .layout-callout .card-num { font-family: var(--font-heading); font-size: 1.5em; font-weight: 500; color: var(--color-accent-orange); line-height: 1; min-width: 1em; text-align: center; flex-shrink: 0; }
+    .layout-callout .card-text { font-family: var(--font-body); font-size: 0.72em; font-weight: 600; color: var(--color-accent-dark); line-height: 1.4; }
+    .layout-callout .stat-card--teal .card-text { color: var(--color-primary-dark); font-weight: 400; font-style: italic; }
+
+    /* DISCUSSION */
+    .layout-discussion { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-discussion .slide-inner { padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .layout-discussion h2 { color: #f5f3ee; font-size: 1.85em; font-weight: 300; margin-bottom: 0.7em; }
+    .layout-discussion .prompt { font-family: var(--font-body); font-size: 0.6em; color: rgba(255,255,255,0.55); margin-bottom: 1.4em; font-style: italic; }
+    .layout-discussion ul { list-style: none; margin-left: 0; }
+    .layout-discussion ul li { font-family: var(--font-heading); font-size: 1.05em; font-style: italic; color: rgba(255,255,255,0.88); font-weight: 300; padding: 0.55em 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    /* CLOSING */
+    .layout-closing { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: center; }
+    .layout-closing .slide-inner { padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .layout-closing h2 { color: #f5f3ee; font-size: 2.1em; font-weight: 300; margin-bottom: 0.3em; }
+    .layout-closing .tagline { font-family: var(--font-body); font-size: 0.47em; color: rgba(255,255,255,0.52); }
+    .layout-closing .orange-rule { width: 48px; height: 3px; background: var(--color-accent-orange); margin: 1.8em auto; }
+    .layout-closing .contact { font-family: var(--font-body); font-size: 0.58em; color: rgba(255, 255, 255, 0.72); line-height: 2.2; }
+
+    
+    .layout-closing .resources-link {
+      font-family: var(--font-heading);
+      font-size: 1.0em;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.5em;
+      margin-bottom: 0;
+    }
+
+    .layout-closing .resources-link a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    /* TWO PHOTO */
+    .layout-two-photo { background: var(--color-bg) !important; padding: 0 !important; }
+    .layout-two-photo .slide-inner { display: flex; flex-direction: column; }
+    .layout-two-photo .photo-header { padding: 36px 80px 16px; flex-shrink: 0; background: var(--color-bg); }
+    .layout-two-photo .photo-header h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0; }
+    .layout-two-photo .photo-row { display: flex; flex: 1; min-height: 0; gap: 16px; padding: 0 80px 28px; }
+    .layout-two-photo .photo-col { flex: 1; display: flex; align-items: center; justify-content: center; padding: 8px; background: var(--color-bg); }
+    .layout-two-photo .photo-col img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 6px 24px rgba(0,0,0,0.13); }
+
+    /* MY PATH */
+    .layout-mypath { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-mypath .slide-inner { position: relative; overflow: hidden; padding: 44px 0 0; display: flex; flex-direction: column; align-items: center; }
+    .layout-mypath .mypath-title { position: relative; z-index: 2; color: var(--color-primary); font-size: 1.9em; margin-bottom: 0.5em; }
+    .layout-mypath .bubble-layer { position: absolute; inset: 0; z-index: 1; }
+    .layout-mypath .blob { position: absolute; background: var(--color-accent-orange); opacity: 0.18; }
+    .layout-mypath .context-layer { position: absolute; inset: 0; z-index: 3; }
+    .layout-mypath .context-item { position: absolute; font-family: var(--font-heading); font-style: italic; font-weight: 400; color: var(--color-primary); opacity: 0.85; white-space: nowrap; }
+    .layout-mypath .roles-panel { position: relative; z-index: 2; background: rgba(255,255,255,0.94); border: 1px solid var(--color-border-light); border-radius: 6px; padding: 28px 52px; box-shadow: 0 8px 32px rgba(0,0,0,0.08); width: 620px; }
+    .layout-mypath .role-row { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 0.55em 0; border-bottom: 1px solid var(--color-border-light); }
+    .layout-mypath .role-row:last-child { border-bottom: none; }
+    .layout-mypath .role-name { font-family: var(--font-body); font-weight: 600; font-size: 0.72em; color: var(--color-accent-dark); }
+    .layout-mypath .role-date { font-family: var(--font-body); font-size: 0.6em; color: var(--color-text-secondary); flex-shrink: 0; }
+
+    /* WHERE TO BEGIN */
+    .layout-wherebegin { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-wherebegin .slide-inner { padding: 0; display: flex; gap: 0; }
+    .layout-wherebegin .content-col { padding: 52px 48px 52px 80px; flex: 1.2; display: flex; flex-direction: column; justify-content: center; }
+    .layout-wherebegin .img-col { flex: 0.8; display: flex; align-items: stretch; }
+    .layout-wherebegin .img-col img { width: 100%; height: 100%; object-fit: cover; }
+    .layout-wherebegin h2 { color: var(--color-primary); font-size: 1.75em; border-bottom: 1.5px solid var(--color-primary-light); padding-bottom: 0.3em; margin-bottom: 0.6em; }
+    .layout-wherebegin .step-list { display: flex; flex-direction: column; margin-left: 48px; }
+    .layout-wherebegin .step-row { display: flex; align-items: baseline; gap: 28px; padding: 0.5em 0; border-bottom: 1px solid var(--color-border-light); }
+    .layout-wherebegin .step-row:last-child { border-bottom: none; }
+    .layout-wherebegin .step-num { font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 1.1em; color: var(--color-primary); min-width: 0.9em; }
+    .layout-wherebegin .step-text { font-family: var(--font-body); font-size: 0.76em; color: var(--color-text); font-weight: 400; }
+    .layout-wherebegin .step-row--repeat .step-num, .layout-wherebegin .step-row--repeat .step-text { color: var(--color-accent-orange); font-style: italic; }
+
+    /* WHAT TO EXPECT LIST */
+    ul.expect-list { list-style: none !important; margin: 0.2em 0 0.4em 0 !important; }
+    ul.expect-list li { position: relative; padding-left: 1.8em; margin-bottom: 0.45em; }
+    ul.expect-list li::before { position: absolute; left: 0; top: 0; font-weight: 700; font-family: var(--font-body); }
+    ul.expect-list li.expect-no::before { content: '\2715'; color: var(--color-accent-orange); }
+    ul.expect-list li.expect-yes::before { content: '\2713'; color: var(--color-primary); }
+
+    /* WHO'S IN THE ROOM (intro variant of discussion) */
+    .layout-intros h2 { margin-bottom: 0.6em; }
+    .layout-intros .intro-rule { width: 56px; height: 3px; background: var(--color-accent-orange); margin: 0 0 1.1em; }
+    .layout-intros .intro-prompt { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; line-height: 1.4; color: #ffffff; border-left: 4px solid var(--color-primary); padding-left: 0.8em; max-width: 88%; }
+    .layout-intros .intro-hi { color: #5fbfc1; }
+    .layout-intros .intro-lead { font-family: var(--font-body); font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: #ffffff; margin: 3.4em 0 0.9em; font-weight: 500; }
+    .layout-discussion.layout-intros ul.intro-list li { border-bottom: none; padding: 0.1em 0 0.1em 1.2em; margin-bottom: 0.15em; position: relative; font-style: normal; font-size: 1.0em; }
+    .layout-intros ul.intro-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); }
+
+    /* Numbered sub-items inside teal-dot lists: no extra dot */
+    ul.custom-bullets ol li { padding-left: 0.2em; }
+    ul.custom-bullets ol li::before { display: none; }
+
+    /* LINK BUTTONS (Doctoral Futures slide) */
+    .df-buttons { flex-shrink: 0; display: flex; justify-content: center; gap: 28px; margin-top: 1.1em; }
+    .reveal a.df-btn { font-family: var(--font-body); font-size: 0.8em; font-weight: 500; padding: 0.55em 1.5em; border-radius: 5px; background: var(--color-primary); color: #fff; border: 2px solid var(--color-primary); text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .reveal a.df-btn:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
+
+    /* UTILITIES */
+    ul.custom-bullets { list-style: none !important; margin-left: 0 !important; }
+    ul.custom-bullets li { padding-left: 1.3em; position: relative; }
+    ul.custom-bullets li::before { content: ''; position: absolute; left: 0; top: 0.52em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-primary); }
+    .highlight-box { background: var(--color-primary-light); border-left: 4px solid var(--color-primary); padding: 0.65em 1em; margin: 0.9em 0; font-size: 0.73em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.6; }
+    .orange-box { background: #fdf1ec; border-left: 4px solid var(--color-accent-orange); padding: 0.65em 1em; margin: 0.9em 0; font-size: 0.73em; border-radius: 0 3px 3px 0; color: var(--color-text); line-height: 1.6; }
+    .img-placeholder { background: var(--color-primary-light); border: 1.5px dashed var(--color-primary); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-size: 0.38em; color: var(--color-primary-dark); text-align: center; padding: 1em; min-height: 160px; }
+    .reveal .fragment { transition: opacity 0.3s ease; }
+
+    /* ================================================================
+       READABILITY OVERRIDES (Oct 15): no teal text on navy; larger small text
+       (decorative teal — bullets, rules, bars — is unchanged)
+    ================================================================ */
+    .layout-title .eyebrow { color: #ffffff; font-size: 0.56em; }
+    .layout-title h1 em { color: #ffffff; }
+    .layout-title .subtitle { font-size: 0.64em; color: rgba(255,255,255,0.88); }
+    .layout-title .presenter { font-size: 0.8em; color: rgba(255,255,255,0.92); }
+    .layout-section .section-desc { font-size: 0.7em; color: rgba(255,255,255,0.92); max-width: 78%; }
+    .layout-intros .intro-hi { color: #ffffff; }
+    .layout-closing .tagline { font-size: 0.66em; color: rgba(255,255,255,0.88); }
+    .layout-closing a, .layout-closing .contact a, .layout-closing .resources-link a, .layout-discussion a { color: #ffffff; }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- SLIDE 1 -->
+  <!-- ================================================================
+       1 · TITLE
+  ================================================================ -->
+  <section class="layout-title">
+    <div class="slide-inner">
+      <div class="text-col">
+        <div class="eyebrow">Workshop &nbsp;·&nbsp; Michigan State University &nbsp;·&nbsp; October 15, 2026</div>
+        <h1>Finding Your<br><em>Footing</em></h1>
+        <div class="teal-rule"></div>
+        <div class="subtitle">
+          Navigating uncertain terrain as a graduate student
+        </div>
+        <div class="presenter">Katina L. Rogers &nbsp;·&nbsp; Inkcap Consulting</div>
+      </div>
+      <div class="img-col">
+        <img src="../images/turkey-tail.jpg" alt="Close up photograph of fan-like turkey tail mushrooms" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">Welcome and introductions. Picking up from yesterday's keynote: today is about the practical side — where to begin, tools to carry with you, and time to reflect and talk together.</aside>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <!-- ================================================================
+       2 · WHAT TO EXPECT
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>What to expect</h2>
+    <p>Reflective practices to <em>build a foundation</em> for your career journey:</p>
+              <ul class="expect-list">
+           <li class="expect-yes">A focus on reflection and discernment</li> 
+           <li class="expect-yes">Tools to help you advocate for change & support</li>                   
+          </ul>
+            <p>It won't address the things specific to your own pathway:</p>
+<ul class="expect-list">
+          <li class="expect-no">CV and résumé support</li>
+          <li class="expect-no">How to find the right job for you</li>
+
+        </ul>
+        <div class="highlight-box">The MSU Graduate School and Career Services Network have resources to support the later steps.</div>
+      </div>
+      <div class="img-col">
+        <img src="../images/amanita_line.jpeg" alt="Several amanita muscaria mushrooms growing in a line on a forest floor" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">Set expectations up front. Many people come to a career workshop hoping for help with a CV or a list of where to look — those are important, but they're not what we'll do today, and I can't tell anyone which job is right for them. Instead, we'll focus on reflection and discernment: the groundwork that makes the later steps more meaningful and less overwhelming. When you're ready for job materials and searching, the MSU Graduate School's career development resources are there for exactly that.</aside>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <!-- ================================================================
+       3 · INTROS
+  ================================================================ -->
+  <section class="layout-discussion layout-intros">
+    <div class="slide-inner">
+      <h2>Intros</h2>
+      <div class="intro-prompt">Building on the prompt from yesterday: think of <span class="intro-hi">one thing</span> you'd spend more time on if you could.</div>
+      <div class="intro-lead">Then introduce yourself with:</div>
+      <ul class="intro-list">
+        <li>Your name</li>
+        <li>Your department</li>
+        <li>Your <span class="intro-hi">one thing</span></li>
+      </ul>
+    </div>
+    <aside class="notes">Quick round of introductions. For anyone who wasn't at the keynote, briefly restate the prompt: one thing you'd spend more time on if you could, work defined broadly. Keep it moving — a sentence or two each. Listen for patterns across the room; they're useful to name later in the discussion.</aside>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <!-- ================================================================
+       4 · MY PATH
+  ================================================================ -->
+  <section class="layout-mypath">
+    <div class="slide-inner">
+      <div class="bubble-layer fragment" data-fragment-index="0">
+        <div class="blob" style="left:-40px; top:-30px; width:540px; height:340px; transform:rotate(-8deg); border-radius: 62% 38% 55% 45% / 42% 60% 40% 58%;"></div>
+        <div class="blob" style="left:780px; top:-20px; width:400px; height:280px; transform:rotate(6deg); border-radius: 40% 60% 45% 55% / 60% 35% 65% 40%;"></div>
+        <div class="blob" style="left:-60px; top:220px; width:360px; height:390px; transform:rotate(-5deg); border-radius: 55% 45% 65% 35% / 45% 55% 30% 70%;"></div>
+        <div class="blob" style="left:830px; top:140px; width:420px; height:360px; transform:rotate(7deg); border-radius: 45% 55% 35% 65% / 55% 40% 60% 45%;"></div>
+        <div class="blob" style="left:-20px; top:545px; width:420px; height:300px; transform:rotate(-9deg); border-radius: 65% 35% 55% 45% / 40% 65% 35% 60%;"></div>
+        <div class="blob" style="left:810px; top:440px; width:480px; height:400px; transform:rotate(-6deg); border-radius: 38% 62% 48% 52% / 62% 38% 55% 45%;"></div>
+      </div>
+      <h2 class="mypath-title">My path</h2>
+      <div class="roles-panel">
+        <div class="role-row"><span class="role-name">Teaching, waiting tables, admin work</span><span class="role-date">2004–2009</span></div>
+        <div class="role-row"><span class="role-name">Temp jobs</span><span class="role-date">2009–2010</span></div>
+        <div class="role-row"><span class="role-name">Alfred P. Sloan Foundation</span><span class="role-date">2010–2012</span></div>
+        <div class="role-row"><span class="role-name">UVA Scholars' Lab</span><span class="role-date">2012–2013</span></div>
+        <div class="role-row"><span class="role-name">MLA</span><span class="role-date">2013–2014</span></div>
+        <div class="role-row"><span class="role-name">CUNY</span><span class="role-date">2014–2021</span></div>
+        <div class="role-row"><span class="role-name">Started Inkcap Consulting</span><span class="role-date">2021–</span></div>
+      </div>
+      <div class="context-layer fragment" data-fragment-index="0">
+        <span class="context-item" style="left:60px; top:85px; transform:rotate(-6deg); font-size:1.3em;">Grad school in Colorado</span>
+        <span class="context-item" style="left:850px; top:80px; transform:rotate(6deg); font-size:1.3em;">Parental leave ×2</span>
+        <span class="context-item" style="left:30px; top:380px; transform:rotate(6deg); font-size:1.3em;">Moved to NYC</span>
+        <span class="context-item" style="left:970px; top:320px; transform:rotate(8deg); font-size:1.3em; width:210px; display:inline-block; text-align:center; white-space:normal;">COVID</span>
+        <span class="context-item" style="left:110px; top:600px; transform:rotate(-8deg); font-size:1.3em;">Defended<br/>dissertation</span>
+        <span class="context-item" style="left:980px; top:615px; transform:rotate(9deg); font-size:1.3em;">Burnout</span>
+      </div>
+    </div>
+    <aside class="notes">The roles are the visible line on a CV. The rest of it — grad school in Colorado, the move to NYC, defending the dissertation, parental leave twice, COVID, burnout — is what actually shaped the path, and none of it lines up neatly next to a job title. Click to bring in that context and talk through how it intersected with (and sometimes interrupted) the roles listed here.</aside>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <!-- ================================================================
+       5 · SECTION: FINDING YOUR WAY
+  ================================================================ -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Finding<br><em>your way</em></h2>
+      <div class="section-desc">A practical framework for reflection and discernment.</div>
+    </div>
+    <aside class="notes">Transition from introductions and my own story into practical tools for finding your way.</aside>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <!-- ================================================================
+       6 · WHERE DO I EVEN START?
+  ================================================================ -->
+  <section class="layout-wherebegin">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Where do I even start?</h2>
+        <div class="orange-box" style="margin-top: 0.2em;"><em>Throughout: Focus on what you can control and celebrate small wins</em></div>
+        <div class="step-list">
+          <div class="step-row"><span class="step-num">1</span><span class="step-text">Assess what's working for you and what's not</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-text">Build relationships and learn the landscape</span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-text">Find resources</span></div>
+          <div class="step-row"><span class="step-num">4</span><span class="step-text">Make a plan</span></div>
+          <div class="step-row"><span class="step-num">5</span><span class="step-text">Put yourself out there!</span></div>
+          <div class="step-row"><span class="step-num">6</span><span class="step-text">Take time to reflect</span></div>
+          <div class="step-row step-row--repeat"><span class="step-num">7</span><span class="step-text">Repeat.</span></div>
+        </div>
+      </div>
+      <div class="img-col">
+        <img src="../images/tiny_parasol.jpg" alt="A hand holding an incredibly tiny parasol mushroom, with a cap smaller than a grain of rice" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">This is a cycle, not a checklist — that's why "repeat" gets its own color. Once you've reflected, you're back to reassessing what's working, and the loop starts again.</aside>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <!-- ================================================================
+       7 · DISCERNMENT AND DISCOVERY
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Discernment and discovery</h2>
+        <div style="display: flex; align-items: flex-start; gap: 1.4em;">
+          <ul class="custom-bullets" style="flex: 1; margin: 0;">
+            <li><strong>Institutional resources</strong> — via the Grad School & the Career Services Network</li>
+            <li><strong>Imagine PhD</strong> — robust, research-based career exploration tool</li>
+            <li><strong>YearCompass</strong> — guided reflection and goal-setting</li>
+            <li><strong>Finding Your Purpose</strong> — zine/workbook by Hannah Alpert Abrams</li>
+          </ul>
+          <div style="flex-shrink: 0; text-align: center; border: 2px solid var(--color-primary); border-radius: 4px; padding: 0.5em;">
+            <img src="../images/qr-inkcap-resources.png" alt="QR code for bit.ly/inkcap-resources" style="width: 120px; height: 120px; display: block; margin: 0 auto;">
+            <div style="font-size: 0.5em; color: var(--color-text-secondary); margin-top: 0.4em; font-family: var(--font-body);">bit.ly/inkcap-resources</div>
+          </div>
+        </div>
+        <div class="orange-box">Tap into the curiosity that led you to grad school in the first place.</div>
+      </div>
+      <div class="img-col">
+        <img src="../images/tiny_ascomycetes.jpg" alt="Photo of white tiny white ascomycetes seen through a hand lens" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">
+<p>One challenge in higher ed is that the expected pathways are so rigidly defined that it’s hard to envision different possibilities, let alone pursue them.</p><p>In that context, how do you even know what you might want to do?</p><p>Starting from the question of what really makes you light up creates a completely different posture towards a career search. Discernment and discovery can be a really difficult part of the process, not least because they have a strong emotional charge to them. But like the questions I asked yesterday, the discernment process taps into our deep curiosity—which is often part of what brought us to graduate school in the first place, but something that can be hard to tap into when you’re scrambling to keep up.</p><p>There are tools and resources that can help. The MSU Graduate School website has a great Career Development section, and I have quite a few resources gathered at the link and QR code on the slide. Let me tell you more about a few of my favorites.</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 8 -->
+  <!-- ================================================================
+       8 · INSTITUTIONAL RESOURCES
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 44px 80px 36px; box-sizing: border-box;">
+      <h2 style="flex-shrink: 0; margin-bottom: 0.4em;">Institutional resources</h2>
+      <div style="flex: 1; min-height: 0; position: relative; background: var(--color-bg-subtle); border-radius: 4px;">
+        <!-- Collage: two overlapping screenshots with white frames + borders (same as faculty deck) -->
+        <img src="../images/msu/msu_career_services.png" alt="MSU career services resources for graduate students" style="position:absolute; left:6%; top:6%; width:48%; height:auto; box-sizing:border-box; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.18); transform:rotate(-2deg); z-index:1;">
+        <img src="../images/msu/msu_career_services2.png" alt="Additional MSU career services resources for graduate students" style="position:absolute; left:45%; top:27%; width:48%; height:auto; box-sizing:border-box; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.22); transform:rotate(2deg); z-index:2;">
+      </div>
+    </div>
+    <aside class="notes">MSU Graduate School career development resources.</aside>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <!-- ================================================================
+       9 · IMAGINE PHD
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; min-height: 0; margin-bottom: 0.75em;">
+        <img src="../images/imaginephd.png" alt="ImaginePhD career exploration tool screenshot" style="width: 100%; height: 100%; object-fit: contain; object-position: top;">
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        Imagine PhD, Graduate Career Consortium, 2026 — <a href="https://imaginephd.com">imaginephd.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>Imagine PhD [describe]</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 10 -->
+  <!-- ================================================================
+       10 · YEARCOMPASS
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="../images/yearcompass.png" alt="YearCompass guided reflection booklet screenshot" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="exercise-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">Calendar review exercise</h3>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Look at your calendar for the past year</li>
+            <li>Identify significant events — social, professional, scholarly, personal, etc.</li>
+            <li>What gave you energy?</li>
+            <li>What left you drained?</li>
+            <li>What patterns do you notice in different parts of your life?</li>
+        
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        YearCompass — <a href="https://yearcompass.com">yearcompass.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>YearCompass guide [describe]</p><p>But the important thing I want to emphasize is the undercurrent of this: that your desires matter, and your curiosity matters.</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 11 -->
+  <!-- ================================================================
+       11 · FINDING YOUR PURPOSE (Abrams)
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="../images/abrams1.png" alt="Finding Your Purpose zine by Hannah Alpert Abrams" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="lineage-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">What's your lineage?</h3>
+          <blockquote style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 0.86em; line-height: 1.45; color: var(--color-accent-dark); border-left: 4px solid var(--color-primary); margin: 0 0 0.9em; padding: 0 0 0 0.8em; width: auto; box-shadow: none; text-align: left;">“Are there people who you have encountered on your professional journey who made you think: I want to be like you? This may include someone like your dissertation advisor or a scholar you frequently cite. But it may also include people whose disciplines, professions, and lives look nothing like your own. It is likely to include people you love.” —Hannah Alpert-Abrams</blockquote>
+          <div style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 1.2em; color: var(--color-primary); line-height: 1.15; margin: 0.2em 0 0.25em;">Reflect</div>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Identify key themes or values that shape your work</li>
+            <li>Reflect on who you associate with those themes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        Hannah Alpert Abrams, <em>Finding Your Purpose</em>, 2022 — <a href="https://halperta.com">halperta.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>Finding Your Purpose zine/workbook by Hannah Alpert Abrams [describe]</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 12 -->
+  <!-- ================================================================
+       12 · REFLECTION
+  ================================================================ -->
+  <section class="layout-discussion layout-intros">
+    <div class="slide-inner">
+      <h2>Taking stock</h2>
+      <div class="intro-prompt" style="margin-bottom: 0.45em;">Take a few minutes to reflect and write:</div>
+      <ul class="intro-list" style="margin-top: 0;">
+        <li>What gives you energy in your work right now? What drains it?</li>
+        <li>What would you like more of in the year ahead — in work, and beyond it?</li>
+        <li>One small step you could take this month</li>
+      </ul>
+    </div>
+    <aside class="notes">Give a full five minutes of quiet writing time. Responses are for them — no one has to share. This loops back to the first step in "Where do I even start?": assessing what's working and what's not. Encourage them to keep the last answer small and concrete.</aside>
+  </section>
+
+  <!-- SLIDE 13 -->
+  <!-- ================================================================
+       13 · SECTION: ADVOCATING FOR YOURSELF AND OTHERS
+  ================================================================ -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Advocating for<br><em>yourself and others</em></h2>
+      <div class="section-desc">Tools and resources to help understand and shape the system.</div>
+    </div>
+    <aside class="notes">Transition from individual reflection to advocating for yourself and for change in your program and field.</aside>
+  </section>
+
+  <!-- SLIDE 14 -->
+  <!-- ================================================================
+       14 · WHAT THE RESEARCH TELLS US
+  ================================================================ -->
+  <section class="layout-callout">
+    <div class="slide-inner">
+      <h2>What the research tells us</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="card-num">1</span>
+          <span class="card-text">Advisor quality is decisive.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">2</span>
+          <span class="card-text">Funding is systematically inadequate.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">3</span>
+          <span class="card-text">Peer communities are lifelines.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">4</span>
+          <span class="card-text">Early career guidance matters.</span>
+        </div>
+        <div class="stat-card">
+          <span class="card-num">5</span>
+          <span class="card-text">Curricular clarity supports success.</span>
+        </div>
+        <div class="stat-card stat-card--teal">
+          <span class="card-text">ACLS Doctoral Futures Initiative, 2025–26</span>
+        </div>
+      </div>
+    </div>
+      <aside class="notes">
+<p>Through this work, a few things have emerged as key elements for student success:</p><ol type="1"><li><p><strong>Advisor quality</strong>. A supportive advisor is perhaps the most crucial element in student progress and well-being. However, advising practices vary significantly and are not often institutionally rewarded, leaving students in a precarious position without clear guidelines to navigate challenges. This is something I’ll be talking about in depth in the faculty workshop tomorrow.</p></li><li><p><strong>Material support</strong>. Adequate funding is essential to student progress, but the typical stipend falls short of a living wage. Students face food insecurity and impossible trade-offs. If you can't pay rent, care for your kid, or go to the doctor, there's no way you can do your best intellectual work.</p></li><li><p><strong>Non-competitive peer networks.</strong> Informal peer networks provide crucial support, especially when formal structures fail. Grad students regularly turn to their peers to understand the hidden curriculum, to form writing groups, and so much more. In many institutions right now, program size reductions are making this increasingly difficult.</p></li><li><p><strong>Career guidance.</strong> While grad career advising has improved in many institutions, for many students the discussion starts too late, toward the end of their studies. It should be integrated into the entire curriculum—not just a standalone career center, but in discussions within the department—from the very beginning of a student's program. Even before someone applies, they should have a sense of where alumni tend to be employed and what their own career prospects might be.</p></li><li><p><strong>Curricular clarity supports success.</strong> Students—and really, faculty—should know why each step of their program matters. What is the goal of the exam? What constitutes a successful dissertation? Alongside this clarity, flexibility can provide essential breathing room—either for non-traditional research approaches, or for the unexpected curveballs that are a part of life. Clear guidelines plus space for creative work and timing adjustments leads to stronger progress and more meaningful research.</p></li></ol><p>These are not impossible changes! While some of these interventions—like funding—require significant resources, not all of them do. Some of the changes could be made right now with sufficient collective will.</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 15 -->
+  <!-- ================================================================
+       15 · ACLS DOCTORAL FUTURES
+  ================================================================ -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 40px 72px 44px; box-sizing: border-box;">
+      <h2 style="flex-shrink: 0;">ACLS Doctoral Futures</h2>
+      <div style="flex: 1; min-height: 0; max-height: 330px; margin-top: 0.4em; display: flex; align-items: center; justify-content: center;">
+        <img src="../images/doctoral-futures.png" alt="ACLS Doctoral Futures initiative" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 6px 24px rgba(0,0,0,0.13);">
+      </div>
+      <div class="df-buttons">
+        <a class="df-btn" href="https://docs.google.com/document/d/1ccI7AgOiWQbjTJHA_uj45ucaMvNvrtIjOO84N56C2YY/edit?tab=t.0" target="_blank" rel="noopener">Recommendations ↗</a>
+        <a class="df-btn" href="https://works.hcommons.org/collections/doctoral-futures/" target="_blank" rel="noopener">Resources ↗</a>
+      </div>
+      <div style="flex-shrink: 0; text-align: center; margin-top: 0.9em; font-family: var(--font-body); font-size: 0.6em;">
+        <a href="https://www.acls.org/doctoral-futures/" target="_blank">acls.org/doctoral-futures</a>
+      </div>
+    </div>
+    <aside class="notes">The Doctoral Futures initiative is working to turn what we've heard in listening sessions into concrete recommendations and models for programs. More information is at acls.org/doctoral-futures.</aside>
+  </section>
+
+  <!-- SLIDE 16 -->
+  <!-- ================================================================
+       16 · DISCUSSION
+  ================================================================ -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Let's talk</h2>
+        <ul class="custom-bullets">
+          <li>What has helped you most so far, formally or informally?</li>
+          <li>What do you wish you had known, or had access to, earlier in your program?</li>
+          <li>What kinds of support could you build with and for your peers?</li>
+          <li>What questions are you still carrying?</li>
+        </ul>
+        <div class="orange-box">Find your people. These conversations are part of the work.</div>
+      </div>
+      <div class="img-col">
+        <img src="../images/reishi.jpeg" alt="Photo of a reishi mushroom growing from wood" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">Open discussion. Depending on the size of the group, start with pairs or small groups for a few minutes, then come back together. The third question connects to the peer programming the fellows will be developing this year.</aside>
+  </section>
+
+  <!-- SLIDE 17 -->
+  <!-- ================================================================
+       17 · CLOSING
+  ================================================================ -->
+  <section class="layout-closing">
+<div class="slide-inner">
+      <h2>Thank you</h2>
+      <div class="tagline">Creative, sustainable, equitable solutions for higher education.</div>
+      <div class="orange-rule"></div>
+      <div class="resources-link">Resources gathered at <a href="https://bit.ly/inkcap-resources">bit.ly/inkcap-resources</a></div><br />
+      <div class="contact">
+        Katina L. Rogers<br>
+        <a href="https://inkcapconsulting.com">inkcapconsulting.com</a><br>
+        katina@inkcapconsulting.com
+      </div>
+    </div>
+
+      <aside class="notes">
+<p>Thank you again for giving me the chance to talk with you today, and for generously sharing your time and attention. I’d love to open it up to questions and discussion.</p>
+    </aside>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    history: true,
+    center: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    hash: true,
+  });
+</script>
+<!-- ================================================================
+     LIVE CAPTIONS (backup) — press C to toggle on/off.
+     Uses Chrome's built-in speech recognition (Chrome only; needs
+     internet and microphone permission). Not shown unless turned on.
+================================================================ -->
+<style>
+  #live-captions { position: fixed; left: 50%; bottom: 3.5vh; transform: translateX(-50%); width: min(88vw, 1400px); z-index: 1000; background: rgba(5, 26, 66, 0.88); border-top: 3px solid #006D6F; border-radius: 6px; padding: 0.55em 1em; box-sizing: border-box; font-family: 'Libre Franklin', system-ui, sans-serif; font-size: clamp(18px, 2.3vw, 36px); line-height: 1.35; color: #ffffff; text-align: left; display: none; max-height: 3.6em; overflow: hidden; }
+  #live-captions.on { display: block; }
+  #live-captions .interim { color: rgba(255,255,255,0.65); }
+  #live-captions .status { color: #ffffff; font-style: italic; }
+</style>
+<div id="live-captions" aria-live="polite"></div>
+<script>
+(function () {
+  var box = document.getElementById('live-captions');
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var rec = null, on = false, finalText = '';
+  var MAX_CHARS = 160;  // roughly two lines of recent speech
+
+  function esc(t) { return t.replace(/[&<>]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
+  function show(finalPart, interimPart) {
+    var f = finalPart.length > MAX_CHARS ? '…' + finalPart.slice(-MAX_CHARS) : finalPart;
+    box.innerHTML = esc(f) + (interimPart ? ' <span class="interim">' + esc(interimPart) + '</span>' : '');
+  }
+  function status(msg) { box.innerHTML = '<span class="status">' + esc(msg) + '</span>'; }
+
+  function start() {
+    if (!SR) { box.classList.add('on'); status('Live captions need Google Chrome.'); setTimeout(function(){ if (!on) box.classList.remove('on'); }, 4000); return; }
+    on = true; finalText = '';
+    box.classList.add('on'); status('Captions on — listening…');
+    rec = new SR();
+    rec.lang = 'en-US'; rec.continuous = true; rec.interimResults = true;
+    rec.onresult = function (e) {
+      var interim = '';
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        var t = e.results[i][0].transcript;
+        if (e.results[i].isFinal) { finalText = (finalText + ' ' + t).replace(/\s+/g, ' ').trim(); }
+        else { interim += t; }
+      }
+      if (finalText.length > MAX_CHARS * 3) finalText = finalText.slice(-MAX_CHARS * 2);
+      show(finalText, interim);
+    };
+    rec.onerror = function (e) {
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { on = false; status('Microphone access was blocked. Allow the microphone for this page and press C again.'); }
+      else if (e.error === 'network') { status('Captions need an internet connection — retrying…'); }
+    };
+    rec.onend = function () { if (on) { try { rec.start(); } catch (err) {} } };  // restart after pauses
+    try { rec.start(); } catch (err) {}
+  }
+  function stop() {
+    on = false;
+    if (rec) { try { rec.stop(); } catch (err) {} rec = null; }
+    box.classList.remove('on'); box.innerHTML = '';
+  }
+  function toggle() { on ? stop() : start(); }
+
+  if (window.Reveal && Reveal.addKeyBinding) {
+    Reveal.addKeyBinding({ keyCode: 67, key: 'C', description: 'Toggle live captions' }, toggle);
+  } else {
+    document.addEventListener('keydown', function (e) { if ((e.key === 'c' || e.key === 'C') && !e.metaKey && !e.ctrlKey) toggle(); });
+  }
+})();
+</script>
+</body>
+</html>

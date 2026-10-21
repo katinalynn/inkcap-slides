@@ -12,9 +12,9 @@ HTML/Reveal.js slide decks for Katina L. Rogers's upcoming talks, styled to matc
 
 | File | Event | Date | Slides |
 |---|---|---|---|
-| `msu-keynote.html` | Keynote, Michigan State University | Oct 2026 | 17 |
-| `msu-faculty.html` | Faculty workshop, Michigan State University | Oct 2026 | 17 |
-| `msu-gradstudents.html` | Graduate student workshop, Michigan State University | Oct 2026 | 17 |
+| `archive/msu-keynote.html` | Keynote, Michigan State University | Oct 2026 | 17 |
+| `archive/msu-faculty.html` | Faculty workshop, Michigan State University | Oct 2026 | 17 |
+| `archive/msu-gradstudents.html` | Graduate student workshop, Michigan State University | Oct 2026 | 17 |
 | `archive/cuny.html` | Talk, The Graduate Center, CUNY | Aug 4, 2026 | 9 |
 | `archive/stockholm.html` | Book talk, Stockholm University | June 2026 | 20 |
 | `archive/alabama.html` | Keynote, University of Alabama | May 2026 | 19 |

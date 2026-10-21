@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Putting the Mycelial University into Practice — Faculty Workshop, Michigan State University, October 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    /* ================================================================
+       INKCAP CONSULTING — BRAND TOKENS
+    ================================================================ */
+    :root {
+      --color-primary:        #006D6F;
+      --color-primary-dark:   #005456;
+      --color-primary-light:  #e6f3f3;
+      --color-text:           #1a1a1a;
+      --color-text-secondary: #4a4a4a;
+      --color-bg:             #ffffff;
+      --color-bg-subtle:      #f7f8f9;
+      --color-bg-warm:        #faf9f7;
+      --color-border:         #d4d4d4;
+      --color-border-light:   #e8e8e8;
+      --color-accent-dark:    #051A42;
+      --color-accent-orange:  #e05724;
+      --font-body:    'Libre Franklin', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    }
+
+    /* ================================================================
+       REVEAL.JS BASE OVERRIDES
+    ================================================================ */
+    .reveal-viewport { background: var(--color-bg); }
+
+    .reveal {
+      font-family: var(--font-body);
+      font-size: 28px;
+      color: var(--color-text);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      text-transform: none;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal h1 { font-size: 2.8em; }
+    .reveal h2 { font-size: 2em; }
+    .reveal h3 { font-size: 1.4em; }
+
+    .reveal p {
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.65;
+      margin-bottom: 0.8em;
+    }
+
+    .reveal ul, .reveal ol {
+      font-family: var(--font-body);
+      line-height: 1.7;
+      margin-left: 1.5em;
+    }
+
+    .reveal ul li, .reveal ol li { margin-bottom: 0.4em; }
+    .reveal a { color: var(--color-primary); }
+
+    .reveal .progress { background: var(--color-border-light); color: var(--color-primary); height: 3px; }
+    .reveal .controls { color: var(--color-primary); }
+    .reveal .slide-number {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      background: transparent;
+      right: 20px;
+      bottom: 18px;
+    }
+
+    /* ================================================================
+       LAYOUT: TITLE (Navy background)
+    ================================================================ */
+    .layout-title { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+    .layout-title .slide-inner { padding: 0; display: flex; height: var(--slide-height, 720px); }
+
+    .layout-title .text-col {
+      padding: 64px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1.1;
+    }
+
+    .layout-title .img-col {
+      flex: 0.9;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .layout-title .img-col img,
+    .layout-title .img-col .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .layout-title .eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.42em;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 1.4em;
+    }
+
+    .layout-title h1 {
+      color: #f5f3ee;
+      font-size: 2.3em;
+      line-height: 1.1;
+      font-weight: 300;
+      margin-bottom: 0.4em;
+    }
+
+    .layout-title h1 em {
+      color: var(--color-primary);
+      font-style: italic;
+    }
+
+    .layout-title .teal-rule {
+      width: 56px;
+      height: 3px;
+      background: var(--color-primary);
+      margin: 1em 0 1.2em;
+    }
+
+    .layout-title .subtitle {
+      font-family: var(--font-body);
+      font-size: 0.48em;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      max-width: 72%;
+      margin-bottom: 0;
+    }
+
+    .layout-title .presenter {
+      font-family: var(--font-heading);
+      font-size: 0.7em;
+      color: rgba(255, 255, 255, 0.82);
+      margin-top: 2em;
+      padding-top: 1em;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    /* ================================================================
+       LAYOUT: DEFAULT (White)
+    ================================================================ */
+    .layout-default { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default .slide-inner { padding: 56px 80px; height: var(--slide-height, 720px); box-sizing: border-box; }
+
+    .layout-default h2 {
+      color: var(--color-primary);
+      font-size: 1.85em;
+      border-bottom: 1.5px solid var(--color-primary-light);
+      padding-bottom: 0.3em;
+      margin-bottom: 0.65em;
+    }
+
+    .layout-default h3 {
+      color: var(--color-accent-dark);
+      font-size: 1.25em;
+      font-weight: 500;
+    }
+
+    .layout-default p,
+    .layout-default li {
+      color: var(--color-text);
+      font-size: 0.7em;
+    }
+
+    /* ================================================================
+       LAYOUT: DEFAULT WITH IMAGE (White, split)
+    ================================================================ */
+    .layout-default-img { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-default-img .slide-inner { display: flex; gap: 0; height: var(--slide-height, 720px); }
+
+    .layout-default-img .content-col {
+      padding: 52px 48px 52px 80px;
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .layout-default-img .img-col {
+      flex: 0.8;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .layout-default-img .img-col img,
+    .layout-default-img .img-col .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .layout-default-img h2 {
+      color: var(--color-primary);
+      font-size: 1.65em;
+      border-bottom: 1.5px solid var(--color-primary-light);
+      padding-bottom: 0.3em;
+      margin-bottom: 0.6em;
+    }
+
+    .layout-default-img h3 { color: var(--color-accent-dark); font-size: 1.2em; }
+
+    .layout-default-img p,
+    .layout-default-img li {
+      font-size: 0.66em;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    /* ================================================================
+       LAYOUT: TWO COLUMN
+    ================================================================ */
+    .layout-two-col { background: var(--color-bg) !important; padding: 0 !important; text-align: left; }
+    .layout-two-col .slide-inner { padding: 50px 72px; height: var(--slide-height, 720px); box-sizing: border-box; }
+
+    .layout-two-col h2 {
+      color: var(--color-primary);
+      font-size: 1.65em;
+      margin-bottom: 0.55em;
+    }
+
+    .layout-two-col .col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      margin-top: 0.6em;
+    }
+
+    .layout-two-col .col h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15em;
+      color: var(--color-accent-dark);
+      margin-bottom: 0.4em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .layout-two-col .col p,
+    .layout-two-col .col li {
+      font-size: 0.63em;
+      color: var(--color-text);
+      line-height: 1.72;
+    }
+
+    /* ================================================================
+       LAYOUT: DISCUSSION (Navy background)
+    ================================================================ */
+    .layout-discussion { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: left; }
+
+    .layout-discussion .slide-inner {
+      padding: 60px 80px;
+      height: var(--slide-height, 720px);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .layout-discussion h2 {
+      color: #f5f3ee;
+      font-size: 1.85em;
+      font-weight: 300;
+      margin-bottom: 0.7em;
+    }
+
+    .layout-discussion .prompt {
+      font-family: var(--font-body);
+      font-size: 0.6em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4em;
+      font-style: italic;
+    }
+
+    .layout-discussion ul { list-style: none; margin-left: 0; }
+
+    .layout-discussion ul li {
+      font-family: var(--font-heading);
+      font-size: 1.05em;
+      font-style: italic;
+      color: rgba(255,255,255,0.88);
+      font-weight: 300;
+      padding: 0.55em 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ================================================================
+       LAYOUT: CLOSING (Navy, centered)
+    ================================================================ */
+    .layout-closing { background: var(--color-accent-dark) !important; padding: 0 !important; text-align: center; }
+    .layout-closing .slide-inner { padding: 64px 80px; height: var(--slide-height, 720px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+    .layout-closing h2 {
+      color: #f5f3ee;
+      font-size: 2.1em;
+      font-weight: 300;
+      margin-bottom: 0.3em;
+    }
+
+    .layout-closing .tagline {
+      font-family: var(--font-body);
+      font-size: 0.47em;
+      color: rgba(255, 255, 255, 0.52);
+      margin-bottom: 0;
+    }
+
+    .layout-closing .orange-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--color-accent-orange);
+      margin: 1.8em auto;
+    }
+
+    .layout-closing .contact {
+      font-family: var(--font-body);
+      font-size: 0.46em;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 2.2;
+    }
+
+    .layout-closing .contact a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .layout-closing .resources-link {
+      font-family: var(--font-heading);
+      font-size: 1.0em;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.5em;
+      margin-bottom: 0;
+    }
+
+    .layout-closing .resources-link a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    /* ================================================================
+       UTILITY & SHARED COMPONENTS
+    ================================================================ */
+    ul.custom-bullets {
+      list-style: none !important;
+      margin-left: 0 !important;
+    }
+
+    ul.custom-bullets li {
+      padding-left: 1.3em;
+      position: relative;
+    }
+
+    ul.custom-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.52em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+
+    .highlight-box {
+      background: var(--color-primary-light);
+      border-left: 4px solid var(--color-primary);
+      padding: 0.85em 1em;
+      margin: 0.9em 0;
+      font-size: 0.63em;
+      line-height: 1.65;
+      border-radius: 0 3px 3px 0;
+      color: var(--color-text);
+    }
+
+    .orange-box {
+      background: #fdf1ec;
+      border-left: 4px solid var(--color-accent-orange);
+      padding: 0.65em 1em;
+      margin: 0.9em 0;
+      font-size: 0.63em;
+      border-radius: 0 3px 3px 0;
+      color: var(--color-text);
+    }
+
+    .footnote {
+      font-family: var(--font-body);
+      font-size: 0.38em;
+      color: var(--color-text-secondary);
+      border-top: 1px solid var(--color-border-light);
+      padding-top: 0.7em;
+      margin-top: 1.8em;
+      position: absolute;
+      bottom: 36px;
+      left: 80px;
+      right: 80px;
+    }
+
+    .img-placeholder {
+      background: var(--color-primary-light);
+      border: 1.5px dashed var(--color-primary);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.42em;
+      color: var(--color-primary-dark);
+      min-height: 200px;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .caption {
+      font-family: var(--font-body);
+      font-size: 0.4em;
+      color: var(--color-text-secondary);
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+
+    .reveal .fragment {
+      transition: opacity 0.3s ease;
+    }
+    /* LINK BUTTONS (Doctoral Futures slide) */
+    .df-buttons { flex-shrink: 0; display: flex; justify-content: center; gap: 28px; margin-top: 1.1em; }
+    .reveal a.df-btn { font-family: var(--font-body); font-size: 0.8em; font-weight: 500; padding: 0.55em 1.5em; border-radius: 5px; background: var(--color-primary); color: #fff; border: 2px solid var(--color-primary); text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .reveal a.df-btn:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
+
+
+
+    /* Reflection-tool slides copied from the student deck: match its text sizes */
+    .lineage-panel li, .exercise-panel li { font-size: 0.78em; }
+    .lineage-panel h3, .exercise-panel h3 { font-weight: 400; }
+    ul.custom-bullets ol li { padding-left: 0.2em; }
+    ul.custom-bullets ol li::before { display: none; }
+    /* WHO'S IN THE ROOM (intro variant of discussion) */
+    .layout-intros h2 { margin-bottom: 0.6em; }
+    .layout-intros .intro-rule { width: 56px; height: 3px; background: var(--color-accent-orange); margin: 0 0 1.1em; }
+    .layout-intros .intro-prompt { font-family: var(--font-heading); font-size: 1.25em; font-style: italic; font-weight: 300; line-height: 1.4; color: #ffffff; border-left: 4px solid var(--color-primary); padding-left: 0.8em; max-width: 88%; }
+    .layout-intros .intro-hi { color: #5fbfc1; }
+    .layout-intros .intro-lead { font-family: var(--font-body); font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: #ffffff; margin: 3.4em 0 0.9em; font-weight: 500; }
+    .layout-discussion.layout-intros ul.intro-list li { border-bottom: none; padding: 0.1em 0 0.1em 1.2em; margin-bottom: 0.15em; position: relative; font-style: normal; font-size: 1.0em; }
+    .layout-intros ul.intro-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); }
+
+    /* SECTION BREAK (teal) */
+    .layout-section { background: var(--color-primary) !important; padding: 0 !important; text-align: left; }
+    .layout-section .slide-inner { padding: 64px 80px; height: var(--slide-height, 720px); box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; }
+    .layout-section h2 { color: #ffffff; font-size: 2.3em; font-weight: 300; line-height: 1.15; }
+    .layout-section h2 em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .layout-section .section-desc { font-family: var(--font-body); font-size: 0.48em; color: rgba(255,255,255,0.62); margin-top: 1.4em; line-height: 1.7; max-width: 62%; }
+
+    /* ================================================================
+       READABILITY OVERRIDES (Oct 15): no teal text on navy; larger small text
+       (decorative teal — bullets, rules, bars — is unchanged)
+    ================================================================ */
+    .layout-title .eyebrow { color: #ffffff; font-size: 0.56em; }
+    .layout-title h1 em { color: #ffffff; }
+    .layout-title .subtitle { font-size: 0.64em; color: rgba(255,255,255,0.88); }
+    .layout-title .presenter { font-size: 0.8em; color: rgba(255,255,255,0.92); }
+    .layout-section .section-desc { font-size: 0.7em; color: rgba(255,255,255,0.92); max-width: 78%; }
+    .layout-intros .intro-hi { color: #ffffff; }
+    .layout-closing .tagline { font-size: 0.66em; color: rgba(255,255,255,0.88); }
+    .layout-closing a, .layout-closing .contact a, .layout-closing .resources-link a, .layout-discussion a { color: #ffffff; }
+
+    /* Review pass (Oct 15): body text matches student deck; consistent title sizes; larger contact text */
+    .layout-default p, .layout-default li { font-size: 0.78em; }
+    .layout-default-img p, .layout-default-img li { font-size: 0.76em; }
+    .layout-default-img h2 { font-size: 1.85em; }
+    .layout-discussion.layout-intros ul.intro-list li { margin-bottom: 0.35em; }
+    .layout-closing .contact { font-size: 0.66em; color: rgba(255,255,255,0.85); }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- SLIDE 1 -->
+  <section class="layout-title">
+    <div class="slide-inner">
+      <div class="text-col">
+        <div class="eyebrow">Faculty Workshop &nbsp;·&nbsp; MSU &nbsp;·&nbsp; October 15, 2026</div>
+        <h1>
+          Putting the mycelial university<br>
+          <em>into practice</em>
+        </h1>
+        <div class="teal-rule"></div>
+        <div class="subtitle">
+          Supporting students in an uncertain landscape
+        </div>
+        <div class="presenter">
+          Katina L. Rogers &nbsp;·&nbsp; Inkcap Consulting
+        </div>
+      </div>
+      <div class="img-col">
+        <img src="../images/turkey-tail.jpg" alt="Close up photograph of fan-like turkey tail mushrooms">
+      </div>
+    </div>
+    <aside class="notes">Welcome and frame the session. Yesterday's keynote laid out the big picture — today let's get into the practical questions faculty actually face. This is a conversation, not a lecture.</aside>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Individual<br><em>actions</em></h2>
+      <div class="section-desc">Advising, mentorship, and pedagogy</div>
+    </div>
+    <aside class="notes">Section break.</aside>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; justify-content: center;">
+      <h2>Three questions I hear most from faculty</h2>
+      <p>These are the questions that have come up repeatedly as I've worked with faculty across institutions:</p>
+      <ul class="custom-bullets">
+        <li class="fragment">How do I offer guidance on pathways I've never experienced?</li>
+        <li class="fragment">How can I support vulnerable students in the current climate?</li>
+        <li class="fragment">How can our department simultaneously hold rigorous standards and be open to new ways of working?</li>
+      </ul>
+      <div class="highlight-box fragment">What else are you carrying in with you today?</div>
+    </div>
+    <aside class="notes">Reveal each question one click at a time. Pause after each one — invite a nod, a reaction. These are meant to feel like recognition. End with the highlight box to signal this is a back-and-forth, not a presentation.</aside>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col" style="flex: 0.9;">
+        <h2>Advising students into the unknown</h2>
+        <p>You don't need to have walked the path to help someone find their way. Effective career support starts with three things:</p>
+        <ul class="custom-bullets">
+          <li><strong>Curiosity</strong> — about students' goals and values</li>
+          <li><strong>Connection</strong> — build trust before having hard conversations</li>
+          <li><strong>Guidance</strong> — pointing students to resources or other voices</li>
+        </ul>
+      </div>
+      <div class="img-col" style="flex: 1.1; position: relative; background: var(--color-bg-subtle);">
+        <!-- Collage: two overlapping screenshots with white frames + borders -->
+        <img src="../images/msu/msu_career_services.png" alt="MSU career services resources for graduate students" style="position:absolute; left:5%; top:9%; width:62%; box-sizing:border-box; height:auto; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.18); transform:rotate(-2deg); z-index:1;">
+        <img src="../images/msu/msu_career_services2.png" alt="Additional MSU career services resources for graduate students" style="position:absolute; left:33%; top:45%; width:62%; box-sizing:border-box; height:auto; object-fit:contain; background:#fff; padding:6px; border:2px solid var(--color-accent-dark); border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,0.22); transform:rotate(2deg); z-index:2;">
+      </div>
+    </div>
+    <aside class="notes">Spend a few minutes here before opening to discussion. The mentor mapping point is worth dwelling on — it's a concrete tool faculty can use in advising conversations. Consider pausing to ask: "What does your own mentor map look like? Who's in the room for your students?"</aside>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <h2 style="flex-shrink: 0; margin-bottom: 0.45em;">Tools you can use</h2>
+      <div style="flex: 1; min-height: 0; max-height: 400px; margin-bottom: 0.75em; display: flex; justify-content: center;">
+        <img src="../images/imaginephd.png" alt="ImaginePhD career exploration tool screenshot" style="max-width: 100%; max-height: 100%; object-fit: contain; object-position: top;">
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        Imagine PhD, Graduate Career Consortium, 2026 — <a href="https://imaginephd.com">imaginephd.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>Imagine PhD [describe]</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="../images/yearcompass.png" alt="YearCompass guided reflection booklet screenshot" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="exercise-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">Calendar review exercise</h3>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Look at your calendar for the past year</li>
+            <li>Identify significant events — social, professional, scholarly, personal, etc.</li>
+            <li>What gave you energy?</li>
+            <li>What left you drained?</li>
+            <li>What patterns do you notice in different parts of your life?</li>
+        
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        YearCompass — <a href="https://yearcompass.com">yearcompass.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>YearCompass guide [describe]</p><p>But the important thing I want to emphasize is the undercurrent of this: that your desires matter, and your curiosity matters.</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 36px 56px 40px; box-sizing: border-box;">
+      <div style="flex: 1; display: flex; gap: 1.6em; min-height: 0; margin-bottom: 0.75em; align-items: stretch;">
+        <img src="../images/abrams1.png" alt="Finding Your Purpose zine by Hannah Alpert Abrams" style="flex: 0.85; min-width: 0; max-height: 100%; object-fit: contain; object-position: top;">
+        <div class="lineage-panel" style="flex: 1.4; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 1.5em; margin: 0 0 0.45em;">What's your lineage?</h3>
+          <blockquote style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 0.86em; line-height: 1.45; color: var(--color-accent-dark); border-left: 4px solid var(--color-primary); margin: 0 0 0.9em; padding: 0 0 0 0.8em; width: auto; box-shadow: none; text-align: left;">“Are there people who you have encountered on your professional journey who made you think: I want to be like you? This may include someone like your dissertation advisor or a scholar you frequently cite. But it may also include people whose disciplines, professions, and lives look nothing like your own. It is likely to include people you love.” —Hannah Alpert-Abrams</blockquote>
+          <div style="font-family: var(--font-heading); font-style: italic; font-weight: 400; font-size: 1.2em; color: var(--color-primary); line-height: 1.15; margin: 0.2em 0 0.25em;">Reflect</div>
+          <ul class="custom-bullets" style="margin: 0;">
+            <li>Identify key themes or values that shape your work</li>
+            <li>Reflect on who you associate with those themes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin: 0; flex-shrink: 0;">
+        Hannah Alpert Abrams, <em>Finding Your Purpose</em>, 2022 — <a href="https://halperta.com">halperta.com</a>
+      </div>
+    </div>
+    <aside class="notes">
+<p>Finding Your Purpose zine/workbook by Hannah Alpert Abrams [describe]</p>
+    </aside>
+  </section>
+
+  <!-- SLIDE 8 -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col" style="flex: 1.3; padding-top: 40px; padding-bottom: 36px;">
+        <h2>Supporting students in challenging circumstances</h2>
+        <p>International students, students with precarious status, and others navigating structural barriers need the same core things — with extra attentiveness.</p>
+        <ul class="custom-bullets">
+          <li>Ask what's most top of mind; don't assume you know what they're facing</li>
+          <li>Know where to find resources before a crisis makes them urgent</li>
+          <li>Connect with local organizers who understand the specific terrain</li>
+        </ul>
+        <div class="highlight-box">Your role isn't to solve every problem.</div>
+      </div>
+      <div class="img-col" style="flex: 0.7; display: flex; flex-direction: column;">
+        <img src="../images/msu/msu_lama.png" alt="MSU LAMA" style="flex: 1; width:100%; object-fit:contain; background:#fff;">
+        <img src="../images/msu/msu_intl_students.png" alt="MSU Office for International Students and Scholars" style="flex: 1; width:100%; object-fit:contain; background:#fff;">
+        <img src="../images/msu/msu_voces.jpg" alt="MSU VOCES" style="flex: 1; width:100%; object-fit:contain; background:#fff;">
+      </div>
+    </div>
+    <aside class="notes">This section may bring up anxiety in the room — that's appropriate. Acknowledge it. The point isn't to have all the answers, but to have done enough advance work to be a reliable resource. Ask: "Do you know what resources your institution has? Has that changed recently?"</aside>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <section class="layout-default-img">
+    <div class="slide-inner">
+      <div class="content-col">
+        <h2>Rigor and openness are not opposites</h2>
+        <ul class="custom-bullets">
+          <li>Difficulty is not the same as quality</li>
+          <li>Start with clarity: what are the requirements, and <em>why</em>?</li>
+          <li>Build lower-stakes moments for exploration into coursework</li>
+          <li>Draw on existing pedagogical resources — you don't have to invent this</li>
+        </ul>
+        <div class="highlight-box" style="margin-top: 1.2em;">Some of the most creative work is also the most rigorous. The goal is to cultivate both.</div>
+      </div>
+      <div class="img-col">
+        <img src="../images/ghost-pipes.jpg" alt="White ghost pipe plants growing in leaf litter" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <aside class="notes">This often generates the most animated discussion. The false opposition framing may push back on assumptions some faculty hold strongly — approach with curiosity, not confrontation. Ask: "Where do you feel tension between rigor and openness in your own teaching or mentorship?"</aside>
+  </section>
+
+  <!-- SLIDE 10 -->
+  <section class="layout-discussion layout-intros">
+    <div class="slide-inner">
+      <h2>Discussion</h2>
+      <ul class="intro-list">
+        <li>What is one teaching or advising practice that you feel you do well?</li>
+        <li class="fragment">Where do you feel least equipped to support students right now?</li>
+        <li class="fragment">What are the things that excite you most in graduate student work?</li>
+        <li class="fragment">What is one practice you could adopt or strengthen to support career reflection?</li>
+      </ul>
+    </div>
+    <aside class="notes">Give the room genuine time here — don't rush to debrief. If energy is high in small groups, let it run a bit long. When you pull back together, ask one person from each table to share a thread rather than a summary. The goal is to surface questions, not close them down.</aside>
+  </section>
+
+  <!-- SLIDE 11 -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Moving toward<br><em>structural change</em></h2>
+      <div class="section-desc">Using findings from ACLS Doctoral Futures to support next steps</div>
+    </div>
+    <aside class="notes">Section break.</aside>
+  </section>
+
+  <!-- SLIDE 12 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; justify-content: center;">
+      <h2>Overall recommendations</h2>
+      <p>A few places to start, at the program level and in individual advising:</p>
+      <ul class="custom-bullets">
+        <li>Begin with a thoughtful, honest program review — what do your structures actually reward?</li>
+        <li>Build periodic self-reflection into the student pathway, not just at the end</li>
+        <li>Encourage students to think expansively as well as deeply — in their field and in their lives</li>
+      </ul>
+      <div class="highlight-box">Small structural changes, made deliberately, shape what students believe is possible.</div>
+    </div>
+    <aside class="notes">Pull the threads together. A program review doesn't have to be a formal external process — it can start with a department looking honestly at what its requirements, milestones, and incentives signal to students. Self-reflection works best as a regular habit rather than a single exit exercise: noticing what energizes and what drains, which problems students are drawn to, which collaborations bring out their best thinking. And thinking expansively as well as deeply means making room for curiosity beyond the dissertation topic, which is where many unexpected pathways begin.</aside>
+  </section>
+
+  <!-- SLIDE 13 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; padding: 40px 72px 44px; box-sizing: border-box;">
+      <h2 style="flex-shrink: 0;">ACLS Doctoral Futures</h2>
+      <div style="flex: 1; min-height: 0; max-height: 330px; margin-top: 0.4em; display: flex; align-items: center; justify-content: center;">
+        <img src="../images/doctoral-futures.png" alt="ACLS Doctoral Futures initiative" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 6px 24px rgba(0,0,0,0.13);">
+      </div>
+      <div class="df-buttons">
+        <a class="df-btn" href="https://docs.google.com/document/d/1ccI7AgOiWQbjTJHA_uj45ucaMvNvrtIjOO84N56C2YY/edit?tab=t.0" target="_blank" rel="noopener">Recommendations ↗</a>
+        <a class="df-btn" href="https://works.hcommons.org/collections/doctoral-futures/" target="_blank" rel="noopener">Resources ↗</a>
+        <a class="df-btn" href="https://docs.google.com/document/d/1CYTHcMV81mM-nZJjEny6LEz-XQ8OI3bqw9qq-eMN5rI/edit?tab=t.0" target="_blank" rel="noopener">Actions ↗</a>
+      </div>
+      <div style="flex-shrink: 0; text-align: center; margin-top: 0.9em; font-family: var(--font-body); font-size: 0.6em;">
+        <a href="https://www.acls.org/doctoral-futures/" target="_blank">acls.org/doctoral-futures</a>
+      </div>
+    </div>
+    <aside class="notes">The Doctoral Futures initiative is working to turn what we've heard in listening sessions into concrete recommendations and models for programs. More information is at acls.org/doctoral-futures.</aside>
+  </section>
+
+  <!-- SLIDE 14 -->
+  <section class="layout-discussion layout-intros">
+    <div class="slide-inner">
+      <h2>What can you do?</h2>
+      <div class="intro-prompt" style="margin-bottom: 0.45em;">Building on all this, consider:</div>
+      <ul class="intro-list" style="margin-top: 0;">
+        <li>What is one short-term action you can take?</li>
+        <li>What is one longer-term change you would like to build towards?</li>
+        <li>What obstacles do you anticipate?</li>
+      </ul>
+    </div>
+    <aside class="notes">Reflection activity.</aside>
+  </section>
+
+  <!-- SLIDE 15 -->
+  <section class="layout-default">
+    <div class="slide-inner" style="display: flex; flex-direction: column; justify-content: center;">
+      <h2>Your own wellbeing matters, too</h2>
+      <p>Faculty face real structural pressures — precarity, overwork, competing demands on time and energy.</p>
+      <ul class="custom-bullets">
+        <li>Honest acknowledgment of constraints is not defeatism — it's clarity</li>
+        <li>Sustainable practices in your own work make genuine mentorship possible</li>
+        <li>Setting limits models something essential for students who struggle to do the same</li>
+      </ul>
+      <div class="highlight-box">The way you navigate these challenges teaches students at least as much as your curriculum does.</div>
+    </div>
+    <aside class="notes">This slide often lands quietly. Give it space. Faculty are not used to being asked how they're doing. You can ask directly: "What does sustainability look like in your own work right now? What would you want to model for your students — and what's getting in the way?"</aside>
+  </section>
+
+  <!-- SLIDE 16 -->
+  <section class="layout-section">
+    <div class="slide-inner">
+      <h2>Open<br><em>discussion</em></h2>
+      <div class="section-desc">What will you take with you?</div>
+    </div>
+    <aside class="notes">Section break.</aside>
+  </section>
+
+  <!-- SLIDE 17 -->
+  <section class="layout-closing">
+    <div class="slide-inner">
+      <h2>Thank you</h2>
+      <div class="tagline">Creative, sustainable, equitable solutions for higher education.</div>
+      <div class="orange-rule"></div>
+      <div class="resources-link">Resources gathered at <a href="https://bit.ly/inkcap-resources">bit.ly/inkcap-resources</a></div><br />
+      <div class="contact">
+        Katina L. Rogers<br>
+        <a href="https://inkcapconsulting.com">inkcapconsulting.com</a><br>
+        katina@inkcapconsulting.com
+      </div>
+    </div>
+    <aside class="notes">Land with warmth. The resources link is a low-barrier way for faculty to stay connected and share with students. Leave time for questions that didn't fit in the discussion — and follow up with anyone who wanted to continue a conversation.</aside>
+  </section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    history: true,
+    center: true,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    hash: true,
+  });
+</script>
+<!-- ================================================================
+     LIVE CAPTIONS (backup) — press C to toggle on/off.
+     Uses Chrome's built-in speech recognition (Chrome only; needs
+     internet and microphone permission). Not shown unless turned on.
+================================================================ -->
+<style>
+  #live-captions { position: fixed; left: 50%; bottom: 3.5vh; transform: translateX(-50%); width: min(88vw, 1400px); z-index: 1000; background: rgba(5, 26, 66, 0.88); border-top: 3px solid #006D6F; border-radius: 6px; padding: 0.55em 1em; box-sizing: border-box; font-family: 'Libre Franklin', system-ui, sans-serif; font-size: clamp(18px, 2.3vw, 36px); line-height: 1.35; color: #ffffff; text-align: left; display: none; max-height: 3.6em; overflow: hidden; }
+  #live-captions.on { display: block; }
+  #live-captions .interim { color: rgba(255,255,255,0.65); }
+  #live-captions .status { color: #ffffff; font-style: italic; }
+</style>
+<div id="live-captions" aria-live="polite"></div>
+<script>
+(function () {
+  var box = document.getElementById('live-captions');
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var rec = null, on = false, finalText = '';
+  var MAX_CHARS = 160;  // roughly two lines of recent speech
+
+  function esc(t) { return t.replace(/[&<>]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
+  function show(finalPart, interimPart) {
+    var f = finalPart.length > MAX_CHARS ? '…' + finalPart.slice(-MAX_CHARS) : finalPart;
+    box.innerHTML = esc(f) + (interimPart ? ' <span class="interim">' + esc(interimPart) + '</span>' : '');
+  }
+  function status(msg) { box.innerHTML = '<span class="status">' + esc(msg) + '</span>'; }
+
+  function start() {
+    if (!SR) { box.classList.add('on'); status('Live captions need Google Chrome.'); setTimeout(function(){ if (!on) box.classList.remove('on'); }, 4000); return; }
+    on = true; finalText = '';
+    box.classList.add('on'); status('Captions on — listening…');
+    rec = new SR();
+    rec.lang = 'en-US'; rec.continuous = true; rec.interimResults = true;
+    rec.onresult = function (e) {
+      var interim = '';
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        var t = e.results[i][0].transcript;
+        if (e.results[i].isFinal) { finalText = (finalText + ' ' + t).replace(/\s+/g, ' ').trim(); }
+        else { interim += t; }
+      }
+      if (finalText.length > MAX_CHARS * 3) finalText = finalText.slice(-MAX_CHARS * 2);
+      show(finalText, interim);
+    };
+    rec.onerror = function (e) {
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { on = false; status('Microphone access was blocked. Allow the microphone for this page and press C again.'); }
+      else if (e.error === 'network') { status('Captions need an internet connection — retrying…'); }
+    };
+    rec.onend = function () { if (on) { try { rec.start(); } catch (err) {} } };  // restart after pauses
+    try { rec.start(); } catch (err) {}
+  }
+  function stop() {
+    on = false;
+    if (rec) { try { rec.stop(); } catch (err) {} rec = null; }
+    box.classList.remove('on'); box.innerHTML = '';
+  }
+  function toggle() { on ? stop() : start(); }
+
+  if (window.Reveal && Reveal.addKeyBinding) {
+    Reveal.addKeyBinding({ keyCode: 67, key: 'C', description: 'Toggle live captions' }, toggle);
+  } else {
+    document.addEventListener('keydown', function (e) { if ((e.key === 'c' || e.key === 'C') && !e.metaKey && !e.ctrlKey) toggle(); });
+  }
+})();
+</script>
+</body>
+</html>
