@@ -1,5 +1,5 @@
 # Inkcap Slides — Patterns & Corrections
-*Updated June 2026. Supplements the inkcap-slides skill. Read this at the start of any session working on slide decks.*
+*Updated October 2026. Supplements the inkcap-slides skill. Read this at the start of any session working on slide decks.*
 
 ---
 
@@ -30,6 +30,43 @@ The base-template.html in the installed plugin has some stale values. Use these 
 .highlight-box { padding: 0.75em 1em; line-height: 1.9; }
 .orange-box    { padding: 0.75em 1em; line-height: 1.9; }
 ```
+
+### Readability floor (Oct 2026, from the MSU workshop decks)
+No slide text below **0.56em** (≈16px at the 28px base); no teal *text* on navy (decorative teal — bullets, rules, bars — is fine). `inkcap-keynote-template.html` in the talks folder has these values built in; when copying CSS from an older deck or the skill's `base-template.html`, add this block:
+```css
+.layout-title .eyebrow   { color: #ffffff; font-size: 0.56em; line-height: 1.7; }
+.layout-title h1 em      { color: #ffffff; }
+.layout-title .subtitle  { font-size: 0.64em; color: rgba(255,255,255,0.88); }
+.layout-title .presenter { font-size: 0.8em;  color: rgba(255,255,255,0.92); }
+.layout-section .section-desc { font-size: 0.7em; color: rgba(255,255,255,0.92); max-width: 78%; }
+.layout-closing .tagline { font-size: 0.66em; color: rgba(255,255,255,0.88); }
+.layout-closing .contact { font-size: 0.66em; color: rgba(255,255,255,0.85); }
+.layout-closing a, .layout-discussion a { color: #ffffff; }
+.highlight-box, .orange-box { font-size: 0.73em; }
+.footnote, .caption, .layout-quote .attribution { font-size: 0.56em; }
+```
+A long eyebrow wraps at 0.56em — break it deliberately with `<br>` (e.g. event name / venue · date).
+
+### Headings — one size for content slides
+```css
+.layout-default h2, .layout-default-img h2, .layout-two-col h2, .layout-callout h2 { font-size: 1.85em; }
+```
+
+### Bullet dots — centre on the first line
+The old `top: 0.52em` sits the dot near the top of the line box (line-height 1.7). Use the `lh` unit:
+```css
+ul.custom-bullets li::before { width: 6px; height: 6px; top: calc(0.85em - 3px); top: calc(0.5lh - 3px); }
+```
+
+### Source line for citations
+Use `.source-note` (not a highlight box) for image credits/citations inside a `.content-col`; `margin-top: auto` pins it to the bottom of the column.
+```css
+.source-note { font-family: var(--font-body); font-size: 0.56em; font-style: italic; color: var(--color-text-secondary); line-height: 1.5; margin-top: auto; padding-top: 0.6em; border-top: 1px solid var(--color-border-light); }
+.source-note a { color: var(--color-primary-dark); }
+```
+
+### Don't put font-size on a `<ul>` or `<p>` inline
+Inline `font-size` on a list multiplies with the `li` size (0.63em × 0.73em ≈ 0.46em). Set sizes on the layout's `p, li` rule only.
 
 ---
 

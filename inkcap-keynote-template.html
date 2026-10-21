@@ -118,12 +118,13 @@
 
     .layout-title .eyebrow {
       font-family: var(--font-body);
-      font-size: 0.42em;
+      font-size: 0.56em;
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-primary);
+      color: #ffffff;
       margin-bottom: 1.4em;
+      line-height: 1.7;
     }
 
     .layout-title h1 {
@@ -135,7 +136,7 @@
     }
 
     .layout-title h1 em {
-      color: var(--color-primary);
+      color: #ffffff;
       font-style: italic;
     }
 
@@ -148,8 +149,8 @@
 
     .layout-title .subtitle {
       font-family: var(--font-body);
-      font-size: 0.48em;
-      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.64em;
+      color: rgba(255, 255, 255, 0.88);
       line-height: 1.7;
       max-width: 72%;
       margin-bottom: 0;
@@ -157,8 +158,8 @@
 
     .layout-title .presenter {
       font-family: var(--font-heading);
-      font-size: 0.7em;
-      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.8em;
+      color: rgba(255, 255, 255, 0.92);
       margin-top: 2em;
       padding-top: 1em;
       border-top: 1px solid rgba(255, 255, 255, 0.14);
@@ -174,8 +175,8 @@
 
     .layout-section .section-num {
       font-family: var(--font-heading);
-      font-size: 0.52em;
-      color: rgba(255, 255, 255, 0.38);
+      font-size: 0.56em;
+      color: rgba(255, 255, 255, 0.6);
       letter-spacing: 0.1em;
       font-weight: 300;
       margin-bottom: 0.5em;
@@ -196,11 +197,11 @@
 
     .layout-section .section-desc {
       font-family: var(--font-body);
-      font-size: 0.48em;
-      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.7em;
+      color: rgba(255, 255, 255, 0.92);
       margin-top: 1.4em;
       line-height: 1.7;
-      max-width: 62%;
+      max-width: 78%;
     }
 
     /* ================================================================
@@ -228,7 +229,7 @@
     .layout-default p,
     .layout-default li {
       color: var(--color-text);
-      font-size: 0.7em;
+      font-size: 0.78em;
     }
 
     /* ================================================================
@@ -262,7 +263,7 @@
 
     .layout-quote .attribution {
       font-family: var(--font-body);
-      font-size: 0.43em;
+      font-size: 0.56em;
       color: var(--color-text-secondary);
       margin-top: 1.4em;
       padding-top: 1em;
@@ -284,7 +285,7 @@
 
     .layout-two-col h2 {
       color: var(--color-primary);
-      font-size: 1.65em;
+      font-size: 1.85em;
       margin-bottom: 0.55em;
     }
 
@@ -306,7 +307,7 @@
 
     .layout-two-col .col p,
     .layout-two-col .col li {
-      font-size: 0.63em;
+      font-size: 0.73em;
       color: var(--color-text);
       line-height: 1.72;
     }
@@ -321,7 +322,7 @@
 
     .layout-callout h2 {
       color: var(--color-primary);
-      font-size: 1.7em;
+      font-size: 1.85em;
       margin-bottom: 0.8em;
     }
 
@@ -353,7 +354,7 @@
 
     .layout-callout .stat-card .label {
       font-family: var(--font-body);
-      font-size: 0.5em;
+      font-size: 0.6em;
       color: var(--color-text-secondary);
       line-height: 1.55;
     }
@@ -375,8 +376,8 @@
 
     .layout-closing .tagline {
       font-family: var(--font-body);
-      font-size: 0.47em;
-      color: rgba(255, 255, 255, 0.52);
+      font-size: 0.66em;
+      color: rgba(255, 255, 255, 0.88);
       margin-bottom: 0;
     }
 
@@ -389,13 +390,13 @@
 
     .layout-closing .contact {
       font-family: var(--font-body);
-      font-size: 0.46em;
-      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.66em;
+      color: rgba(255, 255, 255, 0.85);
       line-height: 2.2;
     }
 
     .layout-closing .contact a {
-      color: var(--color-primary);
+      color: #ffffff;
       text-decoration: none;
     }
 
@@ -431,7 +432,7 @@
 
     .layout-default-img h2 {
       color: var(--color-primary);
-      font-size: 1.65em;
+      font-size: 1.85em;
       border-bottom: 1.5px solid var(--color-primary-light);
       padding-bottom: 0.3em;
       margin-bottom: 0.6em;
@@ -441,7 +442,7 @@
 
     .layout-default-img p,
     .layout-default-img li {
-      font-size: 0.66em;
+      font-size: 0.76em;
       color: var(--color-text);
       line-height: 1.7;
     }
@@ -469,7 +470,7 @@
     .layout-discussion .prompt {
       font-family: var(--font-body);
       font-size: 0.6em;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.8);
       margin-bottom: 1.4em;
       font-style: italic;
     }
@@ -505,9 +506,9 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 0.52em;
-      width: 5px;
-      height: 5px;
+      top: calc(0.5lh - 3px);
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--color-primary);
     }
@@ -518,9 +519,10 @@
       border-left: 4px solid var(--color-primary);
       padding: 0.65em 1em;
       margin: 0.9em 0;
-      font-size: 0.63em;
+      font-size: 0.73em;
       border-radius: 0 3px 3px 0;
       color: var(--color-text);
+      line-height: 1.6;
     }
 
     /* Orange highlight box */
@@ -529,15 +531,16 @@
       border-left: 4px solid var(--color-accent-orange);
       padding: 0.65em 1em;
       margin: 0.9em 0;
-      font-size: 0.63em;
+      font-size: 0.73em;
       border-radius: 0 3px 3px 0;
       color: var(--color-text);
+      line-height: 1.6;
     }
 
     /* Footnote / source line */
     .footnote {
       font-family: var(--font-body);
-      font-size: 0.38em;
+      font-size: 0.56em;
       color: var(--color-text-secondary);
       border-top: 1px solid var(--color-border-light);
       padding-top: 0.7em;
@@ -565,7 +568,7 @@
     /* Caption */
     .caption {
       font-family: var(--font-body);
-      font-size: 0.4em;
+      font-size: 0.56em;
       color: var(--color-text-secondary);
       margin-top: 0.5em;
       font-style: italic;
@@ -575,6 +578,14 @@
     .reveal .fragment {
       transition: opacity 0.3s ease;
     }
+
+    /* Source line for image credits / citations inside a content column
+       (sits at the bottom of the column; use instead of a callout box) */
+    .source-note { font-family: var(--font-body); font-size: 0.56em; font-style: italic; color: var(--color-text-secondary); line-height: 1.5; margin-top: auto; padding-top: 0.6em; border-top: 1px solid var(--color-border-light); }
+    .source-note a { color: var(--color-primary-dark); }
+
+    /* Readability floor (Oct 21, 2026): no slide text below 0.56em; no teal text on navy.
+       Bullet dots are centred on the first line via the lh unit. */
   </style>
 </head>
 
@@ -803,11 +814,11 @@
         </div>
         <div class="col">
           <h3>What We're Looking At</h3>
-          <p style="font-size: 0.63em; line-height: 1.7;">
+          <p>
             Explanatory text that accompanies the image — what does the audience
             need to understand about what they're seeing?
           </p>
-          <ul class="custom-bullets" style="font-size: 0.63em;">
+          <ul class="custom-bullets">
             <li>First observation from the image</li>
             <li>Second observation — what is surprising or important?</li>
             <li>What this means for your argument</li>
